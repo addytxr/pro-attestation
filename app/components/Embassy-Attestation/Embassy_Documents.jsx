@@ -4,7 +4,7 @@ import { motion } from 'framer-motion'
 import { FileText, Check } from 'lucide-react'
 import { useRef, useEffect } from 'react'
 
-const MEA_Documents = () => {
+const Embassy_Documents = () => {
   const sectionRefs = useRef([])
 
   useEffect(() => {
@@ -33,17 +33,17 @@ const MEA_Documents = () => {
   const documentCategories = [
     {
       title: "Educational Documents",
-      description: "Degree, Diploma, SSC, HSC",
+      description: "Degree Certificate, Diploma Certificate, Mark Sheets, School Leaving Certificate",
       icon: Check
     },
     {
       title: "Personal Documents",
-      description: "Birth Certificate, Marriage Certificate, Police Clearance",
+      description: "Birth Certificate, Marriage Certificate, Divorce Certificate, Police Clearance Certificate (PCC), Affidavits",
       icon: Check
     },
     {
       title: "Commercial Documents",
-      description: "Company Registration, Export Licenses, Power of Attorney",
+      description: "Power of Attorney, Company Invoices, Certificate of Incorporation, Board Resolutions",
       icon: Check
     }
   ]
@@ -58,10 +58,10 @@ const MEA_Documents = () => {
           <div className="w-12 h-12 rounded-full px-4 md:px-0 bg-[#FF6A00] flex items-center justify-center text-white mr-4 shadow-lg">
             <FileText className="h-6 w-6" />
           </div>
-          <h2 className="text-2xl md:text-3xl font-bold text-gray-900">Documents Eligible for MEA Attestation</h2>
+          <h2 className="text-2xl md:text-3xl font-bold text-gray-900">Documents We Help Attest</h2>
         </div>
 
-        <p className="text-lg text-gray-700 mb-6">We provide MEA attestation for:</p>
+        <p className="text-lg text-gray-700 mb-6">We provide embassy attestation for the following documents:</p>
 
         <div className="grid md:grid-cols-3 gap-6 mb-8">
           {documentCategories.map((category, index) => (
@@ -80,11 +80,11 @@ const MEA_Documents = () => {
         </div>
 
         <p className="text-lg text-gray-700">
-          All documents are attested directly through the Ministry of External Affairs (MEA) in India, ensuring maximum authenticity and acceptance worldwide.
+          All documents are attested through official embassy channels, ensuring maximum authenticity and acceptance worldwide.
         </p>
       </div>
     </div>
   )
 }
 
-export default MEA_Documents
+export default Embassy_Documents

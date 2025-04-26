@@ -1,9 +1,9 @@
-"use client"
+'use client'
 
-import { motion } from "framer-motion"
-import { ChevronRight } from "lucide-react"
+import { motion } from 'framer-motion'
+import { ChevronRight } from 'lucide-react'
 
-export default function MEA_Header() {
+export default function Apostille_Header() {
   return (
     <section className="relative text-white py-4 md:py-8 px-8 md:px-16 overflow-hidden">
       {/* Background Image */}
@@ -11,7 +11,7 @@ export default function MEA_Header() {
         className="absolute inset-0 bg-cover bg-center"
         style={{
           backgroundImage:
-            "url('https://images.unsplash.com/photo-1562654501-a0ccc0fc3fb1?q=80&w=2944&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D')",
+            "url('https://images.unsplash.com/photo-1450101499163-c8848c66ca85?q=80&w=3570&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D')",
           zIndex: 0,
         }}
       ></div>
@@ -33,7 +33,7 @@ export default function MEA_Header() {
             transition={{ duration: 0.5, delay: 0.2 }}
             className="text-3xl md:text-5xl font-bold mb-6 text-white leading-tight"
           >
-            MEA Attestation Services in India –{" "}
+            Apostille Services in India –{" "}
             <span className="text-[#FF6A00] relative">
               Fast & Reliable
               <span className="absolute bottom-1 left-0 w-full h-2 bg-[#FF6A00]/10 -z-10 rounded-full"></span>
@@ -44,12 +44,11 @@ export default function MEA_Header() {
           <motion.p
             initial={{ y: -20 }}
             animate={{ y: 0 }}
-            transition={{ duration: 0.5}}
+            transition={{ duration: 0.5 }}
             className="text-lg md:text-xl text-gray-200 mb-8 max-w-3xl"
           >
-            Need verified and hassle-free MEA attestation in India? Pro Attestation offers secure, fast, and trusted MEA document attestation services for all types of certificates. Whether you’re applying for a work visa, studying abroad, or doing international business, we handle your document legalization with precision and care.
+            Looking for hassle-free apostille services in India? At Pro Attestation, we provide quick and secure certificate apostille services for educational, personal, and commercial documents — accepted across all Hague Convention countries. Whether you're applying for a visa, job abroad, university admission, or business expansion, we make the apostille process in India seamless and trustworthy.
           </motion.p>
-
 
           <motion.button
             whileHover={{ scale: 1.05 }}

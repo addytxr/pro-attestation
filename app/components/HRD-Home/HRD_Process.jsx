@@ -4,7 +4,7 @@ import { motion } from 'framer-motion'
 import { Search } from 'lucide-react'
 import { useRef, useEffect } from 'react'
 
-const MEA_Process = () => {
+const HRD_Process = () => {
   const sectionRefs = useRef([])
 
   useEffect(() => {
@@ -32,21 +32,20 @@ const MEA_Process = () => {
 
   const processSteps = [
     {
-      title: "Document Collection & Verification",
-      description: "We check document accuracy and validity.",
+      title: "Document Collection",
+      description: "From your doorstep (anywhere in India)",
     },
     {
-      title: "State Authentication",
-      description: "Based on document type, verified by:",
-      subPoints: ["HRD (Educational)", "Home Department (Personal)", "Chamber of Commerce (Commercial)"]
+      title: "Verification",
+      description: "By the university or educational board",
     },
     {
-      title: "Submission to MEA",
-      description: "We submit the document to MEA, New Delhi, for central attestation.",
+      title: "HRD Attestation",
+      description: "State-level HRD seals/stamps",
     },
     {
-      title: "Return with MEA Stamp/Sticker",
-      description: "The document is returned with the official MEA seal, validating it for international use.",
+      title: "Further Attestation",
+      description: "MEA, Embassy, MOFA (if required)",
     }
   ]
     
@@ -56,19 +55,17 @@ const MEA_Process = () => {
       className="px-4 py-16 opacity-0 transition-opacity duration-1000 max-w-6xl mx-auto"
     >
       <div className="max-w-6xl mx-auto">
-      <div className="flex flex-col items-start mb-8">
-            <div className="flex">
-                <div className="w-12 h-12 rounded-full px-4 md:px-0 bg-[#FF6A00] flex items-center justify-center text-white mr-4 shadow-lg">
-                    <Search className="h-6 w-6 " />
-                </div>
-                
-                <h2 className="text-2xl md:text-3xl pt-2  font-bold text-gray-900">MEA Attestation in India – Step-by-Step Process</h2>
+        <div className="flex flex-col items-start mb-8">
+          <div className="flex">
+            <div className="w-12 h-12 rounded-full px-4 md:px-0 bg-[#FF6A00] flex items-center justify-center text-white mr-4 shadow-lg">
+              <Search className="h-6 w-6" />
             </div>
-            <p className="py-4 text-gray-800 lg:pl-12">Here’s how we help you::</p>
+            <h2 className="text-2xl md:text-3xl pt-2 font-bold text-gray-900">HRD Attestation Process</h2>
+          </div>
+          <p className="py-4 text-gray-800 lg:pl-12">Here's how we manage the HRD Attestation Process for you:</p>
         </div>
 
         <div className="relative px-8 rounded-2xl">
-          
           {/* Process steps with connecting line */}
           <div className="hidden md:block absolute left-[45px] top-16 bottom-16 w-1 bg-[#FF6A00]/20 z-0"></div>
 
@@ -88,29 +85,20 @@ const MEA_Process = () => {
                 <div className="ml-6 bg-white p-5 rounded-lg shadow-sm flex-grow border border-[#FF6A00]/10">
                   <h3 className="font-semibold text-lg text-gray-900">{step.title}</h3>
                   <p className="text-gray-700 mt-2">{step.description}</p>
-                  {step.subPoints && (
-                    <ul className="mt-2 space-y-1">
-                      {step.subPoints.map((point, idx) => (
-                        <li key={idx} className="text-gray-700 flex items-center">
-                          <span className="w-1.5 h-1.5 bg-[#FF6A00] rounded-full mr-2"></span>
-                          {point}
-                        </li>
-                      ))}
-                    </ul>
-                  )}
                 </div>
               </motion.div>
             ))}
           </div>
         </div>
 
-        {/* <div className="mt-8 text-center">
-          <p className="text-lg text-gray-700">We offer doorstep pickup & delivery across India.</p>
-          <p className="text-lg text-gray-700 mt-2">Average processing time: 7-10 working days</p>
-        </div> */}
+        <div className="mt-8 px-8">
+          <p className="text-lg text-gray-700 bg-white p-4 rounded-lg border border-[#FF6A00]/10 shadow-sm">
+            📍 We provide State HRD Attestation for all major states including Delhi, Maharashtra, Tamil Nadu, Kerala, Punjab, and more.
+          </p>
+        </div>
       </div>
     </div>
   )
 }
 
-export default MEA_Process
+export default HRD_Process

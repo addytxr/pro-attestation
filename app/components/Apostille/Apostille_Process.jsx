@@ -4,7 +4,7 @@ import { motion } from 'framer-motion'
 import { Search } from 'lucide-react'
 import { useRef, useEffect } from 'react'
 
-const MEA_Process = () => {
+const Apostille_Process = () => {
   const sectionRefs = useRef([])
 
   useEffect(() => {
@@ -32,21 +32,20 @@ const MEA_Process = () => {
 
   const processSteps = [
     {
-      title: "Document Collection & Verification",
-      description: "We check document accuracy and validity.",
+      title: "Document Verification",
+      description: "We verify your documents for accuracy and completeness"
     },
     {
       title: "State Authentication",
-      description: "Based on document type, verified by:",
-      subPoints: ["HRD (Educational)", "Home Department (Personal)", "Chamber of Commerce (Commercial)"]
+      description: "Get necessary state-level verification if required"
     },
     {
-      title: "Submission to MEA",
-      description: "We submit the document to MEA, New Delhi, for central attestation.",
+      title: "Submission to MEA for Apostille Stamp",
+      description: "Submit documents to MEA for Apostille Stamp"
     },
     {
-      title: "Return with MEA Stamp/Sticker",
-      description: "The document is returned with the official MEA seal, validating it for international use.",
+      title: "Tracking & Delivery to Client",
+      description: "Track progress and receive documents at your doorstep"
     }
   ]
     
@@ -56,19 +55,14 @@ const MEA_Process = () => {
       className="px-4 py-16 opacity-0 transition-opacity duration-1000 max-w-6xl mx-auto"
     >
       <div className="max-w-6xl mx-auto">
-      <div className="flex flex-col items-start mb-8">
-            <div className="flex">
-                <div className="w-12 h-12 rounded-full px-4 md:px-0 bg-[#FF6A00] flex items-center justify-center text-white mr-4 shadow-lg">
-                    <Search className="h-6 w-6 " />
-                </div>
-                
-                <h2 className="text-2xl md:text-3xl pt-2  font-bold text-gray-900">MEA Attestation in India – Step-by-Step Process</h2>
-            </div>
-            <p className="py-4 text-gray-800 lg:pl-12">Here’s how we help you::</p>
+        <div className="flex items-center mb-8">
+          <div className="w-12 h-12 rounded-full bg-[#FF6A00] flex items-center justify-center text-white mr-4 shadow-lg">
+            <Search className="h-6 w-6" />
+          </div>
+          <h2 className="text-2xl md:text-3xl font-bold text-gray-900">Our Apostille Process</h2>
         </div>
 
-        <div className="relative px-8 rounded-2xl">
-          
+        <div className="relative p-8 rounded-2xl">
           {/* Process steps with connecting line */}
           <div className="hidden md:block absolute left-[45px] top-16 bottom-16 w-1 bg-[#FF6A00]/20 z-0"></div>
 
@@ -87,30 +81,19 @@ const MEA_Process = () => {
                 </div>
                 <div className="ml-6 bg-white p-5 rounded-lg shadow-sm flex-grow border border-[#FF6A00]/10">
                   <h3 className="font-semibold text-lg text-gray-900">{step.title}</h3>
-                  <p className="text-gray-700 mt-2">{step.description}</p>
-                  {step.subPoints && (
-                    <ul className="mt-2 space-y-1">
-                      {step.subPoints.map((point, idx) => (
-                        <li key={idx} className="text-gray-700 flex items-center">
-                          <span className="w-1.5 h-1.5 bg-[#FF6A00] rounded-full mr-2"></span>
-                          {point}
-                        </li>
-                      ))}
-                    </ul>
-                  )}
+                  <p className="text-gray-700 mt-1">{step.description}</p>
                 </div>
               </motion.div>
             ))}
           </div>
         </div>
 
-        {/* <div className="mt-8 text-center">
+        <div className="mt-8 text-center">
           <p className="text-lg text-gray-700">We offer doorstep pickup & delivery across India.</p>
-          <p className="text-lg text-gray-700 mt-2">Average processing time: 7-10 working days</p>
-        </div> */}
+        </div>
       </div>
     </div>
   )
 }
 
-export default MEA_Process
+export default Apostille_Process

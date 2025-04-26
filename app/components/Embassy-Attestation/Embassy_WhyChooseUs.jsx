@@ -4,7 +4,7 @@ import { motion } from 'framer-motion'
 import { Award, Check } from 'lucide-react'
 import { useRef, useEffect } from 'react'
 
-const MEA_WhyChooseUs = () => {
+const Embassy_WhyChooseUs = () => {
   const sectionRefs = useRef([])
 
   useEffect(() => {
@@ -31,11 +31,11 @@ const MEA_WhyChooseUs = () => {
   }, [])
 
   const features = [
-    "10+ years of expertise in MEA attestation in India",
-    "Authorized, secure & 100% reliable service",
-    "Transparent pricing with no hidden charges",
-    "Pickup & delivery from your doorstep",
-    "Fast-track / express options available",
+    "100% Secure & Confidential Process",
+    "PAN India Document Pickup",
+    "Fast-Track & Express Services",
+    "Transparent Pricing – No Hidden Charges",
+    "Trusted by 1000+ Clients Globally"
   ]
     
   return (
@@ -51,7 +51,7 @@ const MEA_WhyChooseUs = () => {
           <h2 className="text-2xl md:text-3xl font-bold text-gray-900">Why Choose Pro Attestation?</h2>
         </div>
 
-        <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-6 mb-6  p-8 rounded-2xl ">
+        <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-6 mb-6 p-8 rounded-2xl">
           {features.map((feature, index) => (
             <motion.div
               key={index}
@@ -68,4 +68,4 @@ const MEA_WhyChooseUs = () => {
   )
 }
 
-export default MEA_WhyChooseUs
+export default Embassy_WhyChooseUs

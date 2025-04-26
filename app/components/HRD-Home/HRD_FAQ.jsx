@@ -4,7 +4,7 @@ import { motion } from 'framer-motion'
 import { Search } from 'lucide-react'
 import { useRef, useEffect } from 'react'
 
-const MEA_FAQ = () => {
+const HRD_FAQ = () => {
   const sectionRefs = useRef([])
 
   useEffect(() => {
@@ -32,34 +32,38 @@ const MEA_FAQ = () => {
 
   const faqs = [
     {
-      question: "What is MEA attestation meaning in simple words?",
-      answer: " It is an official government stamp confirming your document is genuine for use abroad."
+      question: "What is HRD Attestation?",
+      answer: " HRD attestation is the verification of educational documents by a state’s Human Resource Department before MEA/Embassy attestation."
     },
     {
-      question: "What is the MEA attestation fee?",
-      answer: "The MEA charges ₹50 per document. Additional courier or service charges may apply."
+      question: "What is HRD apostille?",
+      answer: "HRD apostille refers to HRD verification followed by MEA Apostille (for countries under the Hague Convention)."
     },
     {
-      question: "Is MEA and MOFA same?",
-      answer: "No. MEA is India’s external affairs ministry. MOFA is the foreign country’s authority (e.g., UAE MOFA)."
+      question: "Is HRD attestation mandatory?",
+      answer: "Yes, especially if you are submitting educational documents for employment/study abroad in many countries like UAE, Saudi, Germany, etc."
     },
     {
-      question: "What is attestation process for UAE or Gulf countries?",
-      answer: "It includes state-level authentication → MEA attestation → Embassy/Consulate attestation → MOFA attestation (in the destination country)."
+      question: "How long does HRD attestation take?",
+      answer: "Typically between 7–15 business days, depending on your state and university verification speed."
     },
+    {
+      question: "What is the purpose of Home Department Attestation?",
+      answer: "It is used to verify the authenticity of personal documents like birth, marriage, and PCCs for international purposes."
+    }
   ]
     
   return (
     <div
       ref={(el) => (sectionRefs.current[6] = el)}
-      className=" px-6 py-12 opacity-0 transition-opacity duration-1000 rounded-2xl  mx-4 md:mx-auto max-w-6xl"
+      className="px-6 py-12 opacity-0 transition-opacity duration-1000 rounded-2xl mx-4 md:mx-auto max-w-6xl"
     >
       <div className="max-w-6xl mx-auto">
         <div className="flex items-center mb-8">
           <div className="w-10 h-10 rounded-full bg-[#FF6A00] flex items-center justify-center text-white mr-4">
             <Search className="h-5 w-5" />
           </div>
-          <h2 className="text-2xl md:text-3xl font-bold text-gray-900">FAQs about MEA Attestation</h2>
+          <h2 className="text-2xl md:text-3xl font-bold text-gray-900">Frequently Asked Questions (FAQs)</h2>
         </div>
 
         <div className="space-y-6">
@@ -79,4 +83,4 @@ const MEA_FAQ = () => {
   )
 }
 
-export default MEA_FAQ
+export default HRD_FAQ

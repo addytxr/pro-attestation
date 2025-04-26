@@ -3,7 +3,7 @@
 import { motion } from "framer-motion"
 import { ChevronRight } from "lucide-react"
 
-export default function MEA_Header() {
+export default function Embassy_Header() {
   return (
     <section className="relative text-white py-4 md:py-8 px-8 md:px-16 overflow-hidden">
       {/* Background Image */}
@@ -31,25 +31,24 @@ export default function MEA_Header() {
             initial={{ y: -20 }}
             animate={{ y: 0 }}
             transition={{ duration: 0.5, delay: 0.2 }}
-            className="text-3xl md:text-5xl font-bold mb-6 text-white leading-tight"
+            className="text-3xl md:text-5xl lg:pr-72 font-bold mb-6 text-white leading-tight"
           >
-            MEA Attestation Services in India –{" "}
+            Embassy Attestation Services in India –{" "}
             <span className="text-[#FF6A00] relative">
               Fast & Reliable
               <span className="absolute bottom-1 left-0 w-full h-2 bg-[#FF6A00]/10 -z-10 rounded-full"></span>
             </span>{" "}
-            Document Legalization
+            & Government-Approved
           </motion.h1>
 
           <motion.p
             initial={{ y: -20 }}
             animate={{ y: 0 }}
-            transition={{ duration: 0.5}}
+            transition={{ duration: 0.5 }}
             className="text-lg md:text-xl text-gray-200 mb-8 max-w-3xl"
           >
-            Need verified and hassle-free MEA attestation in India? Pro Attestation offers secure, fast, and trusted MEA document attestation services for all types of certificates. Whether you’re applying for a work visa, studying abroad, or doing international business, we handle your document legalization with precision and care.
+            Looking to get your documents legally validated for use in a foreign country? Our expert Embassy Attestation services in India help you get your educational, personal, and commercial documents officially recognized by foreign embassies — quickly, securely, and at the best price.
           </motion.p>
-
 
           <motion.button
             whileHover={{ scale: 1.05 }}

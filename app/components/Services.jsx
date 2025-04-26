@@ -8,25 +8,29 @@ const serviceCards = [
       title: "MEA Attestation",
       description:
         "Get your documents authenticated by the Ministry of External Affairs (MEA), India — a mandatory step for international use of educational, personal, or commercial certificates.",
-      image: "https://i.pinimg.com/736x/a0/fd/1c/a0fd1c102e40829ec94f8ece5e077343.jpg"
+      image: "https://i.pinimg.com/736x/a0/fd/1c/a0fd1c102e40829ec94f8ece5e077343.jpg",
+      link: "services/mea-attestation"
     },
     {
       title: "Apostille Services",
       description:
         "We offer fast and reliable apostille services for countries under the Hague Convention. Valid for travel, study, work, or business abroad without embassy visits.",
-      image: "https://i.pinimg.com/474x/52/af/be/52afbe09cbdcda34aa23d616b9a032db.jpg"
+      image: "https://i.pinimg.com/474x/52/af/be/52afbe09cbdcda34aa23d616b9a032db.jpg",
+      link: "services/apostille"
     },
     {
       title: "Embassy Attestation",
       description:
         "Complete attestation support from the concerned embassies of countries like UAE, Saudi Arabia, Qatar, Kuwait & more — essential for visa and employment processing.",
-      image: "https://i.pinimg.com/736x/83/6d/d3/836dd3b9965ef275822164a77e183b65.jpg"
+      image: "https://i.pinimg.com/736x/83/6d/d3/836dd3b9965ef275822164a77e183b65.jpg",
+      link: "services/embassy-attestation"
     },
     {
       title: "HRD / Home Department Attestation",
       description:
         "State-level attestation made simple. We assist with HRD (Human Resource Department) or Home Department authentication of your documents before MEA/legalization.",
-      image: "https://i.pinimg.com/474x/1f/42/fc/1f42fc28efecaee5c63be08a301cf993.jpg"
+      image: "https://i.pinimg.com/474x/1f/42/fc/1f42fc28efecaee5c63be08a301cf993.jpg",
+      link: "services/home-hrd"
     }
   ];
 
@@ -68,7 +72,7 @@ const Services = () => {
               viewport={{ once: true }}
               transition={{ duration: 0.5, delay: index * 0.1 }}
             >
-                <Link href="/services"> 
+                <Link href={service.link}> 
                     <div className="relative h-48 mb-6 rounded-lg overflow-hidden">
                         <img
                         src={service.image}

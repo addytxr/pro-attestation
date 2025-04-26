@@ -12,7 +12,7 @@ export default function Navbar() {
   }
 
   return (
-    <nav className="flex items-center text-black justify-between px-4 sm:px-8 md:px-16 py-4 border-b border-gray-200 relative">
+    <nav className="fixed top-0 left-0 right-0 bg-white flex items-center text-black justify-between px-4 sm:px-8 md:px-16 py-4 border-b border-gray-200 z-50">
       <div className="flex items-center gap-4 md:gap-10">
         <Image 
           src="/hero.svg"
@@ -32,10 +32,10 @@ export default function Navbar() {
             Home
           </Link>
           <div className="relative group">
-            <Link href="/services" className="text-lg hover:text-[#FF6A00] flex items-center transition-colors">
+            <div className="text-lg hover:text-[#FF6A00] flex items-center transition-colors">
               Services
               <ChevronDown className="ml-1 h-4 w-4" />
-            </Link>
+            </div>
             <div className="absolute hidden group-hover:block bg-white border border-gray-200 rounded-lg shadow-lg p-2 min-w-[200px] z-10">
               <Link href="/services/mea-attestation" className="block px-4 py-2 text-lg hover:text-[#FF6A00] transition-colors">
                 MEA Attestation
@@ -43,7 +43,7 @@ export default function Navbar() {
               <Link href="/services/embassy-attestation" className="block px-4 py-2 text-lg hover:text-[#FF6A00] transition-colors">
                 Embassy Attestation
               </Link>
-              <Link href="/services/home-hrd" className="block px-4 py-2 text-lg hover:text-[#FF6A00] transition-colors">
+              <Link href="/services/apostille" className="block px-4 py-2 text-lg hover:text-[#FF6A00] transition-colors">
               Apostille Services
               </Link>
               <Link href="/services/home-hrd" className="block px-4 py-2 text-lg hover:text-[#FF6A00] transition-colors">
@@ -120,7 +120,7 @@ export default function Navbar() {
             
             <div className="py-2">
               <div className="flex items-center justify-between text-lg hover:text-[#FF6A00] transition-colors">
-                <Link href="/services">Services</Link>
+                <div>Services</div>
               </div>
               <div className="pl-4 mt-1 border-l border-gray-200">
                 <Link href="/services/mea-attestation" className="block py-2 text-lg hover:text-[#FF6A00] transition-colors">
@@ -129,7 +129,7 @@ export default function Navbar() {
                 <Link href="/services/embassy-attestation" className="block py-2 text-lg hover:text-[#FF6A00] transition-colors">
                   Embassy Attestation
                 </Link>
-                <Link href="/services/home-hrd" className="block py-2 text-lg hover:text-[#FF6A00] transition-colors">
+                <Link href="/services/apostille" className="block py-2 text-lg hover:text-[#FF6A00] transition-colors">
                 Apostille Services
                 </Link>
                 <Link href="/services/home-hrd" className="block py-2 text-lg hover:text-[#FF6A00] transition-colors">
@@ -156,7 +156,7 @@ export default function Navbar() {
                 Police Clearance Certificate
                 </Link>
                 <Link href="/documents/educational" className="block py-2 text-lg hover:text-[#FF6A00] transition-colors">
-                Single Certificate Apostill
+                Single Certificate Apostille
                 </Link>
                 <Link href="/documents/educational" className="block py-2 text-lg hover:text-[#FF6A00] transition-colors">
                 GST Certificate Apostille

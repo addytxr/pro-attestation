@@ -1,10 +1,10 @@
 'use client'
 
 import { motion } from 'framer-motion'
-import { Award, Check } from 'lucide-react'
+import { Award, Check, Landmark, Package, Briefcase, Clock, Shield } from 'lucide-react'
 import { useRef, useEffect } from 'react'
 
-const MEA_WhyChooseUs = () => {
+const HRD_WhyChooseUs = () => {
   const sectionRefs = useRef([])
 
   useEffect(() => {
@@ -31,11 +31,11 @@ const MEA_WhyChooseUs = () => {
   }, [])
 
   const features = [
-    "10+ years of expertise in MEA attestation in India",
-    "Authorized, secure & 100% reliable service",
-    "Transparent pricing with no hidden charges",
-    "Pickup & delivery from your doorstep",
-    "Fast-track / express options available",
+    { icon: <Landmark className="text-[#FF6A00] h-5 w-5 mr-3" />, text: "Government-Approved Process" },
+    { icon: <Package className="text-[#FF6A00] h-5 w-5 mr-3" />, text: "PAN India Document Pickup" },
+    { icon: <Briefcase className="text-[#FF6A00] h-5 w-5 mr-3" />, text: "Expert Legal & Embassy Coordination" },
+    { icon: <Clock className="text-[#FF6A00] h-5 w-5 mr-3" />, text: "On-Time Delivery with Tracking" },
+    { icon: <Shield className="text-[#FF6A00] h-5 w-5 mr-3" />, text: "100% Safe & Confidential" }
   ]
     
   return (
@@ -51,15 +51,18 @@ const MEA_WhyChooseUs = () => {
           <h2 className="text-2xl md:text-3xl font-bold text-gray-900">Why Choose Pro Attestation?</h2>
         </div>
 
-        <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-6 mb-6  p-8 rounded-2xl ">
+        <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-6 mb-6 p-8 rounded-2xl">
           {features.map((feature, index) => (
             <motion.div
               key={index}
               whileHover={{ scale: 1.03 }}
               className="bg-white p-5 rounded-lg shadow-sm flex items-start border border-[#FF6A00]/10"
             >
-              <Check className="text-[#FF6A00] h-6 w-6 mr-3 mt-1 flex-shrink-0" />
-              <p className="text-gray-800">{feature}</p>
+              <div className="flex items-center mt-1 flex-shrink-0">
+                <Check className="text-[#FF6A00] h-5 w-5 mr-2" />
+                {feature.icon}
+              </div>
+              <p className="text-gray-800">{feature.text}</p>
             </motion.div>
           ))}
         </div>
@@ -68,4 +71,4 @@ const MEA_WhyChooseUs = () => {
   )
 }
 
-export default MEA_WhyChooseUs
+export default HRD_WhyChooseUs
