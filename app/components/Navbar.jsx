@@ -12,7 +12,7 @@ export default function Navbar() {
   }
 
   return (
-    <nav className="flex items-center justify-between px-4 sm:px-8 md:px-16 py-4 border-b border-gray-200 relative">
+    <nav className="flex items-center text-black justify-between px-4 sm:px-8 md:px-16 py-4 border-b border-gray-200 relative">
       <div className="flex items-center gap-4 md:gap-10">
         <Image 
           src="/hero.svg"
