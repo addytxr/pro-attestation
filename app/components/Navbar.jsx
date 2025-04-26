@@ -23,8 +23,11 @@ export default function Navbar() {
           priority  
         />
 
-        {/* Desktop Navigation */}
-        <div className="hidden md:flex font-semibold z-50 items-center gap-6">
+        
+      </div>
+
+      {/* Desktop Navigation */}
+      <div className="hidden md:flex font-normal z-50 items-center gap-6">
           <Link href="/" className="text-lg hover:text-[#FF6A00] transition-colors">
             Home
           </Link>
@@ -41,6 +44,9 @@ export default function Navbar() {
                 Embassy Attestation
               </Link>
               <Link href="/services/home-hrd" className="block px-4 py-2 text-lg hover:text-[#FF6A00] transition-colors">
+              Apostille Services
+              </Link>
+              <Link href="/services/home-hrd" className="block px-4 py-2 text-lg hover:text-[#FF6A00] transition-colors">
                 Home/HRD Department
               </Link>
             </div>
@@ -52,13 +58,28 @@ export default function Navbar() {
             </Link>
             <div className="absolute hidden group-hover:block bg-white border border-gray-200 rounded-lg shadow-lg p-2 min-w-[200px] z-10">
               <Link href="/documents/personal" className="block px-4 py-2 text-lg hover:text-[#FF6A00] transition-colors">
-                Personal
+              Degree Certificate Apostille
               </Link>
               <Link href="/documents/commercial" className="block px-4 py-2 text-lg hover:text-[#FF6A00] transition-colors">
-                Commercial
+              Birth Certificate Apostille
               </Link>
               <Link href="/documents/educational" className="block px-4 py-2 text-lg hover:text-[#FF6A00] transition-colors">
-                Educational
+              Marriage Certificate Apostille
+              </Link>
+              <Link href="/documents/educational" className="block px-4 py-2 text-lg hover:text-[#FF6A00] transition-colors">
+              Police Clearance Certificate
+              </Link>
+              <Link href="/documents/educational" className="block px-4 py-2 text-lg hover:text-[#FF6A00] transition-colors">
+              Single Certificate Apostille
+              </Link>
+              <Link href="/documents/educational" className="block px-4 py-2 text-lg hover:text-[#FF6A00] transition-colors">
+              GST Certificate Apostille
+              </Link>
+              <Link href="/documents/educational" className="block px-4 py-2 text-lg hover:text-[#FF6A00] transition-colors">
+              Power Attorney Apostille
+              </Link>
+              <Link href="/documents/educational" className="block px-4 py-2 text-lg hover:text-[#FF6A00] transition-colors">
+              Driving License Apostille
               </Link>
             </div>
           </div>
@@ -69,14 +90,13 @@ export default function Navbar() {
             Contact Us
           </Link>
         </div>
-      </div>
 
       {/* Desktop CTA Buttons */}
       <div className="hidden sm:flex items-center gap-3 md:gap-4">
-        <a href="tel:1800123456" className="text-sm md:text-lg border border-gray-300 px-2 md:px-4 py-2 rounded hover:border-[#FF6A00] transition-colors whitespace-nowrap">
+        <a href="tel:1800123456" className="text-sm md:text-md border border-gray-300 px-2 md:px-4 py-2 rounded hover:border-[#FF6A00] transition-colors whitespace-nowrap">
           Call us 1800 123 456
         </a>
-        <button className="bg-[#FF6A00] text-sm md:text-lg text-white px-2 md:px-4 py-2 rounded hover:bg-[#E63C00] transition-colors whitespace-nowrap">
+        <button className="bg-[#FF6A00] text-sm md:text-md text-white px-2 md:px-4 py-2 rounded hover:bg-[#E63C00] transition-colors whitespace-nowrap">
           Book a consultation
         </button>
       </div>
@@ -110,6 +130,9 @@ export default function Navbar() {
                   Embassy Attestation
                 </Link>
                 <Link href="/services/home-hrd" className="block py-2 text-lg hover:text-[#FF6A00] transition-colors">
+                Apostille Services
+                </Link>
+                <Link href="/services/home-hrd" className="block py-2 text-lg hover:text-[#FF6A00] transition-colors">
                   Home/HRD Department
                 </Link>
               </div>
@@ -121,13 +144,28 @@ export default function Navbar() {
               </div>
               <div className="pl-4 mt-1 border-l border-gray-200">
                 <Link href="/documents/personal" className="block py-2 text-lg hover:text-[#FF6A00] transition-colors">
-                  Personal
+                Degree Certificate Apostille
                 </Link>
                 <Link href="/documents/commercial" className="block py-2 text-lg hover:text-[#FF6A00] transition-colors">
-                  Commercial
+                Birth Certificate Apostille
                 </Link>
                 <Link href="/documents/educational" className="block py-2 text-lg hover:text-[#FF6A00] transition-colors">
-                  Educational
+                Marriage Certificate Apostille
+                </Link>
+                <Link href="/documents/educational" className="block py-2 text-lg hover:text-[#FF6A00] transition-colors">
+                Police Clearance Certificate
+                </Link>
+                <Link href="/documents/educational" className="block py-2 text-lg hover:text-[#FF6A00] transition-colors">
+                Single Certificate Apostill
+                </Link>
+                <Link href="/documents/educational" className="block py-2 text-lg hover:text-[#FF6A00] transition-colors">
+                GST Certificate Apostille
+                </Link>
+                <Link href="/documents/educational" className="block py-2 text-lg hover:text-[#FF6A00] transition-colors">
+                Power Attorney Apostille
+                </Link>
+                <Link href="/documents/educational" className="block py-2 text-lg hover:text-[#FF6A00] transition-colors">
+                Driving License Apostille
                 </Link>
               </div>
             </div>

@@ -5,10 +5,11 @@ import { motion } from 'framer-motion';
 
 const countries = {
     "Asia": [
-        "Armenia", "Azerbaijan", "Bahrain", "China", "Georgia", "Hong Kong", "India", "Israel",
-        "Japan", "Kazakhstan", "Kyrgyzstan", "Macau", "Mongolia", "Oman", "Philippines", "Russian",
-        "Singapore", "South Korea", "Tajikistan", "Turkey", "Uzbekistan"
-      ],
+        "Armenia", "Azerbaijan", "Bahrain", "China", "Georgia", "Hong Kong", "Israel",
+        "Japan", "Kazakhstan", "Kuwait", "Kyrgyzstan", "Macau", "Mongolia", "Oman",
+        "Philippines", "Qatar", "Russian", "Saudi Arabia", "Singapore", "South Korea",
+        "Tajikistan", "Turkey", "UAE", "Uzbekistan"
+    ],
     "Europe": [
       "Albania", "Andorra", "Austria", "Belarus", "Belgium", "Bosnia and Herzegovina", "Bulgaria",
       "Croatia", "Cyprus", "Czech Republic", "Denmark", "Estonia", "Finland", "France", "Germany",
@@ -58,10 +59,10 @@ function Countries() {
             Global Presence
           </span>
           <h2 className="text-3xl md:text-4xl font-bold text-[#222222] mt-4">
-            Countries We Offer Visa Assistance
+          Countries We Serve
           </h2>
           <p className="text-[#555555] mt-4 max-w-2xl mx-auto">
-            Explore our comprehensive visa and attestation services available across multiple regions worldwide
+            Explore our apostille and attestation services available across multiple regions worldwide
           </p>
         </motion.div>
 

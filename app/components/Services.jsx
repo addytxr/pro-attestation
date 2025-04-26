@@ -1,5 +1,6 @@
 "use client"
 import { motion } from 'framer-motion'
+import Link from 'next/link';
 
 
 const serviceCards = [
@@ -67,27 +68,29 @@ const Services = () => {
               viewport={{ once: true }}
               transition={{ duration: 0.5, delay: index * 0.1 }}
             >
-              <div className="relative h-48 mb-6 rounded-lg overflow-hidden">
-                <img
-                  src={service.image}
-                  alt={service.title}
-                  className="w-full h-full object-cover"
-                />
-              </div>
-              <div className="flex flex-col space-y-4">
-                <h3 className="text-3xl font-bold text-[#222222]">{service.title}</h3>
-                <p className="text-[#555555]">{service.description}</p>
-                <motion.button
-                  className="mt-4 text-[#FF6A00] font-medium hover:text-[#E63C00] transition-colors flex items-center"
-                  whileHover={{ x: 5 }}
-                  transition={{ type: "spring", stiffness: 400, damping: 10 }}
-                >
-                  Learn more
-                  <svg className="w-4 h-4 ml-1" viewBox="0 0 24 24" fill="none" stroke="currentColor">
-                    <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M9 5l7 7-7 7" />
-                  </svg>
-                </motion.button>
-              </div>
+                <Link href="/services"> 
+                    <div className="relative h-48 mb-6 rounded-lg overflow-hidden">
+                        <img
+                        src={service.image}
+                        alt={service.title}
+                        className="w-full h-full object-cover"
+                        />
+                    </div>
+                    <div className="flex flex-col space-y-4">
+                        <h3 className="text-3xl font-bold text-[#222222]">{service.title}</h3>
+                        <p className="text-[#555555]">{service.description}</p>
+                        <motion.button
+                        className="mt-4 text-[#FF6A00] font-medium hover:text-[#E63C00] transition-colors flex items-center"
+                        whileHover={{ x: 5 }}
+                        transition={{ type: "spring", stiffness: 400, damping: 10 }}
+                        >
+                        Learn more
+                        <svg className="w-4 h-4 ml-1" viewBox="0 0 24 24" fill="none" stroke="currentColor">
+                            <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M9 5l7 7-7 7" />
+                        </svg>
+                        </motion.button>
+                    </div>
+                </Link>
             </motion.div>
           ))}
         </div>

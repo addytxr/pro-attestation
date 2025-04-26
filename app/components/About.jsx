@@ -30,7 +30,7 @@ export default function About() {
               </p>
             </div>
             
-            <p className="text-[#555555] text-lg leading-relaxed">
+            <p className="text-[#555555] text-sm leading-relaxed">
               At Pro Attestation, we specialize in document attestation, apostille, and embassy 
               legalization services for over 120+ countries including UAE, Saudi Arabia, Qatar, 
               Kuwait, Oman, and more. Whether you're applying for a job abroad, planning higher 
@@ -42,7 +42,6 @@ export default function About() {
               {[
                 "100% genuine attestation",
                 "Real-time status updates",
-                "Doorstep document pickup & delivery",
                 "Dedicated support agents"
               ].map((item, index) => (
                 <li key={index} className="flex items-start group">
@@ -56,11 +55,11 @@ export default function About() {
               ))}
             </ul>
             
-            <div className="pt-6">
-              <button className="px-8 py-4 bg-[#FF6A00] text-white font-medium rounded-md hover:bg-[#E63C00] transition-all hover:shadow-lg transform hover:-translate-y-0.5 focus:outline-none focus:ring-2 focus:ring-[#FF6A00] focus:ring-opacity-50">
+            {/* <div className="pt-2">
+              <button className="px-4 py-2 bg-[#FF6A00] text-white font-medium rounded-md hover:bg-[#E63C00] transition-all hover:shadow-lg transform hover:-translate-y-0.5 focus:outline-none focus:ring-2 focus:ring-[#FF6A00] focus:ring-opacity-50">
                 Get Started
               </button>
-            </div>
+            </div> */}
           </motion.div>
           
           {/* Right column - Image */}

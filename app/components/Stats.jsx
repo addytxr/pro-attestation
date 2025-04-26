@@ -3,7 +3,7 @@ import { useState, useEffect, useRef } from 'react';
 import { FileText, Clock, CheckCircle } from 'lucide-react';
 import { motion, useInView } from 'framer-motion';
 
-function CountUp({ end, duration = 2000, prefix = '', suffix = '' }) {
+function CountUp({ end, duration = 1000, prefix = '', suffix = '' }) {
   const [count, setCount] = useState(0);
   const ref = useRef(null);
   const isInView = useInView(ref, { once: true });
@@ -50,14 +50,14 @@ function StatCard({ icon: Icon, count, countPrefix, countSuffix, title, descript
       viewport={{ once: true }}
       transition={{ duration: 0.5 }}
     >
-      <div className="flex flex-col space-y-4">
-        <div className="text-[#FF6A00]">
+      <div className="flex flex-col space-y-4  justify-center text-center">
+        <div className="text-[#FF6A00] flex justify-center text-center">
           <Icon size={32} strokeWidth={1.5} />
         </div>
         
-        <h3 className="text-4xl font-bold text-[#222222]">
+        <h3 className="text-4xl font-bold  text-[#222222]">
           <CountUp end={count} prefix={countPrefix} suffix={countSuffix} />
-          <span className="text-[#FF6A00]">+</span>
+          {!countSuffix && <span className="text-[#FF6A00]">+</span>}
         </h3>
         
         <p className="font-semibold text-xl text-[#222222]">{title}</p>
@@ -111,7 +111,7 @@ export default function Stats() {
             With decades of experience and thousands of successful cases, we've established ourselves as leaders in document attestation services.
           </p>
         </motion.div>
-        
+
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
           {statsData.map((stat, index) => (
             <motion.div
