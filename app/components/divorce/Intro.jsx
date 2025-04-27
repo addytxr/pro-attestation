@@ -46,13 +46,12 @@ const Intro = () => {
             className="space-y-6"
           >
             <article className="space-y-6">
-            <h2 className='text-2xl font-bold text-gray-700'>Introduction :</h2>
               <p className="text-lg text-gray-700">
-                Need to legalize your Birth Certificate for international use? We offer fast and reliable Birth Certificate Apostille and Attestation services across India. Whether you're planning to study abroad, apply for a work visa, or settle overseas, legalization of your birth certificate is mandatory.
+              If you are divorced and planning to marry again abroad or for legal purposes, your Divorce Certificate Apostille or Attestation is necessary.
               </p>
 
               <p className="text-base text-gray-600">
-                For Hague Convention countries, an Apostille stamp is required, while for non-Hague countries, Embassy Attestation is needed. We provide complete support, from document verification to MEA Apostille/Attestation and Embassy processing, ensuring a hassle-free experience at the best fees.
+              We provide trusted services for Divorce Decree Apostille and Embassy Attestation in India at competitive fees.
               </p>
             </article>
           </motion.div>
