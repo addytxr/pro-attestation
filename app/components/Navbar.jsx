@@ -1,7 +1,7 @@
 "use client"
 import Image from "next/image"
 import Link from "next/link"
-import { ChevronDown, Menu, X } from "lucide-react"
+import { ChevronDown, ChevronRight, Menu, X } from "lucide-react"
 import { useState } from "react"
 
 export default function Navbar() {
@@ -67,14 +67,13 @@ export default function Navbar() {
                 {/* 3 main document categories */}
                 <div 
                   onClick={() => toggleDocumentCategory('personal')} 
-                  className="block px-4 py-2 text-lg hover:text-[#FF6A00] transition-colors cursor-pointer flex items-center justify-between"
+                  className="block px-4 py-2 text-lg hover:text-[#FF6A00] transition-colors cursor-pointer flex items-center justify-between relative group/personal"
                 >
                   Personal Documents
-                  <ChevronDown className="ml-1 h-4 w-4" />
-                </div>
-                
-                {activeDocumentCategory === 'personal' && (
-                  <div className="pl-4 border-l border-gray-100 ml-4">
+                  <ChevronRight className="ml-1 h-4 w-4" />
+                  
+                  {/* Right-aligned personal documents dropdown */}
+                  <div className="absolute hidden group-hover/personal:block left-full top-0 bg-white border border-gray-200 rounded-lg shadow-lg p-2 min-w-[200px] z-20 ml-1">
                     <Link href="/documents/birth" className="block px-4 py-2 text-lg hover:text-[#FF6A00] transition-colors">
                         Birth Certificate
                     </Link>
@@ -96,11 +95,14 @@ export default function Navbar() {
                     <Link href="/documents/medical" className="block px-4 py-2 text-lg hover:text-[#FF6A00] transition-colors">
                         Medical Certificates
                     </Link>
-                    <Link href="/documents/transfer-leave" className="block px-4 py-2 text-lg hover:text-[#FF6A00] transition-colors">
-                        Transfer/Leave Certificates
+                    <Link href="/documents/driving" className="block px-4 py-2 text-lg hover:text-[#FF6A00] transition-colors">
+                        Driving License
+                    </Link>
+                    <Link href="/documents/affidavit" className="block px-4 py-2 text-lg hover:text-[#FF6A00] transition-colors">
+                        Affidavit
                     </Link>
                   </div>
-                )}
+                </div>
                 
                 <div 
                   onClick={() => toggleDocumentCategory('commercial')} 
@@ -140,8 +142,8 @@ export default function Navbar() {
                     <Link href="/documents/degree" className="block px-4 py-2 text-lg hover:text-[#FF6A00] transition-colors">
                         Degree Certificates
                     </Link>
-                    <Link href="/documents/driving" className="block px-4 py-2 text-lg hover:text-[#FF6A00] transition-colors">
-                        Driving License
+                    <Link href="/documents/transfer-leave" className="block px-4 py-2 text-lg hover:text-[#FF6A00] transition-colors">
+                        Transfer/Leave Certificates
                     </Link>
                   </div>
                 )}
@@ -237,6 +239,12 @@ export default function Navbar() {
                     <Link href="/documents/police" className="block py-2 text-lg hover:text-[#FF6A00] transition-colors">
                         Police Clearance
                     </Link>
+                    <Link href="/documents/driving" className="block py-2 text-lg hover:text-[#FF6A00] transition-colors">
+                        Driving License
+                    </Link>
+                    <Link href="/documents/affidavit" className="block py-2 text-lg hover:text-[#FF6A00] transition-colors">
+                        Affidavit
+                    </Link>
                   </div>
                 )}
                 
@@ -278,8 +286,8 @@ export default function Navbar() {
                     <Link href="/documents/degree" className="block py-2 text-lg hover:text-[#FF6A00] transition-colors">
                         Degree Certificates
                     </Link>
-                    <Link href="/documents/driving" className="block py-2 text-lg hover:text-[#FF6A00] transition-colors">
-                        Driving License
+                    <Link href="/documents/transfer-leave" className="block py-2 text-lg hover:text-[#FF6A00] transition-colors">
+                        Transfer/Leave Certificates
                     </Link>
                   </div>
                 )}
