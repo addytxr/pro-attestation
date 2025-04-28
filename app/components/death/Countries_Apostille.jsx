@@ -58,10 +58,10 @@ const Countries_Apostille = () => {
         >
           <div className="text-center space-y-4">
             <h2 className="text-2xl md:text-3xl font-bold text-gray-900">
-              Countries That Commonly Require Birth Certificate Apostille
+              Countries That Commonly Require Death Certificate Apostille
             </h2>
             <p className="text-gray-600 max-w-2xl mx-auto">
-              These Hague Convention member countries accept apostilled birth certificates for various purposes
+              These Hague Convention member countries accept apostilled Death certificates for various purposes
             </p>
           </div>
 

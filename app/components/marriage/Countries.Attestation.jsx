@@ -55,11 +55,8 @@ const Countries_Attestation = () => {
         >
           <div className="text-center space-y-4">
             <h2 className="text-2xl md:text-3xl font-bold text-gray-900">
-              Countries That Commonly Require Birth Certificate Attestation
+              Countries That Commonly Require Marriage Certificate Attestation
             </h2>
-            <p className="text-gray-600 max-w-2xl mx-auto">
-              These non-Hague Convention countries require embassy attestation for birth certificates
-            </p>
           </div>
 
           <div className="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-4">

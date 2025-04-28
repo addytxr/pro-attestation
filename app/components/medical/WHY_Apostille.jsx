@@ -64,7 +64,7 @@ const WHY_Apostille = () => {
           className="space-y-8"
         >
           <h2 className="text-2xl md:text-3xl font-bold text-gray-900 text-center">
-            Why is Death Certificate Apostille/Attestation Required?
+            Why is Medical Certificate Apostille/Attestation Required?
           </h2>
 
           <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">

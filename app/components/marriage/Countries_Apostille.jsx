@@ -58,11 +58,8 @@ const Countries_Apostille = () => {
         >
           <div className="text-center space-y-4">
             <h2 className="text-2xl md:text-3xl font-bold text-gray-900">
-              Countries That Commonly Require Birth Certificate Apostille
+              Countries That Commonly Require Marriage Certificate Apostille
             </h2>
-            <p className="text-gray-600 max-w-2xl mx-auto">
-              These Hague Convention member countries accept apostilled birth certificates for various purposes
-            </p>
           </div>
 
           <div className="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-5 gap-4">

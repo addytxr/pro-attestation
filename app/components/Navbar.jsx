@@ -6,9 +6,18 @@ import { useState } from "react"
 
 export default function Navbar() {
   const [mobileMenuOpen, setMobileMenuOpen] = useState(false)
+  const [activeDocumentCategory, setActiveDocumentCategory] = useState(null)
 
   const toggleMobileMenu = () => {
     setMobileMenuOpen(!mobileMenuOpen)
+  }
+
+  const toggleDocumentCategory = (category) => {
+    if (activeDocumentCategory === category) {
+      setActiveDocumentCategory(null)
+    } else {
+      setActiveDocumentCategory(category)
+    }
   }
 
   return (
@@ -22,8 +31,6 @@ export default function Navbar() {
           height={80}
           priority  
         />
-
-        
       </div>
 
       {/* Desktop Navigation */}
@@ -52,35 +59,92 @@ export default function Navbar() {
             </div>
           </div>
           <div className="relative group">
-            <Link href="/documents" className="text-lg hover:text-[#FF6A00] flex items-center transition-colors">
-              Documents
-              <ChevronDown className="ml-1 h-4 w-4" />
-            </Link>
-            <div className="absolute hidden group-hover:block bg-white border border-gray-200 rounded-lg shadow-lg p-2 min-w-[200px] z-10">
-              <Link href="/documents/personal" className="block px-4 py-2 text-lg hover:text-[#FF6A00] transition-colors">
-              Degree Certificate Apostille
-              </Link>
-              <Link href="/documents/commercial" className="block px-4 py-2 text-lg hover:text-[#FF6A00] transition-colors">
-              Birth Certificate Apostille
-              </Link>
-              <Link href="/documents/educational" className="block px-4 py-2 text-lg hover:text-[#FF6A00] transition-colors">
-              Marriage Certificate Apostille
-              </Link>
-              <Link href="/documents/educational" className="block px-4 py-2 text-lg hover:text-[#FF6A00] transition-colors">
-              Police Clearance Certificate
-              </Link>
-              <Link href="/documents/educational" className="block px-4 py-2 text-lg hover:text-[#FF6A00] transition-colors">
-              Single Certificate Apostille
-              </Link>
-              <Link href="/documents/educational" className="block px-4 py-2 text-lg hover:text-[#FF6A00] transition-colors">
-              GST Certificate Apostille
-              </Link>
-              <Link href="/documents/educational" className="block px-4 py-2 text-lg hover:text-[#FF6A00] transition-colors">
-              Power Attorney Apostille
-              </Link>
-              <Link href="/documents/educational" className="block px-4 py-2 text-lg hover:text-[#FF6A00] transition-colors">
-              Driving License Apostille
-              </Link>
+            <div className="text-lg hover:text-[#FF6A00] flex items-center transition-colors">
+                Documents
+                <ChevronDown className="ml-1 h-4 w-4" />
+            </div>
+            <div className="absolute hidden group-hover:block bg-white border border-gray-200 rounded-lg shadow-lg p-2 min-w-[250px] z-10">
+                {/* 3 main document categories */}
+                <div 
+                  onClick={() => toggleDocumentCategory('personal')} 
+                  className="block px-4 py-2 text-lg hover:text-[#FF6A00] transition-colors cursor-pointer flex items-center justify-between"
+                >
+                  Personal Documents
+                  <ChevronDown className="ml-1 h-4 w-4" />
+                </div>
+                
+                {activeDocumentCategory === 'personal' && (
+                  <div className="pl-4 border-l border-gray-100 ml-4">
+                    <Link href="/documents/birth" className="block px-4 py-2 text-lg hover:text-[#FF6A00] transition-colors">
+                        Birth Certificate
+                    </Link>
+                    <Link href="/documents/death" className="block px-4 py-2 text-lg hover:text-[#FF6A00] transition-colors">
+                        Death Certificate
+                    </Link>
+                    <Link href="/documents/marriage" className="block px-4 py-2 text-lg hover:text-[#FF6A00] transition-colors">
+                        Marriage Certificate
+                    </Link>
+                    <Link href="/documents/divorce" className="block px-4 py-2 text-lg hover:text-[#FF6A00] transition-colors">
+                        Divorce Certificate
+                    </Link>
+                    <Link href="/documents/single" className="block px-4 py-2 text-lg hover:text-[#FF6A00] transition-colors">
+                        Single Status Certificate
+                    </Link>
+                    <Link href="/documents/police" className="block px-4 py-2 text-lg hover:text-[#FF6A00] transition-colors">
+                        Police Clearance
+                    </Link>
+                    <Link href="/documents/medical" className="block px-4 py-2 text-lg hover:text-[#FF6A00] transition-colors">
+                        Medical Certificates
+                    </Link>
+                    <Link href="/documents/transfer-leave" className="block px-4 py-2 text-lg hover:text-[#FF6A00] transition-colors">
+                        Transfer/Leave Certificates
+                    </Link>
+                  </div>
+                )}
+                
+                <div 
+                  onClick={() => toggleDocumentCategory('commercial')} 
+                  className="block px-4 py-2 text-lg hover:text-[#FF6A00] transition-colors cursor-pointer flex items-center justify-between"
+                >
+                  Commercial Documents
+                  <ChevronDown className="ml-1 h-4 w-4" />
+                </div>
+                
+                {activeDocumentCategory === 'commercial' && (
+                  <div className="pl-4 border-l border-gray-100 ml-4">
+                    <Link href="/documents/import-export" className="block px-4 py-2 text-lg hover:text-[#FF6A00] transition-colors">
+                        Import-Export Documents
+                    </Link>
+                    <Link href="/documents/company-agreements" className="block px-4 py-2 text-lg hover:text-[#FF6A00] transition-colors">
+                        Company Agreements
+                    </Link>
+                    <Link href="/documents/incorporation" className="block px-4 py-2 text-lg hover:text-[#FF6A00] transition-colors">
+                        Incorporation Documents
+                    </Link>
+                    <Link href="/documents/attorny" className="block px-4 py-2 text-lg hover:text-[#FF6A00] transition-colors">
+                        Power of Attorney
+                    </Link>
+                  </div>
+                )}
+                
+                <div 
+                  onClick={() => toggleDocumentCategory('educational')} 
+                  className="block px-4 py-2 text-lg hover:text-[#FF6A00] transition-colors cursor-pointer flex items-center justify-between"
+                >
+                  Educational Documents
+                  <ChevronDown className="ml-1 h-4 w-4" />
+                </div>
+                
+                {activeDocumentCategory === 'educational' && (
+                  <div className="pl-4 border-l border-gray-100 ml-4">
+                    <Link href="/documents/degree" className="block px-4 py-2 text-lg hover:text-[#FF6A00] transition-colors">
+                        Degree Certificates
+                    </Link>
+                    <Link href="/documents/driving" className="block px-4 py-2 text-lg hover:text-[#FF6A00] transition-colors">
+                        Driving License
+                    </Link>
+                  </div>
+                )}
             </div>
           </div>
           <Link href="/countries" className="text-lg hover:text-[#FF6A00] transition-colors">
@@ -96,9 +160,9 @@ export default function Navbar() {
         <a href="tel:1800123456" className="text-sm md:text-md border border-gray-300 px-2 md:px-4 py-2 rounded hover:border-[#FF6A00] transition-colors whitespace-nowrap">
           Call us 1800 123 456
         </a>
-        <button className="bg-[#FF6A00] text-sm md:text-md text-white px-2 md:px-4 py-2 rounded hover:bg-[#E63C00] transition-colors whitespace-nowrap">
+        <Link href="/contact" className="bg-[#FF6A00] text-sm md:text-md text-white px-2 md:px-4 py-2 rounded hover:bg-[#E63C00] transition-colors whitespace-nowrap">
           Book a consultation
-        </button>
+        </Link>
       </div>
 
       {/* Mobile Menu Toggle */}
@@ -139,34 +203,86 @@ export default function Navbar() {
             </div>
             
             <div className="py-2">
+              {/* Mobile Documents Menu */}
               <div className="flex items-center justify-between text-lg hover:text-[#FF6A00] transition-colors">
-                <Link href="/documents">Documents</Link>
+                <div>Documents</div>
               </div>
               <div className="pl-4 mt-1 border-l border-gray-200">
-                <Link href="/documents/personal" className="block py-2 text-lg hover:text-[#FF6A00] transition-colors">
-                Degree Certificate Apostille
-                </Link>
-                <Link href="/documents/commercial" className="block py-2 text-lg hover:text-[#FF6A00] transition-colors">
-                Birth Certificate Apostille
-                </Link>
-                <Link href="/documents/educational" className="block py-2 text-lg hover:text-[#FF6A00] transition-colors">
-                Marriage Certificate Apostille
-                </Link>
-                <Link href="/documents/educational" className="block py-2 text-lg hover:text-[#FF6A00] transition-colors">
-                Police Clearance Certificate
-                </Link>
-                <Link href="/documents/educational" className="block py-2 text-lg hover:text-[#FF6A00] transition-colors">
-                Single Certificate Apostille
-                </Link>
-                <Link href="/documents/educational" className="block py-2 text-lg hover:text-[#FF6A00] transition-colors">
-                GST Certificate Apostille
-                </Link>
-                <Link href="/documents/educational" className="block py-2 text-lg hover:text-[#FF6A00] transition-colors">
-                Power Attorney Apostille
-                </Link>
-                <Link href="/documents/educational" className="block py-2 text-lg hover:text-[#FF6A00] transition-colors">
-                Driving License Apostille
-                </Link>
+                {/* 3 main categories for mobile */}
+                <div 
+                  onClick={() => toggleDocumentCategory('mobile-personal')} 
+                  className="block py-2 text-lg hover:text-[#FF6A00] transition-colors flex items-center justify-between"
+                >
+                  <div>Personal Documents</div>
+                  <ChevronDown className="ml-1 h-4 w-4" />
+                </div>
+                
+                {activeDocumentCategory === 'mobile-personal' && (
+                  <div className="pl-4 border-l border-gray-100">
+                    <Link href="/documents/birth" className="block py-2 text-lg hover:text-[#FF6A00] transition-colors">
+                        Birth Certificate
+                    </Link>
+                    <Link href="/documents/death" className="block py-2 text-lg hover:text-[#FF6A00] transition-colors">
+                        Death Certificate
+                    </Link>
+                    <Link href="/documents/marriage" className="block py-2 text-lg hover:text-[#FF6A00] transition-colors">
+                        Marriage Certificate
+                    </Link>
+                    <Link href="/documents/divorce" className="block py-2 text-lg hover:text-[#FF6A00] transition-colors">
+                        Divorce Certificate
+                    </Link>
+                    <Link href="/documents/single" className="block py-2 text-lg hover:text-[#FF6A00] transition-colors">
+                        Single Status Certificate
+                    </Link>
+                    <Link href="/documents/police" className="block py-2 text-lg hover:text-[#FF6A00] transition-colors">
+                        Police Clearance
+                    </Link>
+                  </div>
+                )}
+                
+                <div 
+                  onClick={() => toggleDocumentCategory('mobile-commercial')} 
+                  className="block py-2 text-lg hover:text-[#FF6A00] transition-colors flex items-center justify-between"
+                >
+                  <div>Commercial Documents</div>
+                  <ChevronDown className="ml-1 h-4 w-4" />
+                </div>
+                
+                {activeDocumentCategory === 'mobile-commercial' && (
+                  <div className="pl-4 border-l border-gray-100">
+                    <Link href="/documents/import-export" className="block py-2 text-lg hover:text-[#FF6A00] transition-colors">
+                        Import-Export Documents
+                    </Link>
+                    <Link href="/documents/company-agreements" className="block py-2 text-lg hover:text-[#FF6A00] transition-colors">
+                        Company Agreements
+                    </Link>
+                    <Link href="/documents/incorporation" className="block py-2 text-lg hover:text-[#FF6A00] transition-colors">
+                        Incorporation Documents
+                    </Link>
+                    <Link href="/documents/attorny" className="block py-2 text-lg hover:text-[#FF6A00] transition-colors">
+                        Power of Attorney
+                    </Link>
+                  </div>
+                )}
+                
+                <div 
+                  onClick={() => toggleDocumentCategory('mobile-educational')} 
+                  className="block py-2 text-lg hover:text-[#FF6A00] transition-colors flex items-center justify-between"
+                >
+                  <div>Educational Documents</div>
+                  <ChevronDown className="ml-1 h-4 w-4" />
+                </div>
+                
+                {activeDocumentCategory === 'mobile-educational' && (
+                  <div className="pl-4 border-l border-gray-100">
+                    <Link href="/documents/degree" className="block py-2 text-lg hover:text-[#FF6A00] transition-colors">
+                        Degree Certificates
+                    </Link>
+                    <Link href="/documents/driving" className="block py-2 text-lg hover:text-[#FF6A00] transition-colors">
+                        Driving License
+                    </Link>
+                  </div>
+                )}
               </div>
             </div>
             
@@ -181,9 +297,9 @@ export default function Navbar() {
               <a href="tel:1800123456" className="text-center text-lg border border-gray-300 px-4 py-2 rounded hover:border-[#FF6A00] transition-colors">
                 Call us 1800 123 456
               </a>
-              <button className="text-center bg-[#FF6A00] text-lg text-white px-4 py-2 rounded hover:bg-[#E63C00] transition-colors">
+              <Link href="/contact" className="text-center bg-[#FF6A00] text-lg text-white px-4 py-2 rounded hover:bg-[#E63C00] transition-colors">
                 Book a consultation
-              </button>
+              </Link>
             </div>
           </div>
         </div>

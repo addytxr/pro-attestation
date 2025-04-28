@@ -55,10 +55,10 @@ const Countries_Attestation = () => {
         >
           <div className="text-center space-y-4">
             <h2 className="text-2xl md:text-3xl font-bold text-gray-900">
-              Countries That Commonly Require Birth Certificate Attestation
+              Countries That Commonly Require Death Certificate Attestation
             </h2>
             <p className="text-gray-600 max-w-2xl mx-auto">
-              These non-Hague Convention countries require embassy attestation for birth certificates
+              These non-Hague Convention countries require embassy attestation for Death certificates
             </p>
           </div>
 

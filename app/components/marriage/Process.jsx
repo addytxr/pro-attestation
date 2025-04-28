@@ -59,7 +59,7 @@ const Process = () => {
             className="p-6 bg-white rounded-lg shadow-sm"
           >
             <h2 className="text-2xl font-bold text-gray-900 mb-6">
-              Process for Birth Certificate Apostille in India
+              Process for Marriage Certificate Apostille in India
             </h2>
             
             <div className="space-y-6">
@@ -95,7 +95,7 @@ const Process = () => {
             className="p-6 bg-white rounded-lg shadow-sm"
           >
             <h2 className="text-2xl font-bold text-gray-900 mb-6">
-              Process for Birth Certificate Attestation in India
+              Process for Marriage Certificate Attestation in India
             </h2>
             
             <div className="space-y-6">
