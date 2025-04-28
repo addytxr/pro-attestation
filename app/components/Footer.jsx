@@ -39,7 +39,7 @@ export default function Footer() {
               <li><Link href="/documents/single" className="text-gray-400 hover:text-[#FF6A00] transition-colors">Single Status</Link></li>
               <li><Link href="/documents/police" className="text-gray-400 hover:text-[#FF6A00] transition-colors">Police Clearance</Link></li>
               <li><Link href="/documents/medical" className="text-gray-400 hover:text-[#FF6A00] transition-colors">Medical Certificates</Link></li>
-              <li><Link href="/documents/transfer-leave" className="text-gray-400 hover:text-[#FF6A00] transition-colors">Transfer/Leave</Link></li>
+              <li><Link href="/documents/driving" className="text-gray-400 hover:text-[#FF6A00] transition-colors">Driving License</Link></li>
             </ul>
           </div>
 
@@ -56,7 +56,7 @@ export default function Footer() {
             <h3 className="text-lg font-semibold mt-6 mb-4">Educational Documents</h3>
             <ul className="space-y-2">
               <li><Link href="/documents/degree" className="text-gray-400 hover:text-[#FF6A00] transition-colors">Degree Certificates</Link></li>
-              <li><Link href="/documents/driving" className="text-gray-400 hover:text-[#FF6A00] transition-colors">Driving License</Link></li>
+              <li><Link href="/documents/transfer-leave" className="text-gray-400 hover:text-[#FF6A00] transition-colors">Transfer/Leave</Link></li>
             </ul>
           </div>
 
