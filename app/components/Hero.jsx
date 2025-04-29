@@ -1,4 +1,5 @@
 import { Hexagon } from "lucide-react";
+import Link from "next/link";
 
 export default function Hero() {
   return (
@@ -28,9 +29,11 @@ export default function Hero() {
               Get your educational, personal, and commercial documents attested quickly and reliably for international use. Serving clients across India with 100% genuine attestation support for UAE, Saudi Arabia, Qatar, Oman, Kuwait & more.
             </p>
             <div className="flex flex-col sm:flex-row gap-4">
+            <Link href="/contact" >
               <button className="bg-[#FF6A00] text-white px-6 py-3 rounded  hover:bg-[#FF6A00]/90 transition-colors font-medium">
-                Get a Free Quote
+              Talk to an expert 
               </button>
+            </Link>
             </div>
             <div className="flex items-center gap-3 text-sm text-gray-100 pt-4">
               <span>Fast Processing</span>

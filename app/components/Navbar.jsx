@@ -23,23 +23,25 @@ export default function Navbar() {
   return (
     <nav className="fixed top-0 left-0 right-0 bg-white flex items-center text-black justify-between px-4 sm:px-8 md:px-16 py-4 border-b border-gray-200 z-50">
       <div className="flex items-center gap-4 md:gap-10">
-        <Image 
-          src="/hero.svg"
-          alt="Pro Attestation Services Logo"
-          className="rounded-2xl"
-          width={100}             
-          height={80}
-          priority  
-        />
+        <Link href="/">
+          <Image 
+            src="/hero.svg"
+            alt="Pro Attestation Services Logo"
+            className="rounded-2xl"
+            width={125}             
+            height={90}
+            priority  
+          />
+          </Link>
       </div>
 
       {/* Desktop Navigation */}
-      <div className="hidden md:flex font-normal z-50 items-center gap-6">
+      <div className="hidden md:flex font-semibold z-50 items-center gap-6">
           <Link href="/" className="text-lg hover:text-[#FF6A00] transition-colors">
             Home
           </Link>
           <div className="relative group">
-            <div className="text-lg hover:text-[#FF6A00] flex items-center transition-colors">
+            <div className="text-lg cursor-pointer hover:text-[#FF6A00] flex items-center transition-colors">
               Services
               <ChevronDown className="ml-1 h-4 w-4" />
             </div>
@@ -59,7 +61,7 @@ export default function Navbar() {
             </div>
           </div>
           <div className="relative group">
-            <div className="text-lg hover:text-[#FF6A00] flex items-center transition-colors">
+            <div className="text-lg cursor-pointer hover:text-[#FF6A00] flex items-center transition-colors">
                 Documents
                 <ChevronDown className="ml-1 h-4 w-4" />
             </div>
@@ -157,12 +159,8 @@ export default function Navbar() {
           </Link>
         </div>
 
-      {/* Desktop CTA Buttons */}
       <div className="hidden sm:flex items-center gap-3 md:gap-4">
-        <a href="tel:1800123456" className="text-sm md:text-md border border-gray-300 px-2 md:px-4 py-2 rounded hover:border-[#FF6A00] transition-colors whitespace-nowrap">
-          Call us 1800 123 456
-        </a>
-        <Link href="/contact" className="bg-[#FF6A00] text-sm md:text-md text-white px-2 md:px-4 py-2 rounded hover:bg-[#E63C00] transition-colors whitespace-nowrap">
+        <Link href="/contact" className="bg-[#FF6A00] text-sm md:text-md font-semibold text-white px-2 md:px-5 py-2 md:py-3 rounded hover:bg-[#E63C00] transition-colors whitespace-nowrap">
           Book a consultation
         </Link>
       </div>
