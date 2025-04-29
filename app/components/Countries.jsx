@@ -41,9 +41,32 @@ function Countries() {
   const [selectedRegion, setSelectedRegion] = useState('Asia');
   const [searchTerm, setSearchTerm] = useState('');
 
-  const filteredCountries = {
-    [selectedRegion]: countries[selectedRegion]
+  // Get all countries for search
+  const allCountries = Object.values(countries).flat();
+
+  // Filter countries based on search term
+  const getFilteredCountries = () => {
+    if (!searchTerm) {
+      // If no search term, show selected region's countries
+      return {
+        [selectedRegion]: countries[selectedRegion]
+      };
+    }
+
+    // If there's a search term, search across all countries and group by region
+    const filteredBySearch = {};
+    Object.entries(countries).forEach(([region, countryList]) => {
+      const filtered = countryList.filter(country =>
+        country.toLowerCase().includes(searchTerm.toLowerCase())
+      );
+      if (filtered.length > 0) {
+        filteredBySearch[region] = filtered;
+      }
+    });
+    return filteredBySearch;
   };
+
+  const filteredCountries = getFilteredCountries();
 
   return (
     <section className="w-full bg-[#FFF7F0] py-20 px-8 md:px-16">
@@ -79,9 +102,12 @@ function Countries() {
               {Object.keys(countries).map((region, index) => (
                 <motion.button
                   key={region}
-                  onClick={() => setSelectedRegion(region)}
+                  onClick={() => {
+                    setSelectedRegion(region);
+                    setSearchTerm(''); // Clear search when changing region
+                  }}
                   className={`px-6 py-3 rounded-lg transition-all shadow-sm ${
-                    selectedRegion === region
+                    selectedRegion === region && !searchTerm
                       ? 'bg-[#FF6A00] text-white shadow-md'
                       : 'bg-white hover:bg-gray-50'
                   }`}
@@ -104,7 +130,7 @@ function Countries() {
             >
               <input
                 type="text"
-                placeholder="Search countries..."
+                placeholder="Search any country..."
                 className="w-full md:w-64 px-6 py-3 rounded-lg bg-white shadow-sm text-[#222222] 
                          placeholder-gray-400 focus:outline-none focus:ring-2 focus:ring-[#FF6A00] 
                          focus:ring-opacity-50 transition-all"
@@ -115,48 +141,40 @@ function Countries() {
           </motion.div>
 
           {/* Countries Grid */}
-          {Object.entries(filteredCountries).map(([region, countryList]) => {
-            const filtered = countryList.filter(country =>
-              country.toLowerCase().includes(searchTerm.toLowerCase())
-            );
-
-            if (filtered.length === 0) return null;
-
-            return (
-              <motion.div 
-                key={region}
-                initial={{ opacity: 0, y: 20 }}
-                whileInView={{ opacity: 1, y: 0 }}
-                viewport={{ once: true }}
-                transition={{ duration: 0.5 }}
-                className="space-y-6"
-              >
-                <h2 className="text-2xl font-bold text-[#222222] pl-2 border-l-4 border-[#FF6A00]">
-                  {region}
-                </h2>
-                <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-6">
-                  {filtered.map((country, index) => (
-                    <motion.div
-                      key={country}
-                      className="bg-white p-6 rounded-xl shadow-sm hover:shadow-md transition-all"
-                      whileHover={{ y: -5 }}
-                      initial={{ opacity: 0, y: 20 }}
-                      animate={{ opacity: 1, y: 0 }}
-                      transition={{ delay: index * 0.05 }}
-                    >
-                      <h3 className="text-lg font-medium text-[#222222]">{country}</h3>
-                      <div className="mt-2 flex items-center text-[#FF6A00]">
-                        <span className="text-sm">View Details</span>
-                        <svg className="w-4 h-4 ml-1" viewBox="0 0 24 24" fill="none" stroke="currentColor">
-                          <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M9 5l7 7-7 7" />
-                        </svg>
-                      </div>
-                    </motion.div>
-                  ))}
-                </div>
-              </motion.div>
-            );
-          })}
+          {Object.entries(filteredCountries).map(([region, countryList]) => (
+            <motion.div 
+              key={region}
+              initial={{ opacity: 0, y: 20 }}
+              whileInView={{ opacity: 1, y: 0 }}
+              viewport={{ once: true }}
+              transition={{ duration: 0.5 }}
+              className="space-y-6"
+            >
+              <h2 className="text-2xl font-bold text-[#222222] pl-2 border-l-4 border-[#FF6A00]">
+                {region}
+              </h2>
+              <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-6">
+                {countryList.map((country, index) => (
+                  <motion.div
+                    key={country}
+                    className="bg-white p-6 rounded-xl shadow-sm hover:shadow-md transition-all"
+                    whileHover={{ y: -5 }}
+                    initial={{ opacity: 0, y: 20 }}
+                    animate={{ opacity: 1, y: 0 }}
+                    transition={{ delay: index * 0.05 }}
+                  >
+                    <h3 className="text-lg font-medium text-[#222222]">{country}</h3>
+                    <div className="mt-2 flex items-center text-[#FF6A00]">
+                      <span className="text-sm">View Details</span>
+                      <svg className="w-4 h-4 ml-1" viewBox="0 0 24 24" fill="none" stroke="currentColor">
+                        <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M9 5l7 7-7 7" />
+                      </svg>
+                    </div>
+                  </motion.div>
+                ))}
+              </div>
+            </motion.div>
+          ))}
         </div>
       </div>
     </section>

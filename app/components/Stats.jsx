@@ -72,7 +72,7 @@ export default function Stats() {
   const statsData = [
     {
       icon: FileText,
-      count: 50000,
+      count: 150000,
       title: "Documents Attested",
       description: "Helping clients from across India for education, work, and migration abroad."
     },
@@ -84,7 +84,7 @@ export default function Stats() {
     },
     {
       icon: CheckCircle,
-      count: 98,
+      count: 100,
       countSuffix: "%",
       title: "Approval Rate",
       description: "We're committed to delivering smooth and timely services with full transparency."
