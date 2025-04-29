@@ -2,6 +2,7 @@
 
 import { motion } from "framer-motion"
 import { ChevronRight } from "lucide-react"
+import Link from "next/link"
 
 export default function PersonalHeader() {
   return (
@@ -42,14 +43,14 @@ export default function PersonalHeader() {
           </motion.h1>
 
 
-          <motion.button
+          <Link href="/contact"><motion.button
             whileHover={{ scale: 1.05 }}
             whileTap={{ scale: 0.95 }}
             className="bg-[#FF6A00] text-white px-8 py-3 rounded-lg font-medium flex items-center shadow-lg hover:shadow-xl transition-all duration-300"
           >
             Contact Us
             <ChevronRight className="ml-2 h-5 w-5" />
-          </motion.button>
+          </motion.button> </Link>
         </motion.div>
       </div>
     </section>

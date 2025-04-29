@@ -2,6 +2,7 @@
 
 import { motion } from "framer-motion"
 import { ChevronRight } from "lucide-react"
+import Link from "next/link"
 
 export default function MEA_Header() {
   return (
@@ -50,7 +51,7 @@ export default function MEA_Header() {
             Need verified and hassle-free MEA attestation in India? Pro Attestation offers secure, fast, and trusted MEA document attestation services for all types of certificates. Whether you’re applying for a work visa, studying abroad, or doing international business, we handle your document legalization with precision and care.
           </motion.p>
 
-
+          <Link href="/contact">
           <motion.button
             whileHover={{ scale: 1.05 }}
             whileTap={{ scale: 0.95 }}
@@ -59,6 +60,7 @@ export default function MEA_Header() {
             Contact Now
             <ChevronRight className="ml-2 h-5 w-5" />
           </motion.button>
+          </Link>
         </motion.div>
       </div>
     </section>

@@ -5,7 +5,7 @@ import { motion } from "framer-motion";
 
 export default function About() {
   return (
-    <div className="w-full bg-[#FFF7F0] py-24 px-8 md:px-16 lg:px-20">
+    <div id="aboutus" className="w-full bg-[#FFF7F0] py-24 px-8 md:px-16 lg:px-20">
       <div className="max-w-7xl mx-auto">
         <div className="grid grid-cols-1 md:grid-cols-2 gap-12 items-center">
           {/* Left column - Text content */}

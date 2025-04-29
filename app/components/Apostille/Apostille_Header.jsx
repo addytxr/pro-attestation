@@ -2,6 +2,7 @@
 
 import { motion } from 'framer-motion'
 import { ChevronRight } from 'lucide-react'
+import Link from 'next/link'
 
 export default function Apostille_Header() {
   return (
@@ -50,6 +51,7 @@ export default function Apostille_Header() {
             Looking for hassle-free apostille services in India? At Pro Attestation, we provide quick and secure certificate apostille services for educational, personal, and commercial documents — accepted across all Hague Convention countries. Whether you're applying for a visa, job abroad, university admission, or business expansion, we make the apostille process in India seamless and trustworthy.
           </motion.p>
 
+          <Link href="/contact">
           <motion.button
             whileHover={{ scale: 1.05 }}
             whileTap={{ scale: 0.95 }}
@@ -58,6 +60,7 @@ export default function Apostille_Header() {
             Contact Now
             <ChevronRight className="ml-2 h-5 w-5" />
           </motion.button>
+          </Link>
         </motion.div>
       </div>
     </section>

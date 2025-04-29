@@ -2,6 +2,7 @@
 
 import { motion } from 'framer-motion'
 import { ChevronRight } from 'lucide-react'
+import Link from 'next/link'
 import { useRef, useEffect } from 'react'
 
 const MEA_CTA = () => {
@@ -49,6 +50,7 @@ const MEA_CTA = () => {
             Contact us now to get your documents apostilled quickly and securely.
             </p>
 
+          <Link href="/contact">
             <motion.button
               whileHover={{ scale: 1.05 }}
               whileTap={{ scale: 0.95 }}
@@ -57,6 +59,7 @@ const MEA_CTA = () => {
               Contact us now
               <ChevronRight className="ml-2 h-5 w-5" />
             </motion.button>
+          </Link>
           </div>
         </motion.div>
       </div>

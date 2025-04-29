@@ -2,6 +2,7 @@
 
 import { motion } from "framer-motion"
 import { ChevronRight } from "lucide-react"
+import Link from "next/link"
 
 export default function HRD_Header() {
   return (
@@ -46,6 +47,7 @@ export default function HRD_Header() {
             We ensure a quick, hassle-free and 100% government-approved attestation process for your degree certificates, birth/marriage certificates, and more — all handled by experts.
           </motion.p>
 
+          <Link href="/contact">
           <motion.button
             whileHover={{ scale: 1.05 }}
             whileTap={{ scale: 0.95 }}
@@ -54,6 +56,7 @@ export default function HRD_Header() {
             Contact Now
             <ChevronRight className="ml-2 h-5 w-5" />
           </motion.button>
+          </Link>
         </motion.div>
       </div>
     </section>

@@ -2,6 +2,7 @@
 
 import { motion } from "framer-motion"
 import { ChevronRight } from "lucide-react"
+import Link from "next/link"
 
 export default function Embassy_Header() {
   return (
@@ -50,6 +51,7 @@ export default function Embassy_Header() {
             Looking to get your documents legally validated for use in a foreign country? Our expert Embassy Attestation services in India help you get your educational, personal, and commercial documents officially recognized by foreign embassies — quickly, securely, and at the best price.
           </motion.p>
 
+          <Link href="/contact">
           <motion.button
             whileHover={{ scale: 1.05 }}
             whileTap={{ scale: 0.95 }}
@@ -58,6 +60,7 @@ export default function Embassy_Header() {
             Contact Now
             <ChevronRight className="ml-2 h-5 w-5" />
           </motion.button>
+          </Link>
         </motion.div>
       </div>
     </section>

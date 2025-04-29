@@ -1,79 +1,240 @@
 'use client'
 
-import Link from 'next/link'
 import Image from 'next/image'
+import Link from 'next/link'
+import { Phone, Mail, MapPin, Clock, Facebook, Twitter, Instagram, Linkedin } from 'lucide-react'
 
 export default function Footer() {
+  const currentYear = new Date().getFullYear()
+  
   return (
-    <footer className="bg-[#1A1A1A] text-white py-16">
+    <footer className="bg-[#1A1A1A] text-white pt-16 pb-8">
       <div className="max-w-7xl mx-auto px-4 md:px-8">
-        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-5 gap-8">
-          {/* Company Info */}
-          <div className="lg:col-span-2">
-            <Image 
-              src="/hero.svg"
-              alt="Pro Attestation Services Logo"
-              width={150}             
-              height={100}
-              className="mb-6"
-              priority
-            />
-            <p className="text-gray-400 mb-6">
-              Pro Attestation provides comprehensive document attestation, apostille, and embassy legalization services across India. We ensure secure and efficient processing for all your document verification needs.
-            </p>
-            <div className="flex gap-4">
-              <Link href="/contact" className="bg-[#FF6A00] text-white px-6 py-2 rounded hover:bg-[#E63C00] transition-colors">
-                Contact Us
-              </Link>
+        {/* Main Footer Content */}
+        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-12 gap-x-8 gap-y-12">
+          {/* Company Info and Contact - Spans 4 columns */}
+          <div className="lg:col-span-4">
+            <div className="mb-8">
+              <Image 
+                src="/hero.svg"
+                alt="Pro Attestation Services Logo"
+                width={180}             
+                height={120}
+                className="mb-6"
+                priority
+              />
+              <p className="text-gray-400 mb-6 text-sm leading-relaxed">
+                Pro Attestation provides comprehensive document attestation, apostille, and embassy legalization services across India.
+              </p>
+            </div>
+            
+            {/* Contact Info */}
+            <h3 className="text-lg font-semibold mb-4 inline-flex items-center">
+              <span className="border-b-2 border-[#FF6A00] pb-1">Contact Us</span>
+            </h3>
+            <div className="space-y-4 mt-5">
+              <div className="flex items-start text-gray-400 group">
+                <Phone className="h-5 w-5 mr-3 mt-0.5 text-[#FF6A00]" />
+                <div>
+                  <p className="group-hover:text-white transition-colors">+91 8700770603</p>
+                  <p className="group-hover:text-white transition-colors">+91 8595563930</p>
+                </div>
+              </div>
+              <div className="flex items-start text-gray-400 group">
+                <Mail className="h-5 w-5 mr-3 mt-0.5 text-[#FF6A00]" />
+                <div>
+                  <p className="group-hover:text-white transition-colors">info@proattestation.com</p>
+                  <p className="group-hover:text-white transition-colors">support@proattestation.com</p>
+                </div>
+              </div>
+              <div className="flex items-start text-gray-400 group">
+                <MapPin className="h-5 w-5 mr-3 mt-0.5 text-[#FF6A00]" />
+                <div className="text-sm">
+                  <p className="group-hover:text-white transition-colors">Office # S205, 2nd floor,</p>
+                  <p className="group-hover:text-white transition-colors">Balaji Building, Corner Market,</p>
+                  <p className="group-hover:text-white transition-colors">Malviya Nagar, New Delhi - 110017</p>
+                </div>
+              </div>
+              <div className="flex items-start text-gray-400 group">
+                <Clock className="h-5 w-5 mr-3 mt-0.5 text-[#FF6A00]" />
+                <div className="text-sm">
+                  <p className="group-hover:text-white transition-colors">Mon - Sat: 9:00 AM - 7:00 PM</p>
+                  <p className="group-hover:text-white transition-colors">Sunday: Closed</p>
+                </div>
+              </div>
             </div>
           </div>
 
-          {/* Personal Documents */}
-          <div>
-            <h3 className="text-lg font-semibold mb-4">Personal Documents</h3>
-            <ul className="space-y-2">
-              <li><Link href="/documents/birth" className="text-gray-400 hover:text-[#FF6A00] transition-colors">Birth Certificate</Link></li>
-              <li><Link href="/documents/death" className="text-gray-400 hover:text-[#FF6A00] transition-colors">Death Certificate</Link></li>
-              <li><Link href="/documents/marriage" className="text-gray-400 hover:text-[#FF6A00] transition-colors">Marriage Certificate</Link></li>
-              <li><Link href="/documents/divorce" className="text-gray-400 hover:text-[#FF6A00] transition-colors">Divorce Certificate</Link></li>
-              <li><Link href="/documents/single" className="text-gray-400 hover:text-[#FF6A00] transition-colors">Single Status</Link></li>
-              <li><Link href="/documents/police" className="text-gray-400 hover:text-[#FF6A00] transition-colors">Police Clearance</Link></li>
-              <li><Link href="/documents/medical" className="text-gray-400 hover:text-[#FF6A00] transition-colors">Medical Certificates</Link></li>
-              <li><Link href="/documents/driving" className="text-gray-400 hover:text-[#FF6A00] transition-colors">Driving License</Link></li>
-            </ul>
-          </div>
+          {/* Quick Links - Spans 8 columns divided into 3 sections */}
+          <div className="lg:col-span-8">
+            <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-8">
+              {/* Personal Documents */}
+              <div>
+                <h3 className="text-lg font-semibold mb-5 inline-flex items-center">
+                  <span className="border-b-2 border-[#FF6A00] pb-1">Personal Documents</span>
+                </h3>
+                <ul className="space-y-3">
+                  <li>
+                    <Link href="/documents/birth" className="text-gray-400 hover:text-[#FF6A00] transition-colors flex items-center">
+                      <span className="mr-2 text-xs">›</span>Birth Certificate
+                    </Link>
+                  </li>
+                  <li>
+                    <Link href="/documents/death" className="text-gray-400 hover:text-[#FF6A00] transition-colors flex items-center">
+                      <span className="mr-2 text-xs">›</span>Death Certificate
+                    </Link>
+                  </li>
+                  <li>
+                    <Link href="/documents/marriage" className="text-gray-400 hover:text-[#FF6A00] transition-colors flex items-center">
+                      <span className="mr-2 text-xs">›</span>Marriage Certificate
+                    </Link>
+                  </li>
+                  <li>
+                    <Link href="/documents/divorce" className="text-gray-400 hover:text-[#FF6A00] transition-colors flex items-center">
+                      <span className="mr-2 text-xs">›</span>Divorce Certificate
+                    </Link>
+                  </li>
+                  <li>
+                    <Link href="/documents/single" className="text-gray-400 hover:text-[#FF6A00] transition-colors flex items-center">
+                      <span className="mr-2 text-xs">›</span>Single Status
+                    </Link>
+                  </li>
+                  <li>
+                    <Link href="/documents/police" className="text-gray-400 hover:text-[#FF6A00] transition-colors flex items-center">
+                      <span className="mr-2 text-xs">›</span>Police Clearance
+                    </Link>
+                  </li>
+                  <li>
+                    <Link href="/documents/medical" className="text-gray-400 hover:text-[#FF6A00] transition-colors flex items-center">
+                      <span className="mr-2 text-xs">›</span>Medical Certificates
+                    </Link>
+                  </li>
+                  <li>
+                    <Link href="/documents/driving" className="text-gray-400 hover:text-[#FF6A00] transition-colors flex items-center">
+                      <span className="mr-2 text-xs">›</span>Driving License
+                    </Link>
+                  </li>
+                  <li>
+                    <Link href="/documents/affidavit" className="text-gray-400 hover:text-[#FF6A00] transition-colors flex items-center">
+                      <span className="mr-2 text-xs">›</span>Affidavit
+                    </Link>
+                  </li>
+                </ul>
+              </div>
 
-          {/* Commercial Documents */}
-          <div>
-            <h3 className="text-lg font-semibold mb-4">Commercial Documents</h3>
-            <ul className="space-y-2">
-              <li><Link href="/documents/import-export" className="text-gray-400 hover:text-[#FF6A00] transition-colors">Import-Export</Link></li>
-              <li><Link href="/documents/company-agreements" className="text-gray-400 hover:text-[#FF6A00] transition-colors">Company Agreements</Link></li>
-              <li><Link href="/documents/incorporation" className="text-gray-400 hover:text-[#FF6A00] transition-colors">Incorporation</Link></li>
-              <li><Link href="/documents/attorny" className="text-gray-400 hover:text-[#FF6A00] transition-colors">Power of Attorney</Link></li>
-            </ul>
+              {/* Commercial & Educational Documents */}
+              <div>
+                <h3 className="text-lg font-semibold mb-5 inline-flex items-center">
+                  <span className="border-b-2 border-[#FF6A00] pb-1">Commercial Documents</span>
+                </h3>
+                <ul className="space-y-3">
+                  <li>
+                    <Link href="/documents/import-export" className="text-gray-400 hover:text-[#FF6A00] transition-colors flex items-center">
+                      <span className="mr-2 text-xs">›</span>Import-Export
+                    </Link>
+                  </li>
+                  <li>
+                    <Link href="/documents/company-agreements" className="text-gray-400 hover:text-[#FF6A00] transition-colors flex items-center">
+                      <span className="mr-2 text-xs">›</span>Company Agreements
+                    </Link>
+                  </li>
+                  <li>
+                    <Link href="/documents/incorporation" className="text-gray-400 hover:text-[#FF6A00] transition-colors flex items-center">
+                      <span className="mr-2 text-xs">›</span>Incorporation
+                    </Link>
+                  </li>
+                  <li>
+                    <Link href="/documents/attorny" className="text-gray-400 hover:text-[#FF6A00] transition-colors flex items-center">
+                      <span className="mr-2 text-xs">›</span>Power of Attorney
+                    </Link>
+                  </li>
+                </ul>
 
-            <h3 className="text-lg font-semibold mt-6 mb-4">Educational Documents</h3>
-            <ul className="space-y-2">
-              <li><Link href="/documents/degree" className="text-gray-400 hover:text-[#FF6A00] transition-colors">Degree Certificates</Link></li>
-              <li><Link href="/documents/transfer-leave" className="text-gray-400 hover:text-[#FF6A00] transition-colors">Transfer/Leave</Link></li>
-            </ul>
-          </div>
+                <h3 className="text-lg font-semibold mt-8 mb-5 inline-flex items-center">
+                  <span className="border-b-2 border-[#FF6A00] pb-1">Educational Documents</span>
+                </h3>
+                <ul className="space-y-3">
+                  <li>
+                    <Link href="/documents/degree" className="text-gray-400 hover:text-[#FF6A00] transition-colors flex items-center">
+                      <span className="mr-2 text-xs">›</span>Degree Certificates
+                    </Link>
+                  </li>
+                  <li>
+                    <Link href="/documents/transfer-leave" className="text-gray-400 hover:text-[#FF6A00] transition-colors flex items-center">
+                      <span className="mr-2 text-xs">›</span>Transfer/Leave
+                    </Link>
+                  </li>
+                </ul>
+              </div>
 
-          {/* Services */}
-          <div>
-            <h3 className="text-lg font-semibold mb-4">Our Services</h3>
-            <ul className="space-y-2">
-              <li><Link href="/services/mea-attestation" className="text-gray-400 hover:text-[#FF6A00] transition-colors">MEA Attestation</Link></li>
-              <li><Link href="/services/embassy-attestation" className="text-gray-400 hover:text-[#FF6A00] transition-colors">Embassy Attestation</Link></li>
-              <li><Link href="/services/apostille" className="text-gray-400 hover:text-[#FF6A00] transition-colors">Apostille Services</Link></li>
-              <li><Link href="/services/home-hrd" className="text-gray-400 hover:text-[#FF6A00] transition-colors">Home/HRD Department</Link></li>
-            </ul>
+              {/* Services and Quick Links */}
+              <div>
+                <h3 className="text-lg font-semibold mb-5 inline-flex items-center">
+                  <span className="border-b-2 border-[#FF6A00] pb-1">Our Services</span>
+                </h3>
+                <ul className="space-y-3">
+                  <li>
+                    <Link href="/services/mea-attestation" className="text-gray-400 hover:text-[#FF6A00] transition-colors flex items-center">
+                      <span className="mr-2 text-xs">›</span>MEA Attestation
+                    </Link>
+                  </li>
+                  <li>
+                    <Link href="/services/embassy-attestation" className="text-gray-400 hover:text-[#FF6A00] transition-colors flex items-center">
+                      <span className="mr-2 text-xs">›</span>Embassy Attestation
+                    </Link>
+                  </li>
+                  <li>
+                    <Link href="/services/apostille" className="text-gray-400 hover:text-[#FF6A00] transition-colors flex items-center">
+                      <span className="mr-2 text-xs">›</span>Apostille Services
+                    </Link>
+                  </li>
+                  <li>
+                    <Link href="/services/home-hrd" className="text-gray-400 hover:text-[#FF6A00] transition-colors flex items-center">
+                      <span className="mr-2 text-xs">›</span>Home/HRD Department
+                    </Link>
+                  </li>
+                </ul>
+                
+                {/* Quick Links */}
+                <h3 className="text-lg font-semibold mt-8 mb-5 inline-flex items-center">
+                  <span className="border-b-2 border-[#FF6A00] pb-1">Quick Links</span>
+                </h3>
+                <ul className="space-y-3">
+                  <li>
+                    <Link href="#aboutus" className="text-gray-400 hover:text-[#FF6A00] transition-colors flex items-center">
+                      <span className="mr-2 text-xs">›</span>About Us
+                    </Link>
+                  </li>
+                  <li>
+                    <Link href="/contact" className="text-gray-400 hover:text-[#FF6A00] transition-colors flex items-center">
+                      <span className="mr-2 text-xs">›</span>Contact Us
+                    </Link>
+                  </li>
+                </ul>
+              </div>
+            </div>
           </div>
         </div>
 
-        <div className="border-t border-gray-800 mt-12 pt-8 text-center text-gray-400">
-          <p>&copy; {new Date().getFullYear()} Pro Attestation. All rights reserved.</p>
+        {/* Social Media Links */}
+        <div className="flex justify-center space-x-6 mt-12 mb-8">
+          <a href="#" className="bg-gray-800 hover:bg-[#FF6A00] p-2 rounded-full transition-colors">
+            <Facebook className="h-5 w-5" />
+          </a>
+          <a href="#" className="bg-gray-800 hover:bg-[#FF6A00] p-2 rounded-full transition-colors">
+            <Twitter className="h-5 w-5" />
+          </a>
+          <a href="#" className="bg-gray-800 hover:bg-[#FF6A00] p-2 rounded-full transition-colors">
+            <Instagram className="h-5 w-5" />
+          </a>
+          <a href="#" className="bg-gray-800 hover:bg-[#FF6A00] p-2 rounded-full transition-colors">
+            <Linkedin className="h-5 w-5" />
+          </a>
+        </div>
+
+        {/* Copyright */}
+        <div className="border-t border-gray-800 mt-6 pt-6 text-center text-gray-400">
+          <p>&copy; {currentYear} Pro Attestation. All rights reserved.</p>
         </div>
       </div>
     </footer>

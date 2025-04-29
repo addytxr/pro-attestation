@@ -7,6 +7,7 @@ import { useState } from "react"
 export default function Navbar() {
   const [mobileMenuOpen, setMobileMenuOpen] = useState(false)
   const [activeDocumentCategory, setActiveDocumentCategory] = useState(null)
+  const [personalMenuOpen, setPersonalMenuOpen] = useState(false)
 
   const toggleMobileMenu = () => {
     setMobileMenuOpen(!mobileMenuOpen)
@@ -18,6 +19,17 @@ export default function Navbar() {
     } else {
       setActiveDocumentCategory(category)
     }
+  }
+
+  const togglePersonalMenu = (e) => {
+    e.preventDefault()
+    e.stopPropagation()
+    setPersonalMenuOpen(!personalMenuOpen)
+  }
+
+  // Close personal menu when clicking outside
+  const closePersonalMenu = () => {
+    setPersonalMenuOpen(false)
   }
 
   return (
@@ -66,44 +78,46 @@ export default function Navbar() {
                 <ChevronDown className="ml-1 h-4 w-4" />
             </div>
             <div className="absolute hidden group-hover:block bg-white border border-gray-200 rounded-lg shadow-lg p-2 min-w-[250px] z-10">
-                {/* 3 main document categories */}
+                {/* Personal documents with click toggle */}
                 <div 
-                  onClick={() => toggleDocumentCategory('personal')} 
-                  className="block px-4 py-2 text-lg hover:text-[#FF6A00] transition-colors cursor-pointer flex items-center justify-between relative group/personal"
+                  onClick={togglePersonalMenu} 
+                  className="block px-4 py-2 text-lg hover:text-[#FF6A00] transition-colors cursor-pointer flex items-center justify-between relative"
                 >
                   Personal Documents
                   <ChevronRight className="ml-1 h-4 w-4" />
                   
-                  {/* Right-aligned personal documents dropdown */}
-                  <div className="absolute hidden group-hover/personal:block left-full top-0 bg-white border border-gray-200 rounded-lg shadow-lg p-2 min-w-[200px] z-20 ml-1">
-                    <Link href="/documents/birth" className="block px-4 py-2 text-lg hover:text-[#FF6A00] transition-colors">
-                        Birth Certificate
-                    </Link>
-                    <Link href="/documents/death" className="block px-4 py-2 text-lg hover:text-[#FF6A00] transition-colors">
-                        Death Certificate
-                    </Link>
-                    <Link href="/documents/marriage" className="block px-4 py-2 text-lg hover:text-[#FF6A00] transition-colors">
-                        Marriage Certificate
-                    </Link>
-                    <Link href="/documents/divorce" className="block px-4 py-2 text-lg hover:text-[#FF6A00] transition-colors">
-                        Divorce Certificate
-                    </Link>
-                    <Link href="/documents/single" className="block px-4 py-2 text-lg hover:text-[#FF6A00] transition-colors">
-                        Single Status Certificate
-                    </Link>
-                    <Link href="/documents/police" className="block px-4 py-2 text-lg hover:text-[#FF6A00] transition-colors">
-                        Police Clearance
-                    </Link>
-                    <Link href="/documents/medical" className="block px-4 py-2 text-lg hover:text-[#FF6A00] transition-colors">
-                        Medical Certificates
-                    </Link>
-                    <Link href="/documents/driving" className="block px-4 py-2 text-lg hover:text-[#FF6A00] transition-colors">
-                        Driving License
-                    </Link>
-                    <Link href="/documents/affidavit" className="block px-4 py-2 text-lg hover:text-[#FF6A00] transition-colors">
-                        Affidavit
-                    </Link>
-                  </div>
+                  {/* Right-aligned personal documents dropdown - only shows when personalMenuOpen is true */}
+                  {personalMenuOpen && (
+                    <div className="absolute left-full top-0 bg-white border border-gray-200 rounded-lg shadow-lg p-2 min-w-[200px] z-20 ml-1">
+                      <Link href="/documents/birth" className="block px-4 py-2 text-lg hover:text-[#FF6A00] transition-colors">
+                          Birth Certificate
+                      </Link>
+                      <Link href="/documents/death" className="block px-4 py-2 text-lg hover:text-[#FF6A00] transition-colors">
+                          Death Certificate
+                      </Link>
+                      <Link href="/documents/marriage" className="block px-4 py-2 text-lg hover:text-[#FF6A00] transition-colors">
+                          Marriage Certificate
+                      </Link>
+                      <Link href="/documents/divorce" className="block px-4 py-2 text-lg hover:text-[#FF6A00] transition-colors">
+                          Divorce Certificate
+                      </Link>
+                      <Link href="/documents/single" className="block px-4 py-2 text-lg hover:text-[#FF6A00] transition-colors">
+                          Single Status Certificate
+                      </Link>
+                      <Link href="/documents/police" className="block px-4 py-2 text-lg hover:text-[#FF6A00] transition-colors">
+                          Police Clearance
+                      </Link>
+                      <Link href="/documents/medical" className="block px-4 py-2 text-lg hover:text-[#FF6A00] transition-colors">
+                          Medical Certificates
+                      </Link>
+                      <Link href="/documents/driving" className="block px-4 py-2 text-lg hover:text-[#FF6A00] transition-colors">
+                          Driving License
+                      </Link>
+                      <Link href="/documents/affidavit" className="block px-4 py-2 text-lg hover:text-[#FF6A00] transition-colors">
+                          Affidavit
+                      </Link>
+                    </div>
+                  )}
                 </div>
                 
                 <div 
@@ -218,8 +232,8 @@ export default function Navbar() {
                 </div>
                 
                 {activeDocumentCategory === 'mobile-personal' && (
-                  <div className="pl-4 border-l border-gray-100">
-                    <Link href="/documents/birth" className="block py-2 text-lg hover:text-[#FF6A00] transition-colors">
+                  <div className="pl-4 border-l text-black border-gray-100">
+                    <Link href="/documents/birth" className="block py-2 text-lg text-black hover:text-[#FF6A00] transition-colors">
                         Birth Certificate
                     </Link>
                     <Link href="/documents/death" className="block py-2 text-lg hover:text-[#FF6A00] transition-colors">
