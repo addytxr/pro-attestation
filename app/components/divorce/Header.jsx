@@ -17,10 +17,8 @@ export default function PersonalHeader() {
         }}
       ></div>
 
-      {/* Dark Overlay with brand color */}
       <div className="absolute inset-0 bg-black opacity-70 z-0"></div>
 
-      {/* Content */}
       <div className="relative z-10">
         <motion.div
           initial={{ opacity: 0 }}

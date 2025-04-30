@@ -1,4 +1,4 @@
-
+import Link from 'next/link'
 import Countries_Attestation from '@/app/components/police/Countries.Attestation'
 import Countries_Apostille from '@/app/components/police/Countries_Apostille'
 import Documents from '@/app/components/police/Documents'
@@ -9,7 +9,7 @@ import What_Apostille from '@/app/components/police/What_Apostille'
 import WHY_Apostille from '@/app/components/police/WHY_Apostille'
 import React from 'react'
 
-const page = () => {
+const Page = () => {
   return (
     <div>
       <PersonalHeader />
@@ -24,4 +24,4 @@ const page = () => {
   )
 }
 
-export default page
+export default Page
