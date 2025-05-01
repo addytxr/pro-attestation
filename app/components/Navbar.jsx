@@ -80,16 +80,16 @@ export default function Navbar() {
               <ChevronDown className="ml-1 h-4 w-4" />
             </div>
             <div className="absolute hidden group-hover:block bg-white border border-gray-200 rounded-lg shadow-lg p-2 min-w-[200px] z-10">
-              <Link href="/services/mea-attestation" className="block px-4 py-2 text-lg text-[#FF6A00] hover:text-[#FF6A00] transition-colors">
+              <Link href="/services/mea-attestation" className="block px-4 py-2 text-lg text-black hover:text-[#FF6A00] transition-colors">
                 MEA Attestation
               </Link>
-              <Link href="/services/embassy-attestation" className="block px-4 py-2 text-lg text-[#FF6A00] hover:text-[#FF6A00] transition-colors">
+              <Link href="/services/embassy-attestation" className="block px-4 py-2 text-lg text-black hover:text-[#FF6A00] transition-colors">
                 Embassy Attestation
               </Link>
-              <Link href="/services/apostille" className="block px-4 py-2 text-lg text-[#FF6A00] hover:text-[#FF6A00] transition-colors">
+              <Link href="/services/apostille" className="block px-4 py-2 text-lg text-black hover:text-[#FF6A00] transition-colors">
               Apostille Services
               </Link>
-              <Link href="/services/home-hrd" className="block px-4 py-2 text-lg text-[#FF6A00] hover:text-[#FF6A00] transition-colors">
+              <Link href="/services/home-hrd" className="block px-4 py-2 text-lg text-black hover:text-[#FF6A00] transition-colors">
                 Home/HRD Department
               </Link>
             </div>

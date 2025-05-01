@@ -72,14 +72,15 @@ const MEA_Countries = () => {
           ))}
         </div>
 
-        <motion.button
+        <motion.a
+          href="/countries"
           whileHover={{ scale: 1.02 }}
           whileTap={{ scale: 0.98 }}
           className="text-[#FF6A00] font-medium flex items-center hover:underline"
         >
           View full list of countries
           <ChevronRight className="ml-1 h-5 w-5" />
-        </motion.button>
+        </motion.a>
       </div>
     </div>
   )

@@ -63,8 +63,7 @@ const Apostille_Process = () => {
         </div>
 
         <div className="relative p-8 rounded-2xl">
-          {/* Process steps with connecting line */}
-          <div className="hidden md:block absolute left-[45px] top-16 bottom-16 w-1 bg-[#FF6A00]/20 z-0"></div>
+          <div className="hidden md:block absolute left-[52px] top-16 bottom-16 w-1 bg-[#FF6A00]/20 z-0"></div>
 
           <div className="space-y-8 relative z-10">
             {processSteps.map((step, index) => (
@@ -76,7 +75,7 @@ const Apostille_Process = () => {
                 viewport={{ once: true }}
                 className="flex"
               >
-                <div className="flex-shrink-0 w-12 h-12 rounded-full bg-[#FF6A00] text-white flex items-center justify-center font-bold text-lg shadow-md z-10">
+                <div className="flex-shrink-0 w-12 h-12  rounded-full bg-[#FF6A00] text-white flex items-center justify-center font-bold text-lg shadow-md z-10">
                   {index + 1}
                 </div>
                 <div className="ml-6 bg-white p-5 rounded-lg shadow-sm flex-grow border border-[#FF6A00]/10">

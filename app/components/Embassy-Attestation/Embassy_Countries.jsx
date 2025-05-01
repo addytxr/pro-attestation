@@ -71,18 +71,16 @@ const Embassy_Countries = () => {
           ))}
         </div>
 
-        <p className="text-gray-700 text-sm mt-4">
-          Click on the country name to explore specific requirements and timelines.
-        </p>
 
-        <motion.button
+        <motion.a
+          href="/countries"
           whileHover={{ scale: 1.02 }}
           whileTap={{ scale: 0.98 }}
           className="text-[#FF6A00] font-medium flex items-center hover:underline mt-6"
         >
           View full list of countries
           <ChevronRight className="ml-1 h-5 w-5" />
-        </motion.button>
+        </motion.a>
       </div>
     </div>
   )

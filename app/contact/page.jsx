@@ -80,9 +80,9 @@ export default function Contact() {
             </div>
           </div>
 
-          {/* Why Choose MEA EXPERT - narrower column */}
+          {/* Why Choose Pro Attestation - narrower column */}
           <div className="bg-white rounded-xl shadow-lg p-8 transform hover:shadow-xl transition-all duration-300">
-            <h2 className="text-2xl font-semibold text-gray-900 mb-8 pb-2 border-b border-gray-100">Why Choose MEA EXPERT</h2>
+            <h2 className="text-2xl font-semibold text-gray-900 mb-8 pb-2 border-b border-gray-100">Why Choose Pro Attestation</h2>
             
             <div className="space-y-6">
               <div className="flex items-start group">

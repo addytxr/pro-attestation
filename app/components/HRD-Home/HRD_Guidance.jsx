@@ -95,7 +95,6 @@ const HRD_Guidance = () => {
             <DollarSign className="text-[#FF6A00] h-6 w-6 mr-4 mt-1 flex-shrink-0" />
             <div>
               <h3 className="font-semibold text-lg text-gray-900 mb-2">Charges for HRD Attestation  in Delhi:</h3>
-              <p className="text-gray-700">₹1,200 to ₹3,000</p>
               <p className="text-gray-700 mt-1">(Varies by state, urgency, and type of document)</p>
             </div>
           </motion.div>

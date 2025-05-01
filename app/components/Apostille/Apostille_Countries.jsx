@@ -102,7 +102,7 @@ const Apostille_Countries = () => {
         </div>
 
         <motion.a
-          href="/services/apostille/countries"
+          href="/countries"
           className="flex items-center justify-center mt-8 text-[#FF6A00] font-medium hover:underline"
         >
           View full list of countries →

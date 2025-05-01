@@ -63,7 +63,7 @@ const Embassy_Process = () => {
 
         <div className="relative px-8 rounded-2xl">
           {/* Process steps with connecting line */}
-          <div className="hidden md:block absolute left-[45px] top-16 bottom-16 w-1 bg-[#FF6A00]/20 z-0"></div>
+          <div className="hidden md:block absolute left-[52px] top-10 bottom-14 w-1 bg-[#FF6A00]/20 z-0"></div>
 
           <div className="space-y-8 relative z-10">
             {processSteps.map((step, index) => (
