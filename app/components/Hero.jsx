@@ -23,7 +23,7 @@ export default function Hero() {
         <div className="relative z-10 md:py-12">
           <div className="space-y-6 max-w-3xl">
             <h1 className="text-3xl md:text-5xl font-medium  leading-tight text-white">
-              Hassle-Free Document <br /> Attestation Services in India <br /> for MEA, Embassy & Apostille
+            India’s Trusted Document <br /> Attestation Services in India <br /> for MEA, Embassy & Apostille
             </h1>
             <p className="text-gray-200 text-lg">
               Get your educational, personal, and commercial documents attested quickly and reliably for international use. Serving clients across India with 100% genuine attestation support for UAE, Saudi Arabia, Qatar, Oman, Kuwait & more.
