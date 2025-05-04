@@ -29,6 +29,31 @@ export const metadata = {
   }
 };
 
+const structuredData = {
+  "@context": "https://schema.org",
+  "@type": "LocalBusiness",
+  name: "Pro Attestation",
+  url: "https://proattestation.com",
+  telephone: ["+91 8700770603", "+91 8595563930"],
+  email: ["info@proattestation.com", "support@proattestation.com"],
+  address: {
+    "@type": "PostalAddress",
+    streetAddress: "Office # S205, 2nd floor, Balaji Building, Corner Market",
+    addressLocality: "Malviya Nagar",
+    addressRegion: "New Delhi",
+    postalCode: "110017",
+    addressCountry: "IN"
+  },
+  openingHoursSpecification: [
+    {
+      "@type": "OpeningHoursSpecification",
+      dayOfWeek: ["Monday", "Tuesday", "Wednesday", "Thursday", "Friday", "Saturday"],
+      opens: "09:00",
+      closes: "19:00"
+    }
+  ]
+};
+
 export default function RootLayout({ children }) {
   return (
     <html lang="en">
@@ -41,6 +66,12 @@ export default function RootLayout({ children }) {
             'https://www.googletagmanager.com/gtm.js?id='+i+dl;f.parentNode.insertBefore(j,f);
           })(window,document,'script','dataLayer','GTM-KFBR4HT');`}
         </Script>
+        <script
+          type="application/ld+json"
+          dangerouslySetInnerHTML={{
+            __html: JSON.stringify(structuredData)
+          }}
+        />
       </head>
       <body
         className={`${geistSans.variable} ${geistMono.variable} antialiased pt-[72px]`}

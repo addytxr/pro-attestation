@@ -2,7 +2,7 @@
 
 import Image from 'next/image'
 import Link from 'next/link'
-import { Phone, Mail, MapPin, Clock, Facebook, Twitter, Instagram, Linkedin } from 'lucide-react'
+import { Phone, Mail, MapPin, Clock, Facebook, Twitter, Instagram, Linkedin, Youtube } from 'lucide-react'
 
 export default function Footer() {
   const currentYear = new Date().getFullYear()
@@ -218,17 +218,17 @@ export default function Footer() {
 
         {/* Social Media Links */}
         <div className="flex justify-center space-x-6 mt-12 mb-8">
-          <a href="#" className="bg-gray-800 hover:bg-[#FF6A00] p-2 rounded-full transition-colors">
+          <a href="https://www.facebook.com/urconsultant21" className="bg-gray-800 hover:bg-[#FF6A00] p-2 rounded-full transition-colors">
             <Facebook className="h-5 w-5" />
           </a>
-          <a href="#" className="bg-gray-800 hover:bg-[#FF6A00] p-2 rounded-full transition-colors">
-            <Twitter className="h-5 w-5" />
+          <a href="https://g.co/kgs/fjdZ6xH" className="bg-gray-800 hover:bg-[#FF6A00] p-2 rounded-full transition-colors">
+           <img src="/G.svg" alt="" className="h-5 w-5 text-white" />
           </a>
-          <a href="#" className="bg-gray-800 hover:bg-[#FF6A00] p-2 rounded-full transition-colors">
+          <a href="https://www.instagram.com/proattestationservices" className="bg-gray-800 hover:bg-[#FF6A00] p-2 rounded-full transition-colors">
             <Instagram className="h-5 w-5" />
           </a>
-          <a href="#" className="bg-gray-800 hover:bg-[#FF6A00] p-2 rounded-full transition-colors">
-            <Linkedin className="h-5 w-5" />
+          <a href="https://www.youtube.com/@proattestationservices214" className="bg-gray-800 hover:bg-[#FF6A00] p-2 rounded-full transition-colors">
+            <Youtube className="h-5 w-5" />
           </a>
         </div>
 
