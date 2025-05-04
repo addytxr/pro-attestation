@@ -86,10 +86,10 @@ export default function Navbar() {
               <Link href="/services/embassy-attestation" className="block px-4 py-2 text-lg text-black hover:text-[#FF6A00] transition-colors">
                 Embassy Attestation
               </Link>
-              <Link href="/services/apostille" className="block px-4 py-2 text-lg text-black hover:text-[#FF6A00] transition-colors">
-              Apostille Services
+              <Link href="/services/apostille-attestation-delhi" className="block px-4 py-2 text-lg text-black hover:text-[#FF6A00] transition-colors">
+                Apostille Services
               </Link>
-              <Link href="/services/home-hrd" className="block px-4 py-2 text-lg text-black hover:text-[#FF6A00] transition-colors">
+              <Link href="/services/hrd-home-attestation" className="block px-4 py-2 text-lg text-black hover:text-[#FF6A00] transition-colors">
                 Home/HRD Department
               </Link>
             </div>
@@ -111,31 +111,31 @@ export default function Navbar() {
                   {/* Right-aligned personal documents dropdown - only shows when personalMenuOpen is true */}
                   {personalMenuOpen && (
                     <div className="absolute left-full top-0 bg-white border border-gray-200 rounded-lg shadow-lg p-2 min-w-[200px] z-20 ml-1">
-                      <Link href="/documents/birth" className="block px-4 py-2 text-lg text-black hover:text-[#FF6A00] transition-colors">
+                      <Link href="/documents/birth-certificate-apostille-attestation" className="block px-4 py-2 text-lg text-black hover:text-[#FF6A00] transition-colors">
                           Birth Certificate
                       </Link>
-                      <Link href="/documents/death" className="block px-4 py-2 text-lg text-black hover:text-[#FF6A00] transition-colors">
+                      <Link href="/documents/death-certificate-attestation-apostille" className="block px-4 py-2 text-lg text-black hover:text-[#FF6A00] transition-colors">
                           Death Certificate
                       </Link>
-                      <Link href="/documents/marriage" className="block px-4 py-2 text-lg text-black hover:text-[#FF6A00] transition-colors">
+                      <Link href="/documents/marriage-certificate-attestation" className="block px-4 py-2 text-lg text-black hover:text-[#FF6A00] transition-colors">
                           Marriage Certificate
                       </Link>
-                      <Link href="/documents/divorce" className="block px-4 py-2 text-lg text-black hover:text-[#FF6A00] transition-colors">
+                      <Link href="/documents/divorce-certificate-attestation" className="block px-4 py-2 text-lg text-black hover:text-[#FF6A00] transition-colors">
                           Divorce Certificate
                       </Link>
-                      <Link href="/documents/single" className="block px-4 py-2 text-lg text-black hover:text-[#FF6A00] transition-colors">
+                      <Link href="/documents/single-status-certificate-attestation" className="block px-4 py-2 text-lg text-black hover:text-[#FF6A00] transition-colors">
                           Single Status Certificate
                       </Link>
-                      <Link href="/documents/police" className="block px-4 py-2 text-lg text-black hover:text-[#FF6A00] transition-colors">
+                      <Link href="/documents/pcc-apostille-attestation" className="block px-4 py-2 text-lg text-black hover:text-[#FF6A00] transition-colors">
                           Police Clearance
                       </Link>
-                      <Link href="/documents/medical" className="block px-4 py-2 text-lg text-black hover:text-[#FF6A00] transition-colors">
+                      <Link href="/documents/medical-certificate-apostille-attestation" className="block px-4 py-2 text-lg text-black hover:text-[#FF6A00] transition-colors">
                           Medical Certificates
                       </Link>
-                      <Link href="/documents/driving" className="block px-4 py-2 text-lg text-black hover:text-[#FF6A00] transition-colors">
+                      <Link href="/documents/driving-license-attestation-apostille" className="block px-4 py-2 text-lg text-black hover:text-[#FF6A00] transition-colors">
                           Driving License
                       </Link>
-                      <Link href="/documents/affidavit" className="block px-4 py-2 text-lg text-black hover:text-[#FF6A00] transition-colors">
+                      <Link href="/documents/affidavit-document-apostille-attestation" className="block px-4 py-2 text-lg text-black hover:text-[#FF6A00] transition-colors">
                           Affidavit
                       </Link>
                     </div>
@@ -153,16 +153,16 @@ export default function Navbar() {
                   {/* Right-aligned commercial documents dropdown */}
                   {commercialMenuOpen && (
                     <div className="absolute left-full top-0 bg-white border border-gray-200 rounded-lg shadow-lg p-2 min-w-[200px] z-20 ml-1">
-                      <Link href="/documents/import-export" className="block px-4 py-2 text-lg text-black hover:text-[#FF6A00] transition-colors">
+                      <Link href="/documents/import-export-document-apostille" className="block px-4 py-2 text-lg text-black hover:text-[#FF6A00] transition-colors">
                           Import-Export Documents
                       </Link>
-                      <Link href="/documents/company-agreements" className="block px-4 py-2 text-lg text-black hover:text-[#FF6A00] transition-colors">
+                      <Link href="/documents/company-agreement-attestation-apostille" className="block px-4 py-2 text-lg text-black hover:text-[#FF6A00] transition-colors">
                           Company Agreements
                       </Link>
-                      <Link href="/documents/incorporation" className="block px-4 py-2 text-lg text-black hover:text-[#FF6A00] transition-colors">
+                      <Link href="/documents/incorporation-documents-apostille-attestation" className="block px-4 py-2 text-lg text-black hover:text-[#FF6A00] transition-colors">
                           Incorporation Documents
                       </Link>
-                      <Link href="/documents/attorny" className="block px-4 py-2 text-lg text-black hover:text-[#FF6A00] transition-colors">
+                      <Link href="/documents/power-of-attorney-apostille" className="block px-4 py-2 text-lg text-black hover:text-[#FF6A00] transition-colors">
                           Power of Attorney
                       </Link>
                     </div>
@@ -180,10 +180,10 @@ export default function Navbar() {
                   {/* Right-aligned educational documents dropdown */}
                   {educationalMenuOpen && (
                     <div className="absolute left-full top-0 bg-white border border-gray-200 rounded-lg shadow-lg p-2 min-w-[200px] z-20 ml-1">
-                      <Link href="/documents/degree" className="block px-4 py-2 text-lg text-black hover:text-[#FF6A00] transition-colors">
+                      <Link href="/documents/degree-certificate-attestation-apostille" className="block px-4 py-2 text-lg text-black hover:text-[#FF6A00] transition-colors">
                           Degree Certificates
                       </Link>
-                      <Link href="/documents/transfer-leave" className="block px-4 py-2 text-lg text-black hover:text-[#FF6A00] transition-colors">
+                      <Link href="/documents/transfer-certificate-apostille-attestation" className="block px-4 py-2 text-lg text-black hover:text-[#FF6A00] transition-colors">
                           Transfer/Leave Certificates
                       </Link>
                     </div>
@@ -227,16 +227,16 @@ export default function Navbar() {
                 <div>Services</div>
               </div>
               <div className="pl-4 mt-1 border-l border-gray-200">
-                <Link href="/services/mea-attestation" className="block py-2 text-lg text-[#FF6A00] hover:text-[#FF6A00] transition-colors">
+                <Link href="/services/mea-attestation-delhi" className="block py-2 text-lg text-[#FF6A00] hover:text-[#FF6A00] transition-colors">
                   MEA Attestation
                 </Link>
                 <Link href="/services/embassy-attestation" className="block py-2 text-lg text-[#FF6A00] hover:text-[#FF6A00] transition-colors">
                   Embassy Attestation
                 </Link>
-                <Link href="/services/apostille" className="block py-2 text-lg text-[#FF6A00] hover:text-[#FF6A00] transition-colors">
-                Apostille Services
+                <Link href="/services/apostille-attestation-delhi" className="block py-2 text-lg text-[#FF6A00] hover:text-[#FF6A00] transition-colors">
+                  Apostille Services
                 </Link>
-                <Link href="/services/home-hrd" className="block py-2 text-lg text-[#FF6A00] hover:text-[#FF6A00] transition-colors">
+                <Link href="/services/hrd-home-attestation" className="block py-2 text-lg text-[#FF6A00] hover:text-[#FF6A00] transition-colors">
                   Home/HRD Department
                 </Link>
               </div>
@@ -259,28 +259,31 @@ export default function Navbar() {
                 
                 {activeDocumentCategory === 'mobile-personal' && (
                   <div className="pl-4 border-l border-gray-100">
-                    <Link href="/documents/birth" className="block py-2 text-lg text-black hover:text-[#FF6A00] transition-colors">
+                    <Link href="/documents/birth-certificate-apostille-attestation" className="block py-2 text-lg text-black hover:text-[#FF6A00] transition-colors">
                       Birth Certificate
                     </Link>
-                    <Link href="/documents/death" className="block py-2 text-lg text-black hover:text-[#FF6A00] transition-colors">
+                    <Link href="/documents/death-certificate-attestation-apostille" className="block py-2 text-lg text-black hover:text-[#FF6A00] transition-colors">
                       Death Certificate
                     </Link>
-                    <Link href="/documents/marriage" className="block py-2 text-lg text-black hover:text-[#FF6A00] transition-colors">
+                    <Link href="/documents/marriage-certificate-attestation" className="block py-2 text-lg text-black hover:text-[#FF6A00] transition-colors">
                       Marriage Certificate
                     </Link>
-                    <Link href="/documents/divorce" className="block py-2 text-lg text-black hover:text-[#FF6A00] transition-colors">
+                    <Link href="/documents/divorce-certificate-attestation" className="block py-2 text-lg text-black hover:text-[#FF6A00] transition-colors">
                       Divorce Certificate
                     </Link>
-                    <Link href="/documents/single" className="block py-2 text-lg text-black hover:text-[#FF6A00] transition-colors">
+                    <Link href="/documents/single-status-certificate-attestation" className="block py-2 text-lg text-black hover:text-[#FF6A00] transition-colors">
                       Single Status Certificate
                     </Link>
-                    <Link href="/documents/police" className="block py-2 text-lg text-black hover:text-[#FF6A00] transition-colors">
+                    <Link href="/documents/pcc-apostille-attestation" className="block py-2 text-lg text-black hover:text-[#FF6A00] transition-colors">
                       Police Clearance
                     </Link>
-                    <Link href="/documents/driving" className="block py-2 text-lg text-black hover:text-[#FF6A00] transition-colors">
+                    <Link href="/documents/medical-certificate-apostille-attestation" className="block py-2 text-lg text-black hover:text-[#FF6A00] transition-colors">
+                      Medical Certificates
+                    </Link>
+                    <Link href="/documents/driving-license-attestation-apostille" className="block py-2 text-lg text-black hover:text-[#FF6A00] transition-colors">
                       Driving License
                     </Link>
-                    <Link href="/documents/affidavit" className="block py-2 text-lg text-black hover:text-[#FF6A00] transition-colors">
+                    <Link href="/documents/affidavit-document-apostille-attestation" className="block py-2 text-lg text-black hover:text-[#FF6A00] transition-colors">
                       Affidavit
                     </Link>
                   </div>
@@ -296,16 +299,16 @@ export default function Navbar() {
                 
                 {activeDocumentCategory === 'mobile-commercial' && (
                   <div className="pl-4 border-l border-gray-100">
-                    <Link href="/documents/import-export" className="block py-2 text-lg text-black hover:text-[#FF6A00] transition-colors">
+                    <Link href="/documents/import-export-document-apostille" className="block py-2 text-lg text-black hover:text-[#FF6A00] transition-colors">
                       Import-Export Documents
                     </Link>
-                    <Link href="/documents/company-agreements" className="block py-2 text-lg text-black hover:text-[#FF6A00] transition-colors">
+                    <Link href="/documents/company-agreement-attestation-apostille" className="block py-2 text-lg text-black hover:text-[#FF6A00] transition-colors">
                       Company Agreements
                     </Link>
-                    <Link href="/documents/incorporation" className="block py-2 text-lg text-black hover:text-[#FF6A00] transition-colors">
+                    <Link href="/documents/incorporation-documents-apostille-attestation" className="block py-2 text-lg text-black hover:text-[#FF6A00] transition-colors">
                       Incorporation Documents
                     </Link>
-                    <Link href="/documents/attorny" className="block py-2 text-lg text-black hover:text-[#FF6A00] transition-colors">
+                    <Link href="/documents/power-of-attorney-apostille" className="block py-2 text-lg text-black hover:text-[#FF6A00] transition-colors">
                       Power of Attorney
                     </Link>
                   </div>
@@ -321,10 +324,10 @@ export default function Navbar() {
                 
                 {activeDocumentCategory === 'mobile-educational' && (
                   <div className="pl-4 border-l border-gray-100">
-                    <Link href="/documents/degree" className="block py-2 text-lg text-black hover:text-[#FF6A00] transition-colors">
+                    <Link href="/documents/degree-certificate-attestation-apostille" className="block py-2 text-lg text-black hover:text-[#FF6A00] transition-colors">
                       Degree Certificates
                     </Link>
-                    <Link href="/documents/transfer-leave" className="block py-2 text-lg text-black hover:text-[#FF6A00] transition-colors">
+                    <Link href="/documents/transfer-certificate-apostille-attestation" className="block py-2 text-lg text-black hover:text-[#FF6A00] transition-colors">
                       Transfer/Leave Certificates
                     </Link>
                   </div>

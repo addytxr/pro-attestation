@@ -16,7 +16,7 @@ const serviceCards = [
       description:
         "We offer fast and reliable apostille services for countries under the Hague Convention. Valid for travel, study, work, or business abroad without embassy visits.",
       image: "https://i.pinimg.com/474x/52/af/be/52afbe09cbdcda34aa23d616b9a032db.jpg",
-      link: "services/apostille"
+      link: "services/apostille-attestation-delhi"
     },
     {
       title: "Embassy Attestation",
@@ -30,7 +30,7 @@ const serviceCards = [
       description:
         "State-level attestation made simple. We assist with HRD (Human Resource Department) or Home Department authentication of your documents before MEA/legalization.",
       image: "https://i.pinimg.com/474x/1f/42/fc/1f42fc28efecaee5c63be08a301cf993.jpg",
-      link: "services/home-hrd"
+      link: "services/hrd-home-attestation"
     }
   ];
 
@@ -84,7 +84,7 @@ const Services = () => {
                         <h3 className="text-3xl font-bold text-[#222222]">{service.title}</h3>
                         <p className="text-[#555555]">{service.description}</p>
                         <motion.button
-                        className="mt-4 text-[#FF6A00] font-medium hover:text-[#E63C00] transition-colors flex items-center"
+                        className="mt-4 text-[#FF6A00] font-medium cursor-pointer hover:text-[#E63C00] transition-colors flex items-center"
                         whileHover={{ x: 5 }}
                         transition={{ type: "spring", stiffness: 400, damping: 10 }}
                         >

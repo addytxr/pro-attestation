@@ -75,47 +75,47 @@ export default function Footer() {
                 </h3>
                 <ul className="space-y-3">
                   <li>
-                    <Link href="/documents/birth" className="text-gray-400 hover:text-[#FF6A00] transition-colors flex items-center">
+                    <Link href="/documents/birth-certificate-apostille-attestation" className="text-gray-400 hover:text-[#FF6A00] transition-colors flex items-center">
                       <span className="mr-2 text-xs">›</span>Birth Certificate
                     </Link>
                   </li>
                   <li>
-                    <Link href="/documents/death" className="text-gray-400 hover:text-[#FF6A00] transition-colors flex items-center">
+                    <Link href="/documents/death-certificate-attestation-apostille" className="text-gray-400 hover:text-[#FF6A00] transition-colors flex items-center">
                       <span className="mr-2 text-xs">›</span>Death Certificate
                     </Link>
                   </li>
                   <li>
-                    <Link href="/documents/marriage" className="text-gray-400 hover:text-[#FF6A00] transition-colors flex items-center">
+                    <Link href="/documents/marriage-certificate-attestation" className="text-gray-400 hover:text-[#FF6A00] transition-colors flex items-center">
                       <span className="mr-2 text-xs">›</span>Marriage Certificate
                     </Link>
                   </li>
                   <li>
-                    <Link href="/documents/divorce" className="text-gray-400 hover:text-[#FF6A00] transition-colors flex items-center">
+                    <Link href="/documents/divorce-certificate-attestation" className="text-gray-400 hover:text-[#FF6A00] transition-colors flex items-center">
                       <span className="mr-2 text-xs">›</span>Divorce Certificate
                     </Link>
                   </li>
                   <li>
-                    <Link href="/documents/single" className="text-gray-400 hover:text-[#FF6A00] transition-colors flex items-center">
+                    <Link href="/documents/single-status-certificate-attestation" className="text-gray-400 hover:text-[#FF6A00] transition-colors flex items-center">
                       <span className="mr-2 text-xs">›</span>Single Status
                     </Link>
                   </li>
                   <li>
-                    <Link href="/documents/police" className="text-gray-400 hover:text-[#FF6A00] transition-colors flex items-center">
+                    <Link href="/documents/pcc-apostille-attestation" className="text-gray-400 hover:text-[#FF6A00] transition-colors flex items-center">
                       <span className="mr-2 text-xs">›</span>Police Clearance
                     </Link>
                   </li>
                   <li>
-                    <Link href="/documents/medical" className="text-gray-400 hover:text-[#FF6A00] transition-colors flex items-center">
+                    <Link href="/documents/medical-certificate-apostille-attestation" className="text-gray-400 hover:text-[#FF6A00] transition-colors flex items-center">
                       <span className="mr-2 text-xs">›</span>Medical Certificates
                     </Link>
                   </li>
                   <li>
-                    <Link href="/documents/driving" className="text-gray-400 hover:text-[#FF6A00] transition-colors flex items-center">
+                    <Link href="/documents/driving-license-attestation-apostille" className="text-gray-400 hover:text-[#FF6A00] transition-colors flex items-center">
                       <span className="mr-2 text-xs">›</span>Driving License
                     </Link>
                   </li>
                   <li>
-                    <Link href="/documents/affidavit" className="text-gray-400 hover:text-[#FF6A00] transition-colors flex items-center">
+                    <Link href="/documents/affidavit-document-apostille-attestation" className="text-gray-400 hover:text-[#FF6A00] transition-colors flex items-center">
                       <span className="mr-2 text-xs">›</span>Affidavit
                     </Link>
                   </li>
@@ -129,22 +129,22 @@ export default function Footer() {
                 </h3>
                 <ul className="space-y-3">
                   <li>
-                    <Link href="/documents/import-export" className="text-gray-400 hover:text-[#FF6A00] transition-colors flex items-center">
+                    <Link href="/documents/import-export-document-apostille" className="text-gray-400 hover:text-[#FF6A00] transition-colors flex items-center">
                       <span className="mr-2 text-xs">›</span>Import-Export
                     </Link>
                   </li>
                   <li>
-                    <Link href="/documents/company-agreements" className="text-gray-400 hover:text-[#FF6A00] transition-colors flex items-center">
+                    <Link href="/documents/company-agreement-attestation-apostille" className="text-gray-400 hover:text-[#FF6A00] transition-colors flex items-center">
                       <span className="mr-2 text-xs">›</span>Company Agreements
                     </Link>
                   </li>
                   <li>
-                    <Link href="/documents/incorporation" className="text-gray-400 hover:text-[#FF6A00] transition-colors flex items-center">
+                    <Link href="/documents/incorporation-documents-apostille-attestation" className="text-gray-400 hover:text-[#FF6A00] transition-colors flex items-center">
                       <span className="mr-2 text-xs">›</span>Incorporation
                     </Link>
                   </li>
                   <li>
-                    <Link href="/documents/attorny" className="text-gray-400 hover:text-[#FF6A00] transition-colors flex items-center">
+                    <Link href="/documents/power-of-attorney-apostille" className="text-gray-400 hover:text-[#FF6A00] transition-colors flex items-center">
                       <span className="mr-2 text-xs">›</span>Power of Attorney
                     </Link>
                   </li>
@@ -155,12 +155,12 @@ export default function Footer() {
                 </h3>
                 <ul className="space-y-3">
                   <li>
-                    <Link href="/documents/degree" className="text-gray-400 hover:text-[#FF6A00] transition-colors flex items-center">
+                    <Link href="/documents/degree-certificate-attestation-apostille" className="text-gray-400 hover:text-[#FF6A00] transition-colors flex items-center">
                       <span className="mr-2 text-xs">›</span>Degree Certificates
                     </Link>
                   </li>
                   <li>
-                    <Link href="/documents/transfer-leave" className="text-gray-400 hover:text-[#FF6A00] transition-colors flex items-center">
+                    <Link href="/documents/transfer-certificate-apostille-attestation" className="text-gray-400 hover:text-[#FF6A00] transition-colors flex items-center">
                       <span className="mr-2 text-xs">›</span>Transfer/Leave
                     </Link>
                   </li>
@@ -184,12 +184,12 @@ export default function Footer() {
                     </Link>
                   </li>
                   <li>
-                    <Link href="/services/apostille" className="text-gray-400 hover:text-[#FF6A00] transition-colors flex items-center">
+                    <Link href="/services/apostille-attestation-delhi" className="text-gray-400 hover:text-[#FF6A00] transition-colors flex items-center">
                       <span className="mr-2 text-xs">›</span>Apostille Services
                     </Link>
                   </li>
                   <li>
-                    <Link href="/services/home-hrd" className="text-gray-400 hover:text-[#FF6A00] transition-colors flex items-center">
+                    <Link href="/services/hrd-home-attestation" className="text-gray-400 hover:text-[#FF6A00] transition-colors flex items-center">
                       <span className="mr-2 text-xs">›</span>Home/HRD Department
                     </Link>
                   </li>

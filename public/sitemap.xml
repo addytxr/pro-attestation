@@ -1,5 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
+  <!-- Main Pages -->
   <url>
     <loc>https://proattestation.com</loc>
     <lastmod>2024-01-01</lastmod>
@@ -12,6 +13,13 @@
     <changefreq>monthly</changefreq>
     <priority>0.8</priority>
   </url>
+  <url>
+    <loc>https://proattestation.com/countries</loc>
+    <lastmod>2024-01-01</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
+  </url>
+
   <!-- Services -->
   <url>
     <loc>https://proattestation.com/services/mea-attestation</loc>
@@ -26,75 +34,69 @@
     <priority>0.8</priority>
   </url>
   <url>
-    <loc>https://proattestation.com/services/apostille</loc>
+    <loc>https://proattestation.com/services/apostille-attestation-delhi</loc>
     <lastmod>2024-01-01</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.8</priority>
   </url>
   <url>
-    <loc>https://proattestation.com/services/home-hrd</loc>
+    <loc>https://proattestation.com/services/hrd-home-attestation</loc>
     <lastmod>2024-01-01</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.8</priority>
-  </url>
-  <url>
-    <loc>https://proattestation.com/countries</loc>
-    <lastmod>2024-01-01</lastmod>
-    <changefreq>monthly</changefreq>
-    <priority>0.7</priority>
   </url>
 
   <!-- Document Routes - Personal -->
   <url>
-    <loc>https://proattestation.com/documents/birth</loc>
+    <loc>https://proattestation.com/documents/birth-certificate-apostille-attestation</loc>
     <lastmod>2024-01-01</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.7</priority>
   </url>
   <url>
-    <loc>https://proattestation.com/documents/death</loc>
+    <loc>https://proattestation.com/documents/death-certificate-attestation-apostille</loc>
     <lastmod>2024-01-01</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.7</priority>
   </url>
   <url>
-    <loc>https://proattestation.com/documents/marriage</loc>
+    <loc>https://proattestation.com/documents/marriage-certificate-attestation</loc>
     <lastmod>2024-01-01</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.7</priority>
   </url>
   <url>
-    <loc>https://proattestation.com/documents/divorce</loc>
+    <loc>https://proattestation.com/documents/divorce-certificate-attestation</loc>
     <lastmod>2024-01-01</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.7</priority>
   </url>
   <url>
-    <loc>https://proattestation.com/documents/single</loc>
+    <loc>https://proattestation.com/documents/single-status-certificate-attestation</loc>
     <lastmod>2024-01-01</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.7</priority>
   </url>
   <url>
-    <loc>https://proattestation.com/documents/police</loc>
+    <loc>https://proattestation.com/documents/pcc-apostille-attestation</loc>
     <lastmod>2024-01-01</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.7</priority>
   </url>
   <url>
-    <loc>https://proattestation.com/documents/medical</loc>
+    <loc>https://proattestation.com/documents/medical-certificate-apostille-attestation</loc>
     <lastmod>2024-01-01</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.7</priority>
   </url>
   <url>
-    <loc>https://proattestation.com/documents/driving</loc>
+    <loc>https://proattestation.com/documents/driving-license-attestation-apostille</loc>
     <lastmod>2024-01-01</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.7</priority>
   </url>
   <url>
-    <loc>https://proattestation.com/documents/affidavit</loc>
+    <loc>https://proattestation.com/documents/affidavit-document-apostille-attestation</loc>
     <lastmod>2024-01-01</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.7</priority>
@@ -102,25 +104,25 @@
 
   <!-- Document Routes - Commercial -->
   <url>
-    <loc>https://proattestation.com/documents/import-export</loc>
+    <loc>https://proattestation.com/documents/import-export-document-apostille</loc>
     <lastmod>2024-01-01</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.7</priority>
   </url>
   <url>
-    <loc>https://proattestation.com/documents/company-agreements</loc>
+    <loc>https://proattestation.com/documents/company-agreement-attestation-apostille</loc>
     <lastmod>2024-01-01</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.7</priority>
   </url>
   <url>
-    <loc>https://proattestation.com/documents/incorporation</loc>
+    <loc>https://proattestation.com/documents/incorporation-documents-apostille-attestation</loc>
     <lastmod>2024-01-01</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.7</priority>
   </url>
   <url>
-    <loc>https://proattestation.com/documents/attorny</loc>
+    <loc>https://proattestation.com/documents/power-of-attorney-apostille</loc>
     <lastmod>2024-01-01</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.7</priority>
@@ -128,13 +130,13 @@
 
   <!-- Document Routes - Educational -->
   <url>
-    <loc>https://proattestation.com/documents/degree</loc>
+    <loc>https://proattestation.com/documents/degree-certificate-attestation-apostille</loc>
     <lastmod>2024-01-01</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.7</priority>
   </url>
   <url>
-    <loc>https://proattestation.com/documents/transfer-leave</loc>
+    <loc>https://proattestation.com/documents/transfer-certificate-apostille-attestation</loc>
     <lastmod>2024-01-01</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.7</priority>
