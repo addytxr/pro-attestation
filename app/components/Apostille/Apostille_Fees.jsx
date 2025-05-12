@@ -53,7 +53,7 @@ const Apostille_Fees = () => {
               <h3 className="text-xl font-semibold text-gray-900">Processing Time</h3>
             </div>
             <p className="text-gray-700">
-              2–7 working days (depending on document type and state)
+              2–3 working days (depending on document type and state)
             </p>
           </motion.div>
 

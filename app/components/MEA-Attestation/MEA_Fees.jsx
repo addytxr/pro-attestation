@@ -51,7 +51,7 @@ const MEA_Fees = () => {
             <Clock className="text-[#FF6A00] h-6 w-6 mr-4 mt-1 flex-shrink-0" />
             <div>
               <h3 className="font-semibold text-lg text-gray-900 mb-2">Processing Time</h3>
-              <p className="text-gray-700">2–7 working days</p>
+              <p className="text-gray-700">2–3 working days</p>
               <p className="text-gray-700 mt-1">(Depending on document type and state)</p>
             </div>
           </motion.div>
