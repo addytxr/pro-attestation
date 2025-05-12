@@ -32,7 +32,6 @@ const Embassy_Countries = () => {
 
   const countries = [
     { country: "UAE Embassy Attestation", flag: "🇦🇪" },
-    { country: "Saudi Arabia Embassy Attestation", flag: "🇸🇦" },
     { country: "Qatar Embassy Attestation", flag: "🇶🇦" },
     { country: "Oman Embassy Attestation", flag: "🇴🇲" },
     { country: "Kuwait Embassy Attestation", flag: "🇰🇼" },

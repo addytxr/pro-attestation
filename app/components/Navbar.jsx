@@ -3,6 +3,7 @@ import Image from "next/image"
 import Link from "next/link"
 import { ChevronDown, ChevronRight, Menu, X } from "lucide-react"
 import { useState } from "react"
+import { Facebook, Instagram, Youtube } from "lucide-react"
 
 export default function Navbar() {
   const [mobileMenuOpen, setMobileMenuOpen] = useState(false)
@@ -47,15 +48,9 @@ export default function Navbar() {
     setCommercialMenuOpen(false)
   }
 
-  // Close all menus when clicking outside
-  const closeAllMenus = () => {
-    setPersonalMenuOpen(false)
-    setCommercialMenuOpen(false)
-    setEducationalMenuOpen(false)
-  }
 
   return (
-    <nav className="fixed top-0 left-0 right-0 bg-white flex items-center text-black justify-between px-4 sm:px-8 md:px-16 py-4 border-b border-gray-200 z-50">
+    <nav className="fixed top-0 left-0 right-0 bg-white flex items-center text-black justify-between px-4 sm:px-8 md:px-16 py-2 border-b border-gray-200 z-50">
       <div className="flex items-center gap-4 md:gap-10">
         <Link href="/">
           <Image 
@@ -194,14 +189,26 @@ export default function Navbar() {
           <Link href="/countries" className="text-lg hover:text-[#FF6A00] transition-colors">
             Countries
           </Link>
-          <Link href="/contact" className="text-lg hover:text-[#FF6A00] transition-colors">
-            Contact Us
-          </Link>
+          
         </div>
 
       <div className="hidden sm:flex items-center gap-3 md:gap-4">
-        <Link href="/contact" className="bg-[#FF6A00] text-sm md:text-md font-semibold text-white px-2 md:px-5 py-2 md:py-3 rounded hover:bg-[#E63C00] transition-colors whitespace-nowrap">
-          Book a consultation
+        <div className="flex justify-center space-x-2 text-white">
+          <a href="https://www.facebook.com/urconsultant21" className="bg-gray-800 hover:bg-[#FF6A00] p-2 rounded-full transition-colors">
+            <Facebook className="h-5 w-5" />
+          </a>
+          <a href="https://g.co/kgs/fjdZ6xH" className="bg-gray-800 hover:bg-[#FF6A00] p-2 rounded-full transition-colors">
+           <img src="/G.svg" alt="" className="h-5 w-5 text-white" />
+          </a>
+          <a href="https://www.instagram.com/proattestationservices" className="bg-gray-800 hover:bg-[#FF6A00] p-2 rounded-full transition-colors">
+            <Instagram className="h-5 w-5" />
+          </a>
+          <a href="https://www.youtube.com/@proattestationservices214" className="bg-gray-800 hover:bg-[#FF6A00] p-2 rounded-full transition-colors">
+            <Youtube className="h-5 w-5" />
+          </a>
+        </div>
+        <Link href="/contact" className="bg-[#FF6A00] text-sm md:text-md font-semibold text-white px-2 md:px-5 py-2 md:py-2 rounded hover:bg-[#E63C00] transition-colors whitespace-nowrap">
+          Contact Us
         </Link>
       </div>
 
@@ -338,16 +345,26 @@ export default function Navbar() {
             <Link href="/countries" className="py-2 text-lg hover:text-[#FF6A00] transition-colors">
               Countries
             </Link>
-            <Link href="/contact" className="py-2 text-lg hover:text-[#FF6A00] transition-colors">
-              Contact Us
-            </Link>
+           
             
             <div className="flex flex-col gap-3 mt-4">
-              <a href="tel:1800123456" className="text-center text-lg border border-gray-300 px-4 py-2 rounded hover:border-[#FF6A00] transition-colors">
-                Call us 1800 123 456
-              </a>
+              {/* Mobile Social Media Links */}
+              <div className="flex justify-center space-x-2 text-white">
+                <a href="https://www.facebook.com/urconsultant21" className="bg-gray-800 hover:bg-[#FF6A00] p-2 rounded-full transition-colors">
+                  <Facebook className="h-5 w-5" />
+                </a>
+                <a href="https://g.co/kgs/fjdZ6xH" className="bg-gray-800 hover:bg-[#FF6A00] p-2 rounded-full transition-colors">
+                  <img src="/G.svg" alt="" className="h-5 w-5 text-white" />
+                </a>
+                <a href="https://www.instagram.com/proattestationservices" className="bg-gray-800 hover:bg-[#FF6A00] p-2 rounded-full transition-colors">
+                  <Instagram className="h-5 w-5" />
+                </a>
+                <a href="https://www.youtube.com/@proattestationservices214" className="bg-gray-800 hover:bg-[#FF6A00] p-2 rounded-full transition-colors">
+                  <Youtube className="h-5 w-5" />
+                </a>
+              </div>
               <Link href="/contact" className="text-center bg-[#FF6A00] text-lg text-white px-4 py-2 rounded hover:bg-[#E63C00] transition-colors">
-                Book a consultation
+                Contact Us
               </Link>
             </div>
           </div>
