@@ -32,13 +32,11 @@ const Countries_Attestation = () => {
 
   const countries = [
     "United Arab Emirates (UAE)",
-    
     "Thailand",
     "Malaysia",
     "Taiwan", 
     "Vietnam", 
     "Ethiopia",
-    "China",
     "Saudi Arabia",
     "Qatar",
     "Kuwait",

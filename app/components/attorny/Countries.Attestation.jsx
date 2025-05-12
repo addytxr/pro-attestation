@@ -37,7 +37,6 @@ const Countries_Attestation = () => {
     "Taiwan", 
     "Vietnam", 
     "Ethiopia",
-    "China",
     "Saudi Arabia",
     "Qatar",
     "Kuwait",
