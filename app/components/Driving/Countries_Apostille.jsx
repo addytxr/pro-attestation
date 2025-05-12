@@ -32,6 +32,13 @@ const Countries_Apostille = () => {
 
   const countries = [
     "USA",
+    "South Korea", 
+    "Japan", 
+    "Poland", 
+    "UK", 
+    "Switzerland",
+    "Oman",
+
     "Italy",
     "Germany",
     "Spain",
