@@ -32,5 +32,72 @@
       "Medical Certificate"
     ],
     "updatedAt": "2025-05-17T15:13:01.670Z"
+  },
+  {
+    "id": "qatar",
+    "flag": "🇶🇦",
+    "countryName": "Qatar",
+    "title": "Qatar Attestation Services in Delhi NCR",
+    "description": "Qatar Attestation is required for Indian-origin documents to be accepted by Qatari authorities. This process ensures your documents are legally valid in Qatar for visa, work, education, or residency purposes. We offer fast, hassle-free Qatar Embassy attestation in Delhi NCR.",
+    "requirements": [
+      "For job opportunities in Qatar",
+      "Admission in Qatari universities",
+      "Sponsoring family or dependents",
+      "Legal proof for immigration or PR",
+      "Company setup and contracts"
+    ],
+    "process": [
+      "Notary Attestation",
+      "HRD/Home/SDM Attestation",
+      "MEA Attestation",
+      "Qatar Embassy Attestation (India)",
+      "MOFA Attestation (Qatar – if required)"
+    ],
+    "documentsRequired": [
+      "Original Documents (Educational/Personal/Commercial)",
+      "Passport Copy",
+      "Authorization Letter"
+    ],
+    "commonDocuments": [
+      "Educational Certificates (Degree, Diploma)",
+      "Birth/Marriage Certificates",
+      "PCC",
+      "Company MOUs or Commercial Invoices"
+    ],
+    "updatedAt": "2025-05-17T17:14:47.285Z"
+  },
+  {
+    "id": "saudi-arabia",
+    "flag": "🇸🇦",
+    "countryName": "Saudi Arabia",
+    "title": "Saudi Arabia Attestation Services in Delhi NCR",
+    "description": "Saudi Arabia requires document attestation for visa, study, and work purposes. The process includes MEA, Saudi Embassy, and Culture Attestation for education-related documents. We specialize in fast, reliable Saudi Embassy attestation in Delhi NCR with affordable pricing",
+    "requirements": [
+      "Work visa application in Saudi Arabia",
+      "Educational admission and scholarship",
+      "Legalization for family visa",
+      "Business partnerships and contracts"
+    ],
+    "process": [
+      "Notary Attestation",
+      "HRD/Home/SDM Attestation",
+      "MEA Attestation",
+      "Saudi Embassy Attestation",
+      "MOFA Attestation (Saudi Arabia)",
+      "Culture Attestation (only for academic docs)"
+    ],
+    "documentsRequired": [
+      "Original Document",
+      "Passport Copy",
+      "Culture Attestation Form (for education docs)",
+      "Authorization Letter"
+    ],
+    "commonDocuments": [
+      "Degree/Diploma Certificates",
+      "Marriage & Birth Certificates",
+      "Commercial Documents",
+      "PCC"
+    ],
+    "updatedAt": "2025-05-17T17:47:47.657Z"
   }
 ]
