@@ -1,6 +1,7 @@
 import fs from 'fs';
 import path from 'path';
 import Link from 'next/link';
+import { Metadata } from 'next';
 
 export const dynamic = 'force-dynamic';
 
@@ -15,6 +16,80 @@ export async function generateStaticParams() {
     }));
   }
   return [];
+}
+
+// Generate dynamic metadata based on country
+export async function generateMetadata({ params }) {
+  const { id } = params;
+  
+  // Read the country data
+  let country = null;
+  const dataPath = path.join(process.cwd(), 'public', 'data', `${id}.json`);
+
+  try {
+    if (fs.existsSync(dataPath)) {
+      const data = fs.readFileSync(dataPath, 'utf8');
+      country = JSON.parse(data);
+    }
+  } catch (error) {
+    console.error(`Error reading country data for ${id}:`, error);
+    return {
+      title: 'Country Not Found',
+      description: 'The requested country information could not be found.'
+    };
+  }
+
+  if (!country) {
+    return {
+      title: 'Country Not Found',
+      description: 'The requested country information could not be found.'
+    };
+  }
+
+  // Create dynamic metadata using country data
+  return {
+    title: `${country.countryName} Embassy Attestation in Delhi | ${country.countryName} MOFA Attestation Services`,
+    description: `Get fast and reliable ${country.countryName} embassy attestation in Delhi. We handle MOFA attestation, HRD, MEA & ${country.countryName} embassy legalization for all document types.`,
+    alternates: {
+      canonical: `https://www.proattestation.com/${id}-attestation`,
+    },
+    openGraph: {
+      title: `${country.countryName} Embassy Attestation in Delhi | MOFA Attestation Services`,
+      description: `End-to-end support for ${country.countryName} attestation in Delhi. Services include MOFA, MEA, HRD & Embassy legalization.`,
+      type: 'website',
+      url: `https://www.proattestation.com/${id}-attestation`,
+      images: [
+        {
+          url: `https://www.proattestation.com/images/${id}-attestation-banner.jpg`,
+          width: 1200,
+          height: 630,
+          alt: `${country.countryName} Attestation Services`
+        }
+      ],
+    },
+    other: {
+      'script:ld+json': JSON.stringify({
+        "@context": "https://schema.org/",
+        "@type": "Service",
+        "name": `${country.countryName} Embassy Attestation in Delhi`,
+        "provider": {
+          "@type": "Organization",
+          "name": "Pro Attestation",
+          "url": "https://www.proattestation.com"
+        },
+        "areaServed": {
+          "@type": "Place",
+          "name": "Delhi NCR, India"
+        },
+        "serviceType": `${country.countryName} MOFA and Embassy Attestation Services`,
+        "description": `Fast and reliable ${country.countryName} embassy and MOFA attestation in Delhi NCR. Complete assistance for educational, personal, and commercial document attestation.`,
+        "availableChannel": {
+          "@type": "ServiceChannel",
+          "serviceUrl": `https://www.proattestation.com/${id}-attestation`
+        }
+      })
+    }
+  };
 }
 
 export default function CountryPage({ params }) {
