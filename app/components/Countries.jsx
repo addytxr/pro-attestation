@@ -1,6 +1,7 @@
 'use client';
 
-import React, { useState } from 'react';
+import React, { useState, useEffect } from 'react';
+import { useRouter } from 'next/navigation';
 import { motion } from 'framer-motion';
 
 const countries = {
@@ -36,13 +37,42 @@ const countries = {
     ]
   };
   
-
 function Countries() {
+  const router = useRouter();
   const [selectedRegion, setSelectedRegion] = useState('Asia');
   const [searchTerm, setSearchTerm] = useState('');
+  const [countriesWithData, setCountriesWithData] = useState([]);
 
   // Get all countries for search
   const allCountries = Object.values(countries).flat();
+
+  // Fetch countries with data
+  useEffect(() => {
+    const fetchCountriesWithData = async () => {
+      try {
+        const response = await fetch('/api/get-countries');
+        if (response.ok) {
+          const data = await response.json();
+          setCountriesWithData(data.countries || []);
+        }
+      } catch (error) {
+        console.error('Error fetching countries with data:', error);
+      }
+    };
+
+    fetchCountriesWithData();
+  }, []);
+
+  // Handle country click
+  const handleCountryClick = (country) => {
+    // Check if country data exists
+    const countryId = country.toLowerCase().replace(/\s+/g, '-');
+    const hasData = countriesWithData.some(dataCountry => dataCountry.id === countryId);
+    
+    if (hasData) {
+      router.push(`/countries/${countryId}`);
+    }
+  };
 
   // Filter countries based on search term
   const getFilteredCountries = () => {
@@ -109,7 +139,7 @@ function Countries() {
                   className={`px-6 py-3 rounded-lg transition-all shadow-sm ${
                     selectedRegion === region && !searchTerm
                       ? 'bg-[#FF6A00] text-white shadow-md'
-                      : 'bg-white hover:bg-gray-50'
+                      : 'bg-white text-black hover:bg-gray-50'
                   }`}
                   whileHover={{ scale: 1.02 }}
                   whileTap={{ scale: 0.98 }}
@@ -154,24 +184,32 @@ function Countries() {
                 {region}
               </h2>
               <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-6">
-                {countryList.map((country, index) => (
-                  <motion.div
-                    key={country}
-                    className="bg-white p-6 rounded-xl shadow-sm hover:shadow-md transition-all"
-                    whileHover={{ y: -5 }}
-                    initial={{ opacity: 0, y: 20 }}
-                    animate={{ opacity: 1, y: 0 }}
-                    transition={{ delay: index * 0.05 }}
-                  >
-                    <h3 className="text-lg font-medium text-[#222222]">{country}</h3>
-                    <div className="mt-2 flex items-center text-[#FF6A00]">
-                      <span className="text-sm">View Details</span>
-                      <svg className="w-4 h-4 ml-1" viewBox="0 0 24 24" fill="none" stroke="currentColor">
-                        <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M9 5l7 7-7 7" />
-                      </svg>
-                    </div>
-                  </motion.div>
-                ))}
+                {countryList.map((country, index) => {
+                  const countryId = country.toLowerCase().replace(/\s+/g, '-');
+                  const hasData = countriesWithData.some(dataCountry => dataCountry.id === countryId);
+                  
+                  return (
+                    <motion.div
+                      key={country}
+                      className={`bg-white p-6 rounded-xl shadow-sm hover:shadow-md transition-all ${hasData ? 'cursor-pointer' : ''}`}
+                      whileHover={{ y: -5 }}
+                      initial={{ opacity: 0, y: 20 }}
+                      animate={{ opacity: 1, y: 0 }}
+                      transition={{ delay: index * 0.05 }}
+                      onClick={() => hasData && handleCountryClick(country)}
+                    >
+                      <h3 className="text-lg font-medium text-[#222222]">{country}</h3>
+                      <div className={`mt-2 flex items-center ${hasData ? 'text-[#FF6A00]' : 'text-gray-400'}`}>
+                        <span className="text-sm">{hasData ? 'View Details' : ' '}</span>
+                        {hasData && (
+                          <svg className="w-4 h-4 ml-1" viewBox="0 0 24 24" fill="none" stroke="currentColor">
+                            <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M9 5l7 7-7 7" />
+                          </svg>
+                        )}
+                      </div>
+                    </motion.div>
+                  );
+                })}
               </div>
             </motion.div>
           ))}
