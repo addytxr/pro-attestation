@@ -3,6 +3,135 @@
 import { useState, useEffect } from "react";
 import { useRouter } from "next/navigation";
 
+// Country codes mapping
+const countriesWithCodes = {
+  "Armenia": "AM",
+  "Azerbaijan": "AZ",
+  "Bahrain": "BH",
+  "China": "CN",
+  "Georgia": "GE",
+  "Hong Kong": "HK",
+  "Israel": "IL",
+  "Japan": "JP",
+  "Kazakhstan": "KZ",
+  "Kuwait": "KW",
+  "Kyrgyzstan": "KG",
+  "Macau": "MO",
+  "Mongolia": "MN",
+  "Oman": "OM",
+  "Philippines": "PH",
+  "Qatar": "QA",
+  "Russian": "RU",
+  "Saudi Arabia": "SA",
+  "Singapore": "SG",
+  "South Korea": "KR",
+  "Tajikistan": "TJ",
+  "Turkey": "TR",
+  "UAE": "AE",
+  "Uzbekistan": "UZ",
+  "Albania": "AL",
+  "Andorra": "AD",
+  "Austria": "AT",
+  "Belarus": "BY",
+  "Belgium": "BE",
+  "Bosnia and Herzegovina": "BA",
+  "Bulgaria": "BG",
+  "Croatia": "HR",
+  "Cyprus": "CY",
+  "Czech Republic": "CZ",
+  "Denmark": "DK",
+  "Estonia": "EE",
+  "Finland": "FI",
+  "France": "FR",
+  "Germany": "DE",
+  "Greece": "GR",
+  "Hungary": "HU",
+  "Iceland": "IS",
+  "Ireland": "IE",
+  "Italy": "IT",
+  "Kosovo": "XK",
+  "Latvia": "LV",
+  "Liechtenstein": "LI",
+  "Lithuania": "LT",
+  "Luxembourg": "LU",
+  "Malta": "MT",
+  "Moldova, Republic of": "MD",
+  "Monaco": "MC",
+  "Montenegro": "ME",
+  "Netherlands": "NL",
+  "North Macedonia, Republic of": "MK",
+  "Norway": "NO",
+  "Poland": "PL",
+  "Portugal": "PT",
+  "Romania": "RO",
+  "San Marino": "SM",
+  "Serbia": "RS",
+  "Slovakia": "SK",
+  "Slovenia": "SI",
+  "Spain": "ES",
+  "Sweden": "SE",
+  "Switzerland": "CH",
+  "Ukraine": "UA",
+  "United Kingdom": "GB",
+  "Antigua and Barbuda": "AG",
+  "Argentina": "AR",
+  "Bahamas": "BS",
+  "Barbados": "BB",
+  "Belize": "BZ",
+  "Bolivia": "BO",
+  "Brazil": "BR",
+  "Chile": "CL",
+  "Colombia": "CO",
+  "Costa Rica": "CR",
+  "Dominica": "DM",
+  "Dominican Republic": "DO",
+  "Ecuador": "EC",
+  "El Salvador": "SV",
+  "Grenada": "GD",
+  "Guatemala": "GT",
+  "Guyana": "GY",
+  "Honduras": "HN",
+  "Jamaica": "JM",
+  "Mexico": "MX",
+  "Nicaragua": "NI",
+  "Panama": "PA",
+  "Paraguay": "PY",
+  "Peru": "PE",
+  "Saint Kitts and Nevis": "KN",
+  "Saint Lucia": "LC",
+  "Saint Vincent and the Grenadines": "VC",
+  "Suriname": "SR",
+  "Trinidad and Tobago": "TT",
+  "USA": "US",
+  "Uruguay": "UY",
+  "Venezuela": "VE",
+  "Botswana": "BW",
+  "Burundi": "BI",
+  "Cape Verde": "CV",
+  "Lesotho": "LS",
+  "Liberia": "LR",
+  "Malawi": "MW",
+  "Mauritius": "MU",
+  "Morocco": "MA",
+  "Namibia": "NA",
+  "Sao Tome and Principe": "ST",
+  "Seychelles": "SC",
+  "South Africa": "ZA",
+  "Tunisia": "TN",
+  "Australia": "AU",
+  "Brunei Darussalam": "BN",
+  "Cook Islands": "CK",
+  "Fiji": "FJ",
+  "Marshall Islands": "MH",
+  "New Zealand": "NZ",
+  "Niue": "NU",
+  "Palau": "PW",
+  "Samoa": "WS",
+  "Tonga": "TO",
+  "Vanuatu": "VU",
+  "India": "IN"
+};
+
 export default function UploadPage() {
   const router = useRouter();
   const [formData, setFormData] = useState({
@@ -51,7 +180,18 @@ export default function UploadPage() {
 
   const handleChange = (e) => {
     const { name, value } = e.target;
-    setFormData((prev) => ({ ...prev, [name]: value }));
+    
+    // Update the form data
+    setFormData((prev) => {
+      const updatedData = { ...prev, [name]: value };
+      
+      // Auto-set the flag (country code) based on country name
+      if (name === 'countryName' && countriesWithCodes[value]) {
+        updatedData.flag = countriesWithCodes[value].toLowerCase();
+      }
+      
+      return updatedData;
+    });
   };
 
   const handleSubmit = async (e) => {
@@ -167,7 +307,7 @@ export default function UploadPage() {
         <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
           <div>
             <label htmlFor="flag" className="block mb-2 font-medium text-gray-800">
-              Flag Emoji
+              Country Code
             </label>
             <input
               type="text"
@@ -176,24 +316,49 @@ export default function UploadPage() {
               value={formData.flag}
               onChange={handleChange}
               className="w-full p-3 border text-gray-800 placeholder:text-gray-400 border-gray-300 rounded-md"
-              placeholder="🇦🇪"
-              required
+              placeholder="ae"
+              readOnly
             />
+            <small className="text-gray-600">Auto-set based on Country Name - {formData.flag ? (
+              <img 
+                src={`https://flagcdn.com/${formData.flag}.svg`} 
+                alt={formData.countryName} 
+                className="inline-block w-6 h-4 ml-1" 
+              />
+            ) : null}</small>
           </div>
           <div>
             <label htmlFor="countryName" className="block mb-2 font-medium text-gray-800">
               Country Name
             </label>
-            <input
-              type="text"
-              id="countryName"
-              name="countryName"
-              value={formData.countryName}
-              onChange={handleChange}
-              className="w-full p-3 border text-gray-800 placeholder:text-gray-400 border-gray-300 rounded-md"
-              placeholder="UAE"
-              required
-            />
+            <div className="flex items-center">
+              <input
+                type="text"
+                id="countryName"
+                name="countryName"
+                value={formData.countryName}
+                onChange={handleChange}
+                className="w-full p-3 border text-gray-800 placeholder:text-gray-400 border-gray-300 rounded-md"
+                placeholder="UAE"
+                list="country-suggestions"
+                required
+              />
+              {formData.flag && (
+                <div className="ml-3">
+                  <img 
+                    src={`https://flagcdn.com/${formData.flag}.svg`} 
+                    alt={formData.countryName} 
+                    className="w-10 h-7 border border-gray-200 shadow-sm" 
+                  />
+                </div>
+              )}
+            </div>
+            <datalist id="country-suggestions">
+              {Object.keys(countriesWithCodes).map((country) => (
+                <option key={country} value={country} />
+              ))}
+            </datalist>
+            <small className="text-gray-600">Start typing to see available countries</small>
           </div>
         </div>
 
@@ -299,10 +464,10 @@ Authorization Letter (if using an agent)"
             rows="6"
             className="w-full p-3 border text-gray-800 placeholder:text-gray-400 border-gray-300 rounded-md"
             placeholder="Degree Certificate
-Birth Certificate
-Marriage Certificate
-Police Clearance Certificate (PCC)
-Medical Certificate"
+            Birth Certificate
+            Marriage Certificate
+            Police Clearance Certificate (PCC)
+            Medical Certificate"
             required
           ></textarea>
         </div>

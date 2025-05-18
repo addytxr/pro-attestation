@@ -4,54 +4,6 @@ import React, { useState, useEffect } from 'react';
 import { useRouter } from 'next/navigation';
 import { motion } from 'framer-motion';
 
-// Country flags mapping
-const countryFlags = {
-  "Afghanistan": "🇦🇫", "Albania": "🇦🇱", "Algeria": "🇩🇿", "Andorra": "🇦🇩", "Angola": "🇦🇴", 
-  "Antigua and Barbuda": "🇦🇬", "Argentina": "🇦🇷", "Armenia": "🇦🇲", "Australia": "🇦🇺", 
-  "Austria": "🇦🇹", "Azerbaijan": "🇦🇿", "Bahamas": "🇧🇸", "Bahrain": "🇧🇭", "Bangladesh": "🇧🇩", 
-  "Barbados": "🇧🇧", "Belarus": "🇧🇾", "Belgium": "🇧🇪", "Belize": "🇧🇿", "Benin": "🇧🇯", 
-  "Bhutan": "🇧🇹", "Bolivia": "🇧🇴", "Bosnia and Herzegovina": "🇧🇦", "Botswana": "🇧🇼", 
-  "Brazil": "🇧🇷", "Brunei Darussalam": "🇧🇳", "Bulgaria": "🇧🇬", "Burkina Faso": "🇧🇫", 
-  "Burundi": "🇧🇮", "Cambodia": "🇰🇭", "Cameroon": "🇨🇲", "Canada": "🇨🇦", "Cape Verde": "🇨🇻", 
-  "Central African Republic": "🇨🇫", "Chad": "🇹🇩", "Chile": "🇨🇱", "China": "🇨🇳", 
-  "Colombia": "🇨🇴", "Comoros": "🇰🇲", "Congo": "🇨🇬", "Cook Islands": "🇨🇰", "Costa Rica": "🇨🇷", 
-  "Croatia": "🇭🇷", "Cuba": "🇨🇺", "Cyprus": "🇨🇾", "Czech Republic": "🇨🇿", "Denmark": "🇩🇰", 
-  "Djibouti": "🇩🇯", "Dominica": "🇩🇲", "Dominican Republic": "🇩🇴", "Ecuador": "🇪🇨", 
-  "Egypt": "🇪🇬", "El Salvador": "🇸🇻", "Equatorial Guinea": "🇬🇶", "Eritrea": "🇪🇷", 
-  "Estonia": "🇪🇪", "Ethiopia": "🇪🇹", "Fiji": "🇫🇯", "Finland": "🇫🇮", "France": "🇫🇷", 
-  "Gabon": "🇬🇦", "Gambia": "🇬🇲", "Georgia": "🇬🇪", "Germany": "🇩🇪", "Ghana": "🇬🇭", 
-  "Greece": "🇬🇷", "Grenada": "🇬🇩", "Guatemala": "🇬🇹", "Guinea": "🇬🇳", "Guinea-Bissau": "🇬🇼", 
-  "Guyana": "🇬🇾", "Haiti": "🇭🇹", "Honduras": "🇭🇳", "Hong Kong": "🇭🇰", "Hungary": "🇭🇺", 
-  "Iceland": "🇮🇸", "India": "🇮🇳", "Indonesia": "🇮🇩", "Iran": "🇮🇷", "Iraq": "🇮🇶", 
-  "Ireland": "🇮🇪", "Israel": "🇮🇱", "Italy": "🇮🇹", "Jamaica": "🇯🇲", "Japan": "🇯🇵", 
-  "Jordan": "🇯🇴", "Kazakhstan": "🇰🇿", "Kenya": "🇰🇪", "Kiribati": "🇰🇮", "Korea, North": "🇰🇵", 
-  "Korea, South": "🇰🇷", "South Korea": "🇰🇷", "Kuwait": "🇰🇼", "Kyrgyzstan": "🇰🇬", "Laos": "🇱🇦", 
-  "Latvia": "🇱🇻", "Lebanon": "🇱🇧", "Lesotho": "🇱🇸", "Liberia": "🇱🇷", "Libya": "🇱🇾", 
-  "Liechtenstein": "🇱🇮", "Lithuania": "🇱🇹", "Luxembourg": "🇱🇺", "Macau": "🇲🇴", 
-  "Macedonia": "🇲🇰", "North Macedonia, Republic of": "🇲🇰", "Madagascar": "🇲🇬", "Malawi": "🇲🇼", 
-  "Malaysia": "🇲🇾", "Maldives": "🇲🇻", "Mali": "🇲🇱", "Malta": "🇲🇹", "Marshall Islands": "🇲🇭", 
-  "Mauritania": "🇲🇷", "Mauritius": "🇲🇺", "Mexico": "🇲🇽", "Micronesia": "🇫🇲", 
-  "Moldova, Republic of": "🇲🇩", "Monaco": "🇲🇨", "Mongolia": "🇲🇳", "Montenegro": "🇲🇪", 
-  "Morocco": "🇲🇦", "Mozambique": "🇲🇿", "Myanmar": "🇲🇲", "Namibia": "🇳🇦", "Nauru": "🇳🇷", 
-  "Nepal": "🇳🇵", "Netherlands": "🇳🇱", "New Zealand": "🇳🇿", "Nicaragua": "🇳🇮", 
-  "Niger": "🇳🇪", "Nigeria": "🇳🇬", "Niue": "🇳🇺", "Norway": "🇳🇴", "Oman": "🇴🇲", 
-  "Pakistan": "🇵🇰", "Palau": "🇵🇼", "Palestine": "🇵🇸", "Panama": "🇵🇦", "Papua New Guinea": "🇵🇬", 
-  "Paraguay": "🇵🇾", "Peru": "🇵🇪", "Philippines": "🇵🇭", "Poland": "🇵🇱", "Portugal": "🇵🇹", 
-  "Qatar": "🇶🇦", "Romania": "🇷🇴", "Russia": "🇷🇺", "Russian": "🇷🇺", "Rwanda": "🇷🇼", 
-  "Saint Kitts and Nevis": "🇰🇳", "Saint Lucia": "🇱🇨", "Saint Vincent and the Grenadines": "🇻🇨", 
-  "Samoa": "🇼🇸", "San Marino": "🇸🇲", "Sao Tome and Principe": "🇸🇹", "Saudi Arabia": "🇸🇦", 
-  "Senegal": "🇸🇳", "Serbia": "🇷🇸", "Seychelles": "🇸🇨", "Sierra Leone": "🇸🇱", 
-  "Singapore": "🇸🇬", "Slovakia": "🇸🇰", "Slovenia": "🇸🇮", "Solomon Islands": "🇸🇧", 
-  "Somalia": "🇸🇴", "South Africa": "🇿🇦", "Spain": "🇪🇸", "Sri Lanka": "🇱🇰", "Sudan": "🇸🇩", 
-  "Suriname": "🇸🇷", "Swaziland": "🇸🇿", "Sweden": "🇸🇪", "Switzerland": "🇨🇭", "Syria": "🇸🇾", 
-  "Taiwan": "🇹🇼", "Tajikistan": "🇹🇯", "Tanzania": "🇹🇿", "Thailand": "🇹🇭", "Timor-Leste": "🇹🇱", 
-  "Togo": "🇹🇬", "Tonga": "🇹🇴", "Trinidad and Tobago": "🇹🇹", "Tunisia": "🇹🇳", "Turkey": "🇹🇷", 
-  "Turkmenistan": "🇹🇲", "Tuvalu": "🇹🇻", "Uganda": "🇺🇬", "Ukraine": "🇺🇦", "UAE": "🇦🇪", 
-  "United Kingdom": "🇬🇧", "USA": "🇺🇸", "United States": "🇺🇸", "Uruguay": "🇺🇾", 
-  "Uzbekistan": "🇺🇿", "Vanuatu": "🇻🇺", "Vatican City": "🇻🇦", "Venezuela": "🇻🇪", 
-  "Vietnam": "🇻🇳", "Yemen": "🇾🇪", "Zambia": "🇿🇲", "Zimbabwe": "🇿🇼"
-};
-
 const countries = {
     "Asia": [
         "Armenia", "Azerbaijan", "Bahrain", "China", "Georgia", "Hong Kong", "Israel",
@@ -235,7 +187,6 @@ function Countries() {
                 {countryList.map((country, index) => {
                   const countryId = country.toLowerCase().replace(/\s+/g, '-');
                   const hasData = countriesWithData.some(dataCountry => dataCountry.id === countryId);
-                  const flag = countryFlags[country] || '🌐'; // Use globe emoji as fallback
                   
                   return (
                     <motion.div
@@ -247,10 +198,7 @@ function Countries() {
                       transition={{ delay: index * 0.05 }}
                       onClick={() => hasData && handleCountryClick(country)}
                     >
-                      <h3 className="text-lg font-medium text-[#222222]">
-                        <span className="mr-2 text-xl">{flag}</span>
-                        {country}
-                      </h3>
+                      <h3 className="text-lg font-medium text-[#222222]">{country}</h3>
                       <div className={`mt-2 flex items-center ${hasData ? 'text-[#FF6A00]' : 'text-gray-400'}`}>
                         <span className="text-sm">{hasData ? 'View Details' : ' '}</span>
                         {hasData && (

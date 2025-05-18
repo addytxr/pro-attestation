@@ -138,7 +138,13 @@ export default function CountryPage({ params }) {
           </Link>
           
           <div className="flex items-center gap-6">
-            <span className="text-6xl md:text-7xl">{country.flag}</span>
+            <span className="text-6xl md:text-7xl">
+              <img 
+                src={`https://flagcdn.com/${country.flag}.svg`} 
+                alt={`${country.countryName} flag`}
+                className="w-20 h-20 rounded shadow-sm"
+              />
+            </span>
             <div>
               <h1 className="text-3xl md:text-4xl font-bold">{country.countryName}</h1>
               <h2 className="text-xl md:text-2xl font-medium mt-2 text-orange-100">{country.title}</h2>
