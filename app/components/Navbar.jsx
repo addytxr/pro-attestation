@@ -234,7 +234,7 @@ export default function Navbar() {
                 <div>Services</div>
               </div>
               <div className="pl-4 mt-1 border-l border-gray-200">
-                <Link href="/services/mea-attestation-delhi" className="block py-2 text-lg text-[#FF6A00] hover:text-[#FF6A00] transition-colors">
+                <Link href="/services/mea-attestation" className="block py-2 text-lg text-[#FF6A00] hover:text-[#FF6A00] transition-colors">
                   MEA Attestation
                 </Link>
                 <Link href="/services/embassy-attestation" className="block py-2 text-lg text-[#FF6A00] hover:text-[#FF6A00] transition-colors">
