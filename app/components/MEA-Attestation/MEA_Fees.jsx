@@ -63,7 +63,6 @@ const MEA_Fees = () => {
             <DollarSign className="text-[#FF6A00] h-6 w-6 mr-4 mt-1 flex-shrink-0" />
             <div>
               <h3 className="font-semibold text-lg text-gray-900 mb-2">MEA Attestation Fees:</h3>
-              <p className="text-gray-700"> ₹50 per document (official MEA charge)</p>
               <p className="text-gray-700 mt-1">Our service fees are additional — contact us for a custom quote</p>
             </div>
           </motion.div>

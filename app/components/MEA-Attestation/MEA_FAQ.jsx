@@ -36,10 +36,6 @@ const MEA_FAQ = () => {
       answer: " It is an official government stamp confirming your document is genuine for use abroad."
     },
     {
-      question: "What is the MEA attestation fee?",
-      answer: "The MEA charges ₹50 per document. Additional courier or service charges may apply."
-    },
-    {
       question: "Is MEA and MOFA same?",
       answer: "No. MEA is India’s external affairs ministry. MOFA is the foreign country’s authority (e.g., UAE MOFA)."
     },
