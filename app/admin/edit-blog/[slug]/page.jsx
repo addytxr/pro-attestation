@@ -117,7 +117,7 @@ export default function EditBlogPage({ params }) {
       </div>
     );
   }
-  
+
   return (
     <div className="bg-gray-50 text-gray-600 pt-0 min-h-screen">
       <div className="p-4 bg-white shadow">

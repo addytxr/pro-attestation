@@ -189,7 +189,9 @@ export default function Navbar() {
           <Link href="/countries" className="text-lg hover:text-[#FF6A00] transition-colors">
             Countries
           </Link>
-          
+          <Link href="/blog" className="text-lg hover:text-[#FF6A00] transition-colors">
+            Blogs
+          </Link>
         </div>
 
       <div className="hidden sm:flex items-center gap-3 md:gap-4">
@@ -210,6 +212,7 @@ export default function Navbar() {
         <Link href="/contact" className="bg-[#FF6A00] text-sm md:text-md font-semibold text-white px-2 md:px-5 py-2 md:py-2 rounded hover:bg-[#E63C00] transition-colors whitespace-nowrap">
           Contact Us
         </Link>
+        
       </div>
 
       {/* Mobile Menu Toggle */}
@@ -344,6 +347,10 @@ export default function Navbar() {
             
             <Link href="/countries" className="py-2 text-lg hover:text-[#FF6A00] transition-colors">
               Countries
+            </Link>
+
+            <Link href="/blog" className="py-2 text-lg hover:text-[#FF6A00] transition-colors">
+              Blogs
             </Link>
            
             
