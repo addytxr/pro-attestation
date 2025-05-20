@@ -51,7 +51,7 @@ const Embassy_Fees = () => {
             <Clock className="text-[#FF6A00] h-6 w-6 mr-4 mt-1 flex-shrink-0" />
             <div>
               <h3 className="font-semibold text-lg text-gray-900 mb-2">Timeframe</h3>
-              <p className="text-gray-700">4-10 working days</p>
+              <p className="text-gray-700">2-3 working days</p>
               <p className="text-gray-700 mt-1">(Varies by country and document type)</p>
             </div>
           </motion.div>

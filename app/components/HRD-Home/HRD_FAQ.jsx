@@ -45,7 +45,7 @@ const HRD_FAQ = () => {
     },
     {
       question: "How long does HRD attestation take?",
-      answer: "Typically between 7–15 business days, depending on your state and university verification speed."
+      answer: "Typically between 2-3 business days, depending on your state and university verification speed."
     },
     {
       question: "What is the purpose of Home Department Attestation?",

@@ -128,7 +128,7 @@ export default function CountryPage({ params }) {
   return (
     <div className="bg-gray-50 min-h-screen  pb-16">
       {/* Hero section with country flag and name */}
-      <div className="bg-gradient-to-r from-[#FF6A00] to-[#FF6A00] text-white   py-12">
+      <div className="bg-gradient-to-r from-[#FF6A00] to-[#FF6A00] text-white   py-12 md:px-24 ">
         <div className="container mx-auto px-4">
           <Link href="/countries" className="text-white hover:text-orange-200 flex items-center mb-6 font-medium">
             <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" className="mr-2">
@@ -153,7 +153,7 @@ export default function CountryPage({ params }) {
         </div>
       </div>
 
-      <div className="container mx-auto px-4 md:px-12 -mt-8">
+      <div className="container mx-auto px-4 md:px-24 -mt-8">
         {/* Introduction card */}
         <div className="bg-white rounded-lg shadow-lg p-8 mb-8">
           <h3 className="text-xl font-base mb-4 text-gray-800">{country.description.split('\n')[0]}</h3>

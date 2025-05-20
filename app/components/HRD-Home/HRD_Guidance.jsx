@@ -83,7 +83,7 @@ const HRD_Guidance = () => {
             <Clock className="text-[#FF6A00] h-6 w-6 mr-4 mt-1 flex-shrink-0" />
             <div>
               <h3 className="font-semibold text-lg text-gray-900 mb-2">Processing Time</h3>
-              <p className="text-gray-700">7 to 15 working days</p>
+              <p className="text-gray-700">2-3 working days</p>
               <p className="text-gray-700 mt-1">(Depending on document type and university response)</p>
             </div>
           </motion.div>

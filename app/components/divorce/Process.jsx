@@ -83,7 +83,7 @@ const Process = () => {
 
             <div className="mt-8 flex items-center space-x-2 text-gray-600">
               <Clock className="w-5 h-5" />
-              <p>Time Frame: 5–10 working days (depending on state and process)</p>
+              <p>Time Frame: 2-3 working days (depending on state and process)</p>
             </div>
           </motion.div>
 
@@ -119,7 +119,7 @@ const Process = () => {
 
             <div className="mt-8 flex items-center space-x-2 text-gray-600">
               <Clock className="w-5 h-5" />
-              <p>Time Frame: 7–15 working days (depending on country and embassy)</p>
+              <p>Time Frame: 2-3 working days (depending on country and embassy)</p>
             </div>
           </motion.div>
         </div>
