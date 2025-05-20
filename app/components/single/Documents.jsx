@@ -41,11 +41,7 @@ const Documents = () => {
       description: "Copy of your valid passport",
       icon: ClipboardList
     },
-    {
-      title: "Authorization Letter",
-      description: "Required if applying through an agent",
-      icon: FileCheck
-    }
+
   ]
 
   return (
@@ -65,7 +61,7 @@ const Documents = () => {
             Documents Required
           </h2>
 
-          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
+          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-2 gap-6">
             {requiredDocuments.map((doc, index) => (
               <motion.div
                 key={index}

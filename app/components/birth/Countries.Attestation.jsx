@@ -83,6 +83,12 @@ const Countries_Attestation = () => {
               </motion.div>
             ))}
           </div>
+          <motion.a
+          href="/countries"
+          className="flex items-start mt-8 text-[#FF6A00] font-medium hover:underline"
+        >
+          View full list of countries →
+        </motion.a>
         </motion.div>
       </div>
     </div>

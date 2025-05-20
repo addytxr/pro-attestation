@@ -139,10 +139,15 @@ export default function UploadPage() {
     countryName: "",
     title: "",
     description: "",
+    descriptionHeading: "About Attestation",
     requirements: "",
+    requirementsHeading: "Why is Attestation Required?",
     process: "",
+    processHeading: "Attestation Process",
     documentsRequired: "",
+    documentsRequiredHeading: "Documents Required",
     commonDocuments: "",
+    commonDocumentsHeading: "Most Common Documents",
   });
   const [loading, setLoading] = useState(false);
   const [message, setMessage] = useState("");
@@ -218,10 +223,15 @@ export default function UploadPage() {
           countryName: "",
           title: "",
           description: "",
+          descriptionHeading: "About Attestation",
           requirements: "",
+          requirementsHeading: "Why is Attestation Required?",
           process: "",
+          processHeading: "Attestation Process",
           documentsRequired: "",
+          documentsRequiredHeading: "Documents Required",
           commonDocuments: "",
+          commonDocumentsHeading: "Most Common Documents",
         });
       } else {
         setMessage(`Error: ${data.message}`);
@@ -283,7 +293,7 @@ export default function UploadPage() {
 
   // Show upload form if authenticated
   return (
-    <div className="container mx-auto px-4 py-24 mt-10">
+    <div className="container mx-auto px-4 py-12">
       <div className="flex justify-between items-center mb-8">
         <h1 className="text-3xl text-gray-800 font-bold">Upload Country Attestation Data</h1>
         <button
@@ -382,6 +392,21 @@ export default function UploadPage() {
           <label htmlFor="description" className="block mb-2 font-medium text-gray-800">
             Description
           </label>
+          <div className="mb-2">
+            <label htmlFor="descriptionHeading" className="block mb-2 text-sm text-gray-600">
+              Description Heading
+            </label>
+            <input
+              type="text"
+              id="descriptionHeading"
+              name="descriptionHeading"
+              value={formData.descriptionHeading}
+              onChange={handleChange}
+              className="w-full p-3 border text-gray-800 placeholder:text-gray-400 border-gray-300 rounded-md"
+              placeholder="About Attestation"
+              required
+            />
+          </div>
           <textarea
             id="description"
             name="description"
@@ -398,6 +423,21 @@ export default function UploadPage() {
           <label htmlFor="requirements" className="block mb-2 font-medium text-gray-800">
             Why is Attestation Required? (One item per line)
           </label>
+          <div className="mb-2">
+            <label htmlFor="requirementsHeading" className="block mb-2 text-sm text-gray-600">
+              Requirements Heading
+            </label>
+            <input
+              type="text"
+              id="requirementsHeading"
+              name="requirementsHeading"
+              value={formData.requirementsHeading}
+              onChange={handleChange}
+              className="w-full p-3 border text-gray-800 placeholder:text-gray-400 border-gray-300 rounded-md"
+              placeholder="Why is Attestation Required?"
+              required
+            />
+          </div>
           <textarea
             id="requirements"
             name="requirements"
@@ -418,6 +458,21 @@ For resident visa or PR"
           <label htmlFor="process" className="block mb-2 font-medium text-gray-800">
             Attestation Process (One step per line)
           </label>
+          <div className="mb-2">
+            <label htmlFor="processHeading" className="block mb-2 text-sm text-gray-600">
+              Process Heading
+            </label>
+            <input
+              type="text"
+              id="processHeading"
+              name="processHeading"
+              value={formData.processHeading}
+              onChange={handleChange}
+              className="w-full p-3 border text-gray-800 placeholder:text-gray-400 border-gray-300 rounded-md"
+              placeholder="Attestation Process"
+              required
+            />
+          </div>
           <textarea
             id="process"
             name="process"
@@ -426,10 +481,10 @@ For resident visa or PR"
             rows="6"
             className="w-full p-3 border text-gray-800 placeholder:text-gray-400 border-gray-300 rounded-md"
             placeholder="Notary Attestation (Local notary verification)
-HRD/Home Department or SDM Attestation
-MEA Attestation
-UAE Embassy Attestation (India)
-MOFA Attestation (UAE – completed after document reaches UAE)"
+            HRD/Home Department or SDM Attestation
+            MEA Attestation
+            UAE Embassy Attestation (India)
+            MOFA Attestation (UAE – completed after document reaches UAE)"
             required
           ></textarea>
         </div>
@@ -438,6 +493,21 @@ MOFA Attestation (UAE – completed after document reaches UAE)"
           <label htmlFor="documentsRequired" className="block mb-2 font-medium text-gray-800">
             Documents Required (One item per line)
           </label>
+          <div className="mb-2">
+            <label htmlFor="documentsRequiredHeading" className="block mb-2 text-sm text-gray-600">
+              Documents Required Heading
+            </label>
+            <input
+              type="text"
+              id="documentsRequiredHeading"
+              name="documentsRequiredHeading"
+              value={formData.documentsRequiredHeading}
+              onChange={handleChange}
+              className="w-full p-3 border text-gray-800 placeholder:text-gray-400 border-gray-300 rounded-md"
+              placeholder="Documents Required"
+              required
+            />
+          </div>
           <textarea
             id="documentsRequired"
             name="documentsRequired"
@@ -446,8 +516,8 @@ MOFA Attestation (UAE – completed after document reaches UAE)"
             rows="4"
             className="w-full p-3 border text-gray-800 placeholder:text-gray-400 border-gray-300 rounded-md"
             placeholder="Original Document (Degree/Birth/Marriage/etc.)
-Passport Copy (Front and Back)
-Authorization Letter (if using an agent)"
+            Passport Copy (Front and Back)
+            Authorization Letter (if using an agent)"
             required
           ></textarea>
         </div>
@@ -456,6 +526,21 @@ Authorization Letter (if using an agent)"
           <label htmlFor="commonDocuments" className="block mb-2 font-medium text-gray-800">
             Most Common Documents (One item per line)
           </label>
+          <div className="mb-2">
+            <label htmlFor="commonDocumentsHeading" className="block mb-2 text-sm text-gray-600">
+              Common Documents Heading
+            </label>
+            <input
+              type="text"
+              id="commonDocumentsHeading"
+              name="commonDocumentsHeading"
+              value={formData.commonDocumentsHeading}
+              onChange={handleChange}
+              className="w-full p-3 border text-gray-800 placeholder:text-gray-400 border-gray-300 rounded-md"
+              placeholder="Most Common Documents"
+              required
+            />
+          </div>
           <textarea
             id="commonDocuments"
             name="commonDocuments"

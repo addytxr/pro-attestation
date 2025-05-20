@@ -41,11 +41,7 @@ const Documents = () => {
       description: "Passport Copy (husband and wife)",
       icon: FileChartPie
     },
-    {
-      title: "Authorization Letter",
-      description: "Required if applying through an agent",
-      icon: FileCheck
-    },
+
     {
       title: "Application Form",
       description: "If applicable for your specific case",
@@ -70,7 +66,7 @@ const Documents = () => {
             Documents Required for Marriage Certificate Apostille/Attestation
           </h2>
 
-          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6">
+          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
             {requiredDocuments.map((doc, index) => (
               <motion.div
                 key={index}

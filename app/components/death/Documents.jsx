@@ -41,11 +41,7 @@ const Documents = () => {
       description: "Required if front and back pages of the passport",
       icon: FileChartPie
     },
-    {
-      title: "Authorization Letter",
-      description: "Required if applying through an agent",
-      icon: FileCheck
-    }
+
   ]
 
   return (
@@ -65,7 +61,7 @@ const Documents = () => {
             Documents Required for Death Certificate Apostille/Attestation
           </h2>
 
-          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6">
+          <div className="grid grid-cols-1 md:grid-cols-2  gap-6">
             {requiredDocuments.map((doc, index) => (
               <motion.div
                 key={index}

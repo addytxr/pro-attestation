@@ -41,11 +41,7 @@ const Documents = () => {
       description: "Front and back pages of the passport",
       icon: FileChartPie
     },
-    {
-      title: "Authorization Letter",
-      description: "Required if applying through an agent",
-      icon: FileCheck
-    },
+ 
     {
       title: "Application Form",
       description: "If applicable for your specific case",
