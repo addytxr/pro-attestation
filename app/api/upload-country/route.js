@@ -13,13 +13,40 @@ export async function POST(req) {
       flag: body.flag,
       countryName: body.countryName,
       title: body.title,
-      description: body.description,
-      requirements: body.requirements.split('\n').filter(Boolean).map(item => item.trim()),
-      process: body.process.split('\n').filter(Boolean).map(item => item.trim()),
-      documentsRequired: body.documentsRequired.split('\n').filter(Boolean).map(item => item.trim()),
-      commonDocuments: body.commonDocuments.split('\n').filter(Boolean).map(item => item.trim()),
+      serviceType: body.serviceType || "attestation", // Default to attestation if not provided
       updatedAt: new Date().toISOString()
     };
+    
+    // Only include fields that are not empty
+    if (body.description && body.description.trim()) {
+      formattedData.description = body.description;
+      formattedData.descriptionHeading = body.descriptionHeading || "About Attestation";
+    }
+    
+    if (body.requirements && body.requirements.trim()) {
+      formattedData.requirements = body.requirements.split('\n').filter(Boolean).map(item => item.trim());
+      formattedData.requirementsHeading = body.requirementsHeading || "Why is Attestation Required?";
+    }
+    
+    if (body.process && body.process.trim()) {
+      formattedData.process = body.process.split('\n').filter(Boolean).map(item => item.trim());
+      formattedData.processHeading = body.processHeading || "Attestation Process";
+    }
+    
+    if (body.documentsRequired && body.documentsRequired.trim()) {
+      formattedData.documentsRequired = body.documentsRequired.split('\n').filter(Boolean).map(item => item.trim());
+      formattedData.documentsRequiredHeading = body.documentsRequiredHeading || "Documents Required";
+    }
+    
+    if (body.commonDocuments && body.commonDocuments.trim()) {
+      formattedData.commonDocuments = body.commonDocuments.split('\n').filter(Boolean).map(item => item.trim());
+      formattedData.commonDocumentsHeading = body.commonDocumentsHeading || "Most Common Documents";
+    }
+    
+    if (body.processingTime && body.processingTime.trim()) {
+      formattedData.processingTime = body.processingTime.split('\n').filter(Boolean).map(item => item.trim());
+      formattedData.processingTimeHeading = body.processingTimeHeading || "Processing Time";
+    }
 
     // Create the data directory if it doesn't exist
     const dataDir = path.join(process.cwd(), 'public', 'data');
@@ -32,15 +59,26 @@ export async function POST(req) {
     let countries = [];
     
     if (fs.existsSync(countriesPath)) {
-      const data = fs.readFileSync(countriesPath, 'utf8');
-      countries = JSON.parse(data);
-      
-      // Check if country already exists, update it
-      const existingIndex = countries.findIndex(country => country.id === formattedData.id);
-      if (existingIndex !== -1) {
-        countries[existingIndex] = formattedData;
-      } else {
-        countries.push(formattedData);
+      try {
+        const data = fs.readFileSync(countriesPath, 'utf8');
+        if (data && data.trim()) {
+          countries = JSON.parse(data);
+          
+          // Check if country already exists, update it
+          const existingIndex = countries.findIndex(country => country.id === formattedData.id);
+          if (existingIndex !== -1) {
+            countries[existingIndex] = formattedData;
+          } else {
+            countries.push(formattedData);
+          }
+        } else {
+          // File exists but is empty
+          countries = [formattedData];
+        }
+      } catch (parseError) {
+        console.error('Error parsing countries.json file:', parseError);
+        // If there's an error parsing the file, start fresh
+        countries = [formattedData];
       }
     } else {
       countries = [formattedData];

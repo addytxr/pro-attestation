@@ -8,8 +8,19 @@ export async function GET() {
     let countries = [];
     
     if (fs.existsSync(dataPath)) {
-      const data = fs.readFileSync(dataPath, 'utf8');
-      countries = JSON.parse(data);
+      try {
+        const data = fs.readFileSync(dataPath, 'utf8');
+        if (data && data.trim()) {
+          countries = JSON.parse(data);
+        } else {
+          // File exists but is empty
+          countries = [];
+        }
+      } catch (parseError) {
+        console.error('Error parsing countries.json file:', parseError);
+        // If there's an error parsing the file, return empty array
+        countries = [];
+      }
     }
     
     return NextResponse.json({ 

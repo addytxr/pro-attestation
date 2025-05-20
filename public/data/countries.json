@@ -1,167 +1,36 @@
 [
   {
-    "id": "uae",
-    "flag": "ae",
-    "countryName": "UAE",
-    "title": "UAE Attestation Services in Delhi NCR",
-    "description": "UAE Attestation is a mandatory process to authenticate Indian documents for use in the United Arab Emirates. It involves verifying your documents through multiple levels of authorities, including the MEA and the UAE Embassy in India. Whether you're applying for a UAE employment visa, student visa, or family visa, document attestation is essential.\nWe provide complete UAE Embassy attestation and MOFA attestation support in Delhi NCR at the best prices.\n",
-    "requirements": [
-      "For employment visa in UAE",
-      "For higher education or student visa in UAE",
-      "To sponsor family or spouse",
-      "For business or company formation in UAE",
-      "For resident visa or PR"
-    ],
-    "process": [
-      "Notary Attestation (Local notary verification)",
-      "HRD/Home Department or SDM Attestation",
-      "MEA Attestation",
-      "UAE Embassy Attestation (India)",
-      "MOFA Attestation (UAE – completed after document reaches UAE)"
-    ],
-    "documentsRequired": [
-      "Original Document (Degree/Birth/Marriage/etc.)",
-      "Passport Copy (Front and Back)",
-      "Authorization Letter (if using an agent)"
-    ],
-    "commonDocuments": [
-      "Degree Certificate",
-      "Birth Certificate",
-      "Marriage Certificate",
-      "Police Clearance Certificate (PCC)",
-      "Medical Certificate"
-    ],
-    "updatedAt": "2025-05-18T06:24:51.640Z"
-  },
-  {
-    "id": "qatar",
-    "flag": "qa",
-    "countryName": "Qatar",
-    "title": "Qatar Attestation Services in Delhi NCR",
-    "description": "Qatar Attestation is required for Indian-origin documents to be accepted by Qatari authorities. This process ensures your documents are legally valid in Qatar for visa, work, education, or residency purposes. We offer fast, hassle-free Qatar Embassy attestation in Delhi NCR.\n",
-    "requirements": [
-      "For job opportunities in Qatar",
-      "Admission in Qatari universities",
-      "Sponsoring family or dependents",
-      "Legal proof for immigration or PR",
-      "Company setup and contracts"
-    ],
-    "process": [
-      "Notary Attestation",
-      "HRD/Home/SDM Attestation",
-      "MEA Attestation",
-      "Qatar Embassy Attestation (India)",
-      "MOFA Attestation (Qatar – if required)"
-    ],
-    "documentsRequired": [
-      "Original Documents (Educational/Personal/Commercial)",
-      "Passport Copy",
-      "Authorization Letter"
-    ],
-    "commonDocuments": [
-      "Educational Certificates (Degree, Diploma)",
-      "Birth/Marriage Certificates",
-      "PCC",
-      "Company MOUs or Commercial Invoices"
-    ],
-    "updatedAt": "2025-05-18T06:26:28.353Z"
-  },
-  {
-    "id": "kuwait",
-    "flag": "kw",
-    "countryName": "Kuwait",
-    "title": "Kuwait Attestation Services in Delhi NCR",
-    "description": "Kuwait Attestation is a document legalization process that confirms the authenticity of Indian documents for use in Kuwait. If you're relocating for a job or business setup, attestation from the Kuwait Embassy in India is mandatory. We provide end-to-end Kuwait attestation in Delhi NCR, including MEA and Embassy processing",
-    "requirements": [
-      "To apply for a job in Kuwait",
-      "For student visa or dependent visa",
-      "Family sponsorships",
-      "Business registration in Kuwait"
-    ],
-    "process": [
-      "Notary Attestation",
-      "State HRD/Home/SDM Attestation",
-      "MEA Attestation",
-      "Kuwait Embassy Attestation (India)",
-      "MOFA Attestation (Kuwait – done locally)"
-    ],
-    "documentsRequired": [
-      "Original Document",
-      "Passport Copy",
-      "Authorization Letter (if applicable)"
-    ],
-    "commonDocuments": [
-      "Academic Certificates (Degree, Diploma)",
-      "Birth Certificate",
-      "Marriage Certificate",
-      "Power of Attorney"
-    ],
-    "updatedAt": "2025-05-18T06:39:27.761Z"
-  },
-  {
-    "id": "oman",
-    "flag": "om",
-    "countryName": "Oman",
-    "title": "Oman Attestation Services in Delhi NCR",
-    "description": "Oman Attestation is the procedure of validating Indian documents for use in Oman. It is necessary for individuals moving to Oman for employment, education, or business. We offer trusted Oman Embassy attestation services in Delhi NCR with document pickup & drop.\n",
-    "requirements": [
-      "Job visa processing in Oman",
-      "Higher education applications",
-      "Family visa or sponsorship",
-      "Business or trade purposes"
-    ],
-    "process": [
-      "Notary Attestation",
-      "HRD/Home/SDM Attestation",
-      "MEA Attestation",
-      "Oman Embassy Attestation (India)",
-      "MOFA (Oman – optional depending on case)"
-    ],
-    "documentsRequired": [
-      "Original Document",
-      "Passport Copy",
-      "Authorization Letter"
-    ],
-    "commonDocuments": [
-      "Degree Certificates",
-      "Birth/Marriage Certificates",
-      "Medical Certificates",
-      "Commercial Papers"
-    ],
-    "updatedAt": "2025-05-18T06:40:26.049Z"
-  },
-  {
     "id": "saudi-arabia",
     "flag": "sa",
     "countryName": "Saudi Arabia",
-    "title": "Saudi Arabia Attestation Services in Delhi NCR",
-    "description": "Saudi Arabia requires document attestation for visa, study, and work purposes. The process includes MEA, Saudi Embassy, and Culture Attestation for education-related documents. We specialize in fast, reliable Saudi Embassy attestation in Delhi NCR with affordable pricing.\n",
+    "title": "Saudi Arabia Apostille Services in Delhi NCR",
+    "serviceType": "apostille",
+    "updatedAt": "2025-05-20T20:47:31.684Z",
+    "description": "Need to legalize your documents for Saudi Arabia? If you're applying for a job, higher studies, family visa, or doing business in KSA, your Indian documents need an apostille from the Ministry of External Affairs (MEA), Government of India.\nWe offer Saudi Arabia Apostille services in Delhi NCR, ensuring a smooth and fast process for birth certificates, degree certificates, marriage certificates, and more.\n",
+    "descriptionHeading": "About Apostille",
     "requirements": [
-      "Work visa application in Saudi Arabia",
-      "Educational admission and scholarship",
-      "Legalization for family visa",
-      "Business partnerships and contracts"
+      "Same-day pickup and delivery in Delhi NCR",
+      "Real-time updates and support",
+      "Transparent pricing, no hidden charges",
+      "100% MEA-authenticated apostille sticker"
     ],
+    "requirementsHeading": "Why Choose Our Saudi Apostille Services",
     "process": [
-      "Notary Attestation",
-      "HRD/Home/SDM Attestation",
-      "MEA Attestation",
-      "Saudi Embassy Attestation",
-      "MOFA Attestation (Saudi Arabia)",
-      "Culture Attestation (only for academic docs)"
+      "Notary Attestation (if required)",
+      "State-level Attestation (HRD/Home/SDM based on document type)",
+      "MEA Apostille"
     ],
-    "documentsRequired": [
-      "Original Document",
-      "Passport Copy",
-      "Culture Attestation Form (for education docs)",
-      "Authorization Letter"
-    ],
+    "processHeading": "Apostille Process for Saudi Arabia (India-issued docs)",
     "commonDocuments": [
-      "Degree/Diploma Certificates",
-      "Marriage & Birth Certificates",
-      "Commercial Documents",
-      "PCC"
+      "Birth & Marriage Certificates",
+      "Degree & Diploma Certificates",
+      "Police Clearance Certificate (PCC)",
+      "Affidavits, Medical, Divorce, and Death Certificates"
     ],
-    "updatedAt": "2025-05-18T06:41:40.386Z"
+    "commonDocumentsHeading": "Documents Commonly Apostilled for Saudi Arabia",
+    "processingTime": [
+      "2-3 working days (may vary by state and document type)"
+    ],
+    "processingTimeHeading": "Processing Time:"
   }
 ]

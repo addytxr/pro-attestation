@@ -134,20 +134,24 @@ const countriesWithCodes = {
 
 export default function UploadPage() {
   const router = useRouter();
+  const [serviceType, setServiceType] = useState("attestation");
   const [formData, setFormData] = useState({
     flag: "",
     countryName: "",
     title: "",
     description: "",
-    descriptionHeading: "About Attestation",
+    descriptionHeading: serviceType === "attestation" ? "About Attestation" : "About Apostille",
     requirements: "",
-    requirementsHeading: "Why is Attestation Required?",
+    requirementsHeading: serviceType === "attestation" ? "Why is Attestation Required?" : "Why Choose Our Apostille Services",
     process: "",
-    processHeading: "Attestation Process",
+    processHeading: serviceType === "attestation" ? "Attestation Process" : "Apostille Process",
     documentsRequired: "",
     documentsRequiredHeading: "Documents Required",
     commonDocuments: "",
     commonDocumentsHeading: "Most Common Documents",
+    processingTime: "",
+    processingTimeHeading: "Processing Time",
+    serviceType: "attestation",
   });
   const [loading, setLoading] = useState(false);
   const [message, setMessage] = useState("");
@@ -223,15 +227,18 @@ export default function UploadPage() {
           countryName: "",
           title: "",
           description: "",
-          descriptionHeading: "About Attestation",
+          descriptionHeading: serviceType === "attestation" ? "About Attestation" : "About Apostille",
           requirements: "",
-          requirementsHeading: "Why is Attestation Required?",
+          requirementsHeading: serviceType === "attestation" ? "Why is Attestation Required?" : "Why Choose Our Apostille Services",
           process: "",
-          processHeading: "Attestation Process",
+          processHeading: serviceType === "attestation" ? "Attestation Process" : "Apostille Process",
           documentsRequired: "",
           documentsRequiredHeading: "Documents Required",
           commonDocuments: "",
           commonDocumentsHeading: "Most Common Documents",
+          processingTime: "",
+          processingTimeHeading: "Processing Time",
+          serviceType: serviceType,
         });
       } else {
         setMessage(`Error: ${data.message}`);
@@ -272,7 +279,7 @@ export default function UploadPage() {
                 id="password"
                 value={password}
                 onChange={(e) => setPassword(e.target.value)}
-                className="w-full p-3 border text-gray-800 placeholder:text-gray-400 text-gray-800 border-gray-300 rounded-md"
+                className="w-full p-3 border text-gray-800 placeholder:text-gray-400 border-gray-300 rounded-md"
                 placeholder="Enter admin password"
                 required
               />
@@ -295,7 +302,12 @@ export default function UploadPage() {
   return (
     <div className="container mx-auto px-4 py-12">
       <div className="flex justify-between items-center mb-8">
-        <h1 className="text-3xl text-gray-800 font-bold">Upload Country Attestation Data</h1>
+        <div>
+          <h1 className="text-3xl text-gray-800 font-bold">
+            Upload Country {serviceType === "attestation" ? "Attestation" : "Apostille"} Data
+          </h1>
+          <p className="text-gray-600 mt-1">Select service type and fill in the country details</p>
+        </div>
         <button
           onClick={() => {
             localStorage.removeItem("adminAuth");
@@ -314,6 +326,48 @@ export default function UploadPage() {
       )}
 
       <form onSubmit={handleSubmit} className="space-y-6 max-w-3xl">
+        <div className="mb-6">
+          <label className="block mb-2 font-medium text-gray-800">Service Type</label>
+          <div className="flex gap-4">
+            <button
+              type="button"
+              onClick={() => {
+                setServiceType("attestation");
+                setFormData(prev => ({
+                  ...prev,
+                  serviceType: "attestation",
+                  descriptionHeading: "About Attestation",
+                  requirementsHeading: "Why is Attestation Required?",
+                  processHeading: "Attestation Process"
+                }));
+              }}
+              className={`px-4 py-2 rounded-md transition-colors ${
+                serviceType === "attestation" ? "bg-[#FF6A00] text-white" : "bg-gray-200 text-gray-800"
+              }`}
+            >
+              Attestation
+            </button>
+            <button
+              type="button"
+              onClick={() => {
+                setServiceType("apostille");
+                setFormData(prev => ({
+                  ...prev,
+                  serviceType: "apostille",
+                  descriptionHeading: "About Apostille",
+                  requirementsHeading: "Why Choose Our Apostille Services",
+                  processHeading: "Apostille Process"
+                }));
+              }}
+              className={`px-4 py-2 rounded-md transition-colors ${
+                serviceType === "apostille" ? "bg-[#FF6A00] text-white" : "bg-gray-200 text-gray-800"
+              }`}
+            >
+              Apostille
+            </button>
+          </div>
+        </div>
+        
         <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
           <div>
             <label htmlFor="flag" className="block mb-2 font-medium text-gray-800">
@@ -383,8 +437,16 @@ export default function UploadPage() {
             value={formData.title}
             onChange={handleChange}
             className="w-full p-3 border text-gray-800 placeholder:text-gray-400 border-gray-300 rounded-md"
-            placeholder="UAE Attestation Services in Delhi NCR"
+            placeholder={serviceType === "attestation" ? 
+              "UAE Attestation Services in Delhi NCR" : 
+              "Saudi Arabia Apostille Services in Delhi NCR"}
             required
+          />
+          <input
+            type="hidden"
+            id="serviceType"
+            name="serviceType"
+            value={serviceType}
           />
         </div>
 
@@ -404,7 +466,6 @@ export default function UploadPage() {
               onChange={handleChange}
               className="w-full p-3 border text-gray-800 placeholder:text-gray-400 border-gray-300 rounded-md"
               placeholder="About Attestation"
-              required
             />
           </div>
           <textarea
@@ -414,8 +475,9 @@ export default function UploadPage() {
             onChange={handleChange}
             rows="6"
             className="w-full p-3 border text-gray-800 placeholder:text-gray-400 border-gray-300 rounded-md"
-            placeholder="What is UAE Attestation? UAE Attestation is a mandatory process..."
-            required
+            placeholder={serviceType === "attestation" ? 
+              "What is UAE Attestation? UAE Attestation is a mandatory process..." : 
+              "Need to legalize your documents for Saudi Arabia? If you're applying for a job, higher studies, family visa, or doing business in KSA, your Indian documents need an apostille from the Ministry of External Affairs (MEA), Government of India."}
           ></textarea>
         </div>
 
@@ -435,7 +497,6 @@ export default function UploadPage() {
               onChange={handleChange}
               className="w-full p-3 border text-gray-800 placeholder:text-gray-400 border-gray-300 rounded-md"
               placeholder="Why is Attestation Required?"
-              required
             />
           </div>
           <textarea
@@ -445,12 +506,16 @@ export default function UploadPage() {
             onChange={handleChange}
             rows="6"
             className="w-full p-3 border text-gray-800 placeholder:text-gray-400 border-gray-300 rounded-md"
-            placeholder="For employment visa in UAE
+            placeholder={serviceType === "attestation" ? 
+              `For employment visa in UAE
 For higher education or student visa in UAE
 To sponsor family or spouse
 For business or company formation in UAE
-For resident visa or PR"
-            required
+For resident visa or PR` : 
+              `Same-day pickup and delivery in Delhi NCR
+Real-time updates and support
+Transparent pricing, no hidden charges
+100% MEA-authenticated apostille sticker`}
           ></textarea>
         </div>
 
@@ -470,7 +535,6 @@ For resident visa or PR"
               onChange={handleChange}
               className="w-full p-3 border text-gray-800 placeholder:text-gray-400 border-gray-300 rounded-md"
               placeholder="Attestation Process"
-              required
             />
           </div>
           <textarea
@@ -480,12 +544,15 @@ For resident visa or PR"
             onChange={handleChange}
             rows="6"
             className="w-full p-3 border text-gray-800 placeholder:text-gray-400 border-gray-300 rounded-md"
-            placeholder="Notary Attestation (Local notary verification)
-            HRD/Home Department or SDM Attestation
-            MEA Attestation
-            UAE Embassy Attestation (India)
-            MOFA Attestation (UAE – completed after document reaches UAE)"
-            required
+            placeholder={serviceType === "attestation" ? 
+              `Notary Attestation (Local notary verification)
+HRD/Home Department or SDM Attestation
+MEA Attestation
+UAE Embassy Attestation (India)
+MOFA Attestation (UAE – completed after document reaches UAE)` : 
+              `Notary Attestation (if required)
+State-level Attestation (HRD/Home/SDM based on document type)
+MEA Apostille`}
           ></textarea>
         </div>
 
@@ -505,7 +572,6 @@ For resident visa or PR"
               onChange={handleChange}
               className="w-full p-3 border text-gray-800 placeholder:text-gray-400 border-gray-300 rounded-md"
               placeholder="Documents Required"
-              required
             />
           </div>
           <textarea
@@ -515,10 +581,13 @@ For resident visa or PR"
             onChange={handleChange}
             rows="4"
             className="w-full p-3 border text-gray-800 placeholder:text-gray-400 border-gray-300 rounded-md"
-            placeholder="Original Document (Degree/Birth/Marriage/etc.)
-            Passport Copy (Front and Back)
-            Authorization Letter (if using an agent)"
-            required
+            placeholder={serviceType === "attestation" ? 
+              `Original Document (Degree/Birth/Marriage/etc.)
+Passport Copy (Front and Back)
+Authorization Letter (if using an agent)` : 
+              `Original Document (Birth/Marriage/Degree Certificate etc.)
+Copy of Passport (First and Last Page)
+Authorization Letter (if applying through an agent)`}
           ></textarea>
         </div>
 
@@ -538,7 +607,6 @@ For resident visa or PR"
               onChange={handleChange}
               className="w-full p-3 border text-gray-800 placeholder:text-gray-400 border-gray-300 rounded-md"
               placeholder="Most Common Documents"
-              required
             />
           </div>
           <textarea
@@ -548,12 +616,47 @@ For resident visa or PR"
             onChange={handleChange}
             rows="6"
             className="w-full p-3 border text-gray-800 placeholder:text-gray-400 border-gray-300 rounded-md"
-            placeholder="Degree Certificate
-            Birth Certificate
-            Marriage Certificate
-            Police Clearance Certificate (PCC)
-            Medical Certificate"
-            required
+            placeholder={serviceType === "attestation" ? 
+              `Degree Certificate
+Birth Certificate
+Marriage Certificate
+Police Clearance Certificate (PCC)
+Medical Certificate` : 
+              `Birth & Marriage Certificates
+Degree & Diploma Certificates
+Police Clearance Certificate (PCC)
+Affidavits, Medical, Divorce, and Death Certificates`}
+          ></textarea>
+        </div>
+
+        <div>
+          <label htmlFor="processingTime" className="block mb-2 font-medium text-gray-800">
+            Processing Time
+          </label>
+          <div className="mb-2">
+            <label htmlFor="processingTimeHeading" className="block mb-2 text-sm text-gray-600">
+              Processing Time Heading
+            </label>
+            <input
+              type="text"
+              id="processingTimeHeading"
+              name="processingTimeHeading"
+              value={formData.processingTimeHeading}
+              onChange={handleChange}
+              className="w-full p-3 border text-gray-800 placeholder:text-gray-400 border-gray-300 rounded-md"
+              placeholder="Processing Time"
+            />
+          </div>
+          <textarea
+            id="processingTime"
+            name="processingTime"
+            value={formData.processingTime}
+            onChange={handleChange}
+            rows="3"
+            className="w-full p-3 border text-gray-800 placeholder:text-gray-400 border-gray-300 rounded-md"
+            placeholder={serviceType === "attestation" ? 
+              "7-10 working days (depends on document type and country)" : 
+              "2-3 working days (may vary by state and document type)"}
           ></textarea>
         </div>
 
