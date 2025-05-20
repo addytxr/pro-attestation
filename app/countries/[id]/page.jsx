@@ -165,7 +165,7 @@ export default function CountryPage({ params }) {
             </span>
             <div>
               <h1 className="text-3xl md:text-4xl font-bold">
-                {country.countryName} {country.serviceType === "apostille" ? "Apostille" : "Attestation"}
+                {country.countryName} 
               </h1>
               <h2 className="text-xl md:text-2xl font-medium mt-2 text-orange-100">{country.title}</h2>
             </div>
