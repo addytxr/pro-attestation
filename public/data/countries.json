@@ -855,5 +855,128 @@
       "Police Clearance Certificate (PCC)"
     ],
     "documentsRequiredHeading": "Documents Required"
+  },
+  {
+    "id": "indonesia",
+    "flag": "id",
+    "countryName": "Indonesia",
+    "title": "Indonesia Embassy Attestation Services in Delhi NCR",
+    "serviceType": "attestation",
+    "updatedAt": "2025-05-21T10:35:45.867Z",
+    "description": "If you're relocating to Indonesia for a job, business, or education, your Indian documents must go through Embassy Attestation, as Indonesia is not part of the Hague Convention. We offer trusted Indonesia attestation services in Delhi NCR, ensuring document validity for Indonesian authorities.\n",
+    "descriptionHeading": "About Attestation",
+    "requirements": [
+      "Experts in handling Indonesia Embassy requirements",
+      "Doorstep document pickup & delivery in Delhi NCR",
+      "Legal process assurance with regular updates",
+      "Experienced with personal, educational & commercial docs"
+    ],
+    "requirementsHeading": "Why is Attestation Required?",
+    "process": [
+      "Notarization of Documents",
+      "SDM or State Authentication",
+      "MEA Attestation",
+      "Embassy of Indonesia Attestation"
+    ],
+    "processHeading": "Attestation Process",
+    "documentsRequired": [
+      "Educational Certificates",
+      "Birth/Marriage Certificates",
+      "PCC",
+      "Power of Attorney & Commercial Docs"
+    ],
+    "documentsRequiredHeading": "Documents Required"
+  },
+  {
+    "id": "cambodia",
+    "flag": "kh",
+    "countryName": "Cambodia",
+    "title": "Cambodia Embassy Attestation Services in Delhi NCR",
+    "serviceType": "attestation",
+    "updatedAt": "2025-05-21T10:36:34.842Z",
+    "description": "Indian documents being submitted to Cambodia for visa, business, or education must be attested through the Cambodian Embassy in India. Since Cambodia is not in the Apostille treaty, embassy legalization is mandatory. We provide complete Cambodia attestation services in Delhi NCR.",
+    "descriptionHeading": "About Attestation",
+    "requirements": [
+      "Legalized process for non-apostille countries",
+      "Pickup and drop facility in Delhi NCR",
+      "MEA & Embassy attestation handled completely",
+      "Cost-effective and prompt service"
+    ],
+    "requirementsHeading": "Why is Attestation Required?",
+    "process": [
+      "Notary Attestation",
+      "SDM/Home Dept Authentication",
+      "MEA Attestation",
+      "Cambodia Embassy Attestation"
+    ],
+    "processHeading": "Attestation Process",
+    "documentsRequired": [
+      "Degree/Transcript Certificates",
+      "Marriage & Birth Certificates",
+      "Police Clearance Certificate",
+      "Power of Attorney, Business Agreements"
+    ],
+    "documentsRequiredHeading": "Documents Required"
+  },
+  {
+    "id": "laos",
+    "flag": "la",
+    "countryName": "Laos",
+    "title": "Laos Embassy Attestation Services in Delhi NCR",
+    "serviceType": "attestation",
+    "updatedAt": "2025-05-21T10:37:27.178Z",
+    "description": "Heading to Laos for employment, education, or investment? Laos doesn’t accept apostille — your documents require full Embassy Attestation via the MEA and Laos Embassy. We offer secure and hassle-free Laos attestation services in Delhi NCR",
+    "descriptionHeading": "About Attestation",
+    "requirements": [
+      "Non-apostille attestation experts",
+      "Pickup & drop facility across Delhi NCR",
+      "Dedicated team to coordinate embassy visits",
+      "Secure and efficient service"
+    ],
+    "requirementsHeading": "Why is Attestation Required?",
+    "process": [
+      "Notary Attestation",
+      "SDM/State Verification",
+      "MEA Attestation",
+      "Laos Embassy Attestation"
+    ],
+    "processHeading": "Attestation Process",
+    "documentsRequired": [
+      "Degree, Diploma & School Certificates",
+      "Marriage, Birth, and PCC",
+      "Power of Attorney & Commercial Docs"
+    ],
+    "documentsRequiredHeading": "Documents Required"
+  },
+  {
+    "id": "kenya",
+    "flag": "ke",
+    "countryName": "Kenya",
+    "title": "Kenya Embassy Attestation Services in Delhi NCR",
+    "serviceType": "attestation",
+    "updatedAt": "2025-05-21T10:38:16.598Z",
+    "description": "Kenya requires Embassy Attestation for any Indian document intended for official use. Whether you’re applying for a visa, pursuing education, or signing a business contract, apostille is not valid — only embassy legalization works. We provide Kenya attestation services in Delhi NCR with full legal compliance.\n",
+    "descriptionHeading": "About Attestation",
+    "requirements": [
+      "Embassy attestation from India to Kenya handled end-to-end",
+      "Delhi NCR pickup & drop included",
+      "Experienced attestation consultants",
+      "Prompt, verified, and secure processing"
+    ],
+    "requirementsHeading": "Why is Attestation Required?",
+    "process": [
+      "Notary Attestation",
+      "SDM or State Authentication",
+      "MEA Attestation",
+      "Kenya Embassy Attestation"
+    ],
+    "processHeading": "Attestation Process",
+    "documentsRequired": [
+      "Educational Documents",
+      "Birth/Marriage/Death Certificates",
+      "Business Agreements & Export Documents",
+      "PCC, Medical Certificates"
+    ],
+    "documentsRequiredHeading": "Documents Required"
   }
 ]
