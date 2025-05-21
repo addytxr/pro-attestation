@@ -3,6 +3,7 @@ import Script from 'next/script';
 import "./globals.css";
 import WhatsAppButton from "./components/WhatsAppButton";
 import CallButton from "./components/CallButton";
+import GoogleAnalytics from "./components/GoogleAnalytics";
 
 const geistSans = Geist({
   variable: "--font-geist-sans",
@@ -67,6 +68,9 @@ export default function RootLayout({ children }) {
             'https://www.googletagmanager.com/gtm.js?id='+i+dl;f.parentNode.insertBefore(j,f);
           })(window,document,'script','dataLayer','GTM-KFBR4HT');`}
         </Script>
+        
+        <GoogleAnalytics />
+        
         <script
           type="application/ld+json"
           dangerouslySetInnerHTML={{
