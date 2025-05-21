@@ -709,5 +709,45 @@
       "2-3 working days for most documents"
     ],
     "processingTimeHeading": "Processing Time"
+  },
+  {
+    "id": "uae",
+    "flag": "ae",
+    "countryName": "UAE",
+    "title": "UAE Attestation Services in Delhi NCR",
+    "serviceType": "attestation",
+    "updatedAt": "2025-05-21T10:06:50.840Z",
+    "description": "UAE Attestation is a mandatory process to authenticate Indian documents for use in the United Arab Emirates. It involves verifying your documents through multiple levels of authorities, including the MEA and the UAE Embassy in India. Whether you're applying for a UAE employment visa, student visa, or family visa, document attestation is essential.\nWe provide complete UAE Embassy attestation and MOFA attestation support in Delhi NCR at the best prices.\n",
+    "descriptionHeading": "About Attestation",
+    "requirements": [
+      "For employment visa in UAE",
+      "For higher education or student visa in UAE",
+      "To sponsor family or spouse",
+      "For business or company formation in UAE",
+      "For resident visa or PR"
+    ],
+    "requirementsHeading": "Why is Attestation Required?",
+    "process": [
+      "Notary Attestation (Local notary verification)",
+      "HRD/Home Department or SDM Attestation",
+      "MEA Attestation",
+      "UAE Embassy Attestation (India)",
+      "MOFA Attestation (UAE – completed after document reaches UAE)"
+    ],
+    "processHeading": "Attestation Process",
+    "documentsRequired": [
+      "Original Document (Degree/Birth/Marriage/etc.)",
+      "Passport Copy (Front and Back)",
+      "Authorization Letter (if using an agent)"
+    ],
+    "documentsRequiredHeading": "Documents Required",
+    "commonDocuments": [
+      "Degree Certificate",
+      "Birth Certificate",
+      "Marriage Certificate",
+      "Police Clearance Certificate (PCC)",
+      "Medical Certificate"
+    ],
+    "commonDocumentsHeading": "Most Common Documents"
   }
 ]
