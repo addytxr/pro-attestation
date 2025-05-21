@@ -31,8 +31,8 @@ const apostilleCountriesList = [
   "Nicaragua", "Uruguay", "Namibia", "Belgium", "Denmark", "Greece", "Lithuania",
   "North Macedonia", "Russian Federation", "Switzerland", "Georgia", "Malaysia",
   "Singapore", "Dominican Republic", "Panama", "Venezuela", "Rwanda",
-  "Bosnia and Herzegovina", "Estonia", "Hungary", "Luxembourg", "Norway", "Serbia",
-  "Türkiye", "Mongolia", "Sri Lanka"
+  "Bosnia and Herzegovina", "Estonia", "Hungary", "Luxembourg", "Norway","Oman", "Serbia",
+  "Türkiye", "Mongolia", "Sri Lanka","South Korea"
 ];
 
 // List of all countries (combined)

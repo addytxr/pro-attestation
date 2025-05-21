@@ -76,9 +76,9 @@ export default async function BlogListingPage() {
   };
   
   return (
-    <div className="bg-gray-50 min-h-screen pb-16">
+    <div className="bg-gray-50 min-h-screen pb-16 ">
       {/* Hero section */}
-      <div className="bg-gradient-to-r from-[#FF6A00] to-[#FF6A00] text-white py-12">
+      <div className="bg-gradient-to-r from-[#FF6A00] to-[#FF6A00] md:px-12 text-white py-12">
         <div className="container mx-auto px-4">
           <h1 className="text-3xl md:text-4xl font-bold">Our Blog</h1>
           <p className="mt-4 text-xl text-orange-100">
@@ -87,7 +87,7 @@ export default async function BlogListingPage() {
         </div>
       </div>
 
-      <div className="container mx-auto px-4 py-12">
+      <div className="container mx-auto px-4 py-12 md:px-12">
         {blogs.length === 0 ? (
           <div className="text-center py-16">
             <h2 className="text-2xl font-bold text-gray-800">No blog posts found</h2>
