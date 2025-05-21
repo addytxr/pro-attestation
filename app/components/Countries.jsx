@@ -2,7 +2,6 @@
 
 import React, { useState, useEffect } from 'react';
 import { useRouter } from 'next/navigation';
-import { motion } from 'framer-motion';
 
 // Define attestation only countries
 const attestationCountriesList = [
@@ -22,18 +21,18 @@ const apostilleCountriesList = [
   "Albania", "Bulgaria", "European Union", "Iceland", "Malta", "Poland",
   "Slovakia", "Ukraine", "Armenia", "Israel", "New Zealand", "Thailand",
   "Brazil", "Canada", "Chile", "Ecuador", "Honduras", "Mexico", "Peru",
-  "Suriname", "United States of America", "Egypt", "Morocco", "Mauritius",
+  "Suriname", "United States of America (USA)", "Egypt", "Morocco", "Mauritius",
   "Tunisia", "Zambia", "Andorra", "Austria", "Belarus", "Croatia", "Cyprus",
   "Czech Republic", "Finland", "France", "Germany", "Ireland", "Italy",
   "Latvia", "Monaco", "Montenegro", "Netherlands", "Portugal", "Republic of Moldova",
-  "Romania", "Slovenia", "Spain", "Sweden", "United Kingdom", "Australia",
+  "Romania", "Slovenia", "Spain", "Sweden", "United Kingdom(UK)", "Australia",
   "Azerbaijan", "China", "Japan", "Jordan", "Kazakhstan", "Philippines",
-  "Republic of Korea", "Saudi Arabia", "Uzbekistan", "Viet Nam", "Costa Rica",
+  "Republic of Korea", "Saudi Arabia", "Uzbekistan", "Vietnam", "Costa Rica",
   "Nicaragua", "Uruguay", "Namibia", "Belgium", "Denmark", "Greece", "Lithuania",
   "North Macedonia", "Russian Federation", "Switzerland", "Georgia", "Malaysia",
   "Singapore", "Dominican Republic", "Panama", "Venezuela", "Rwanda",
   "Bosnia and Herzegovina", "Estonia", "Hungary", "Luxembourg", "Norway", "Serbia",
-  "Türkiye", "India", "Mongolia", "Sri Lanka"
+  "Türkiye", "Mongolia", "Sri Lanka"
 ];
 
 // List of all countries (combined)
@@ -58,6 +57,10 @@ function Countries() {
   const [selectedServiceType, setSelectedServiceType] = useState('all');
   const [searchTerm, setSearchTerm] = useState('');
   const [countriesData, setCountriesData] = useState([]);
+  const [showAllCountries, setShowAllCountries] = useState(false);
+  
+  // Define initial visible countries count
+  const initialVisibleCount = 16;
   
   // Group countries based on services
   const [groupedCountries, setGroupedCountries] = useState({
@@ -86,6 +89,11 @@ function Countries() {
 
     fetchCountriesWithData();
   }, []);
+
+  // Reset show all when service type or search changes
+  useEffect(() => {
+    setShowAllCountries(false);
+  }, [selectedServiceType, searchTerm]);
 
   // Handle country click
   const handleCountryClick = (country) => {
@@ -124,12 +132,8 @@ function Countries() {
   return (
     <section className="w-full bg-[#FFF7F0] py-20 px-8 md:px-16">
       <div className="max-w-7xl mx-auto">
-        <motion.div 
+        <div 
           className="text-center mb-16"
-          initial={{ opacity: 0, y: 20 }}
-          whileInView={{ opacity: 1, y: 0 }}
-          viewport={{ once: true }}
-          transition={{ duration: 0.6 }}
         >
           <span className="inline-block text-lg font-semibold text-[#FF6A00] pb-1 border-b-2 border-[#FF6A00]">
             Global Presence
@@ -140,20 +144,16 @@ function Countries() {
           <p className="text-[#555555] mt-4 max-w-2xl mx-auto">
             Explore our apostille and attestation services available across multiple regions worldwide
           </p>
-        </motion.div>
+        </div>
 
         <div className="space-y-8">
           {/* Service Type Filter and Search */}
-          <motion.div 
+          <div 
             className="flex flex-col md:flex-row justify-between items-center gap-6 mb-12"
-            initial={{ opacity: 0, y: 20 }}
-            whileInView={{ opacity: 1, y: 0 }}
-            viewport={{ once: true }}
-            transition={{ duration: 0.5 }}
           >
             <div className="flex flex-wrap justify-center gap-3">
               {Object.keys(serviceTypeLabels).map((serviceType, index) => (
-                <motion.button
+                <button
                   key={serviceType}
                   onClick={() => {
                     setSelectedServiceType(serviceType);
@@ -164,22 +164,14 @@ function Countries() {
                       ? 'bg-[#FF6A00] text-white shadow-md'
                       : 'bg-white text-black hover:bg-gray-50'
                   }`}
-                  whileHover={{ scale: 1.02 }}
-                  whileTap={{ scale: 0.98 }}
-                  initial={{ opacity: 0, y: 20 }}
-                  animate={{ opacity: 1, y: 0 }}
-                  transition={{ delay: index * 0.1 }}
                 >
                   {serviceTypeLabels[serviceType]}
-                </motion.button>
+                </button>
               ))}
             </div>
 
-            <motion.div 
+            <div 
               className="relative w-full md:w-auto"
-              initial={{ opacity: 0 }}
-              animate={{ opacity: 1 }}
-              transition={{ delay: 0.3 }}
             >
               <input
                 type="text"
@@ -190,22 +182,21 @@ function Countries() {
                 value={searchTerm}
                 onChange={(e) => setSearchTerm(e.target.value)}
               />
-            </motion.div>
-          </motion.div>
+            </div>
+          </div>
 
           {/* Countries Grid */}
-          <motion.div 
-            initial={{ opacity: 0, y: 20 }}
-            whileInView={{ opacity: 1, y: 0 }}
-            viewport={{ once: true }}
-            transition={{ duration: 0.5 }}
+          <div 
             className="space-y-6"
           >
             <h2 className="text-2xl font-bold text-[#222222] pl-2 border-l-4 border-[#FF6A00]">
               {serviceTypeLabels[selectedServiceType]}
             </h2>
-            <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-6">
-              {filteredCountries.map((country, index) => {
+            
+            {/* Grid container with relative positioning for overlay */}
+            <div className="relative">
+              <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-6">
+                {filteredCountries.slice(0, showAllCountries ? filteredCountries.length : initialVisibleCount).map((country, index) => {
                 const countryId = country.toLowerCase().replace(/\s+/g, '-');
                 const hasData = countriesData.some(dataCountry => dataCountry.id === countryId);
                 
@@ -233,13 +224,10 @@ function Countries() {
                 };
                 
                 return (
-                  <motion.div
+                  <div
                     key={country}
                     className={`bg-white p-6 rounded-xl shadow-sm hover:shadow-md transition-all ${hasData ? 'cursor-pointer' : ''}`}
-                    whileHover={{ y: -5 }}
-                    initial={{ opacity: 0, y: 20 }}
-                    animate={{ opacity: 1, y: 0 }}
-                    transition={{ delay: index * 0.05 }}
+               
                     onClick={() => hasData && handleCountryClick(country)}
                   >
                     <div className="flex justify-between items-start">
@@ -256,11 +244,32 @@ function Countries() {
                         </svg>
                       )}
                     </div>
-                  </motion.div>
+                  </div>
                 );
               })}
+              </div>
+
+              {/* Blur overlay - only show when not showing all and not searching */}
+              {!showAllCountries && filteredCountries.length > initialVisibleCount && !searchTerm && (
+                <div className="absolute bottom-0 left-0 right-0 h-32 bg-gradient-to-t from-[#FFF7F0] to-transparent pointer-events-none" />
+              )}
             </div>
-          </motion.div>
+
+            {/* "View More" button - only show when there are more countries to display */}
+            {filteredCountries.length > initialVisibleCount && (
+              <div 
+                className="text-center mt-8"
+              >
+                <button
+                  onClick={() => setShowAllCountries(!showAllCountries)}
+                  className="px-8 py-3 rounded-lg bg-white border border-[#FF6A00] text-[#FF6A00] font-medium transition-all shadow-sm
+                            hover:bg-[#FF6A00] hover:text-white focus:outline-none focus:ring-2 focus:ring-[#FF6A00] focus:ring-opacity-50"
+                >
+                  {showAllCountries ? 'Show Less' : 'View More'}
+                </button>
+              </div>
+            )}
+          </div>
         </div>
       </div>
     </section>
