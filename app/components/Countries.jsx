@@ -10,7 +10,7 @@ const attestationCountriesList = [
   "Eritrea", "Ethiopia", "Ghana", "Guinea", "Haiti", "Indonesia", "Iran",
   "Iraq", "Jamaica", "Kenya", "Kuwait", "Laos", "Lebanon", "Libya",
   "Madagascar", "Mali", "Mauritania", "Myanmar", "Nepal", "Niger",
-  "Nigeria", "Pakistan", "Palestine", "Qatar", "Rwanda", "Senegal",
+  "Nigeria", "Palestine", "Qatar", "Rwanda", "Senegal",
   "Sierra Leone", "Sudan", "Syria", "Taiwan", "Tanzania", "Togo",
   "Turkmenistan", "UAE", "Uganda", "Yemen", "Zimbabwe"
 ];
