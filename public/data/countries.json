@@ -749,5 +749,111 @@
       "Medical Certificate"
     ],
     "commonDocumentsHeading": "Most Common Documents"
+  },
+  {
+    "id": "qatar",
+    "flag": "qa",
+    "countryName": "Qatar",
+    "title": "Qatar Attestation Services in Delhi NCR",
+    "serviceType": "attestation",
+    "updatedAt": "2025-05-21T10:10:31.561Z",
+    "description": "Qatar Attestation is required for Indian-origin documents to be accepted by Qatari authorities. This process ensures your documents are legally valid in Qatar for visa, work, education, or residency purposes. We offer fast, hassle-free Qatar Embassy attestation in Delhi NCR.",
+    "descriptionHeading": "About Attestation",
+    "requirements": [
+      "For job opportunities in Qatar",
+      "Admission in Qatari universities",
+      "Sponsoring family or dependents",
+      "Legal proof for immigration or PR",
+      "Company setup and contracts"
+    ],
+    "requirementsHeading": "Why is Attestation Required?",
+    "process": [
+      "Notary Attestation",
+      "HRD/Home/SDM Attestation",
+      "MEA Attestation",
+      "Qatar Embassy Attestation (India)",
+      "MOFA Attestation (Qatar – if required)"
+    ],
+    "processHeading": "Qatar Document Attestation Process in India",
+    "documentsRequired": [
+      "Original Documents (Educational/Personal/Commercial)",
+      "Passport Copy"
+    ],
+    "documentsRequiredHeading": "Documents Required for Qatar Attestation",
+    "commonDocuments": [
+      "Educational Certificates (Degree, Diploma)",
+      "Birth/Marriage Certificates",
+      "PCC",
+      "Company MOUs or Commercial Invoices"
+    ],
+    "commonDocumentsHeading": "Most Common Documents"
+  },
+  {
+    "id": "kuwait",
+    "flag": "kw",
+    "countryName": "Kuwait",
+    "title": "Kuwait Attestation Services in Delhi NCR",
+    "serviceType": "attestation",
+    "updatedAt": "2025-05-21T10:11:16.279Z",
+    "description": "Kuwait Attestation is a document legalization process that confirms the authenticity of Indian documents for use in Kuwait. If you're relocating for a job or business setup, attestation from the Kuwait Embassy in India is mandatory. We provide end-to-end Kuwait attestation in Delhi NCR, including MEA and Embassy processing.",
+    "descriptionHeading": "About Attestation",
+    "requirements": [
+      "To apply for a job in Kuwait",
+      "For student visa or dependent visa",
+      "Family sponsorships",
+      "Business registration in Kuwait"
+    ],
+    "requirementsHeading": "Why is Kuwait Attestation Required?",
+    "process": [
+      "Notary Attestation",
+      "State HRD/Home/SDM Attestation",
+      "MEA Attestation",
+      "Kuwait Embassy Attestation (India)",
+      "MOFA Attestation (Kuwait – done locally)"
+    ],
+    "processHeading": "Attestation Process",
+    "documentsRequired": [
+      "Original Document",
+      "Passport Copy"
+    ],
+    "documentsRequiredHeading": "Documents Required",
+    "commonDocuments": [
+      "Academic Certificates (Degree, Diploma)",
+      "Birth Certificate",
+      "Marriage Certificate",
+      "Power of Attorney"
+    ],
+    "commonDocumentsHeading": "Most Common Documents"
+  },
+  {
+    "id": "iran",
+    "flag": "",
+    "countryName": "Iran",
+    "title": "Iran Embassy Attestation Services in Delhi NCR",
+    "serviceType": "attestation",
+    "updatedAt": "2025-05-21T10:14:13.816Z",
+    "description": "Planning to travel to Iran for employment, business, education, or medical purposes? Your Indian documents require Embassy Attestation after MEA attestation. We provide reliable Iran attestation services in Delhi NCR with end-to-end support.\n",
+    "descriptionHeading": "About Attestation",
+    "requirements": [
+      "Specialized in non-apostille country attestations",
+      "Embassy coordination handled by our experts",
+      "Free document pickup & drop in Delhi NCR",
+      "Transparent pricing and process tracking"
+    ],
+    "requirementsHeading": "Why is Attestation Required?",
+    "process": [
+      "Notary Attestation",
+      "State/SDM Authentication",
+      "Ministry of External Affairs (MEA) Attestation",
+      "Iran Embassy Attestation (New Delhi)"
+    ],
+    "processHeading": "Attestation Process",
+    "documentsRequired": [
+      "Degree and Diploma Certificates",
+      "Birth and Marriage Certificates",
+      "Commercial Documents (Invoice, Company Contracts)",
+      "Police Clearance Certificate (PCC)"
+    ],
+    "documentsRequiredHeading": "Documents Required"
   }
 ]

@@ -4,28 +4,54 @@ import React, { useState, useEffect } from 'react';
 import { useRouter } from 'next/navigation';
 import { motion } from 'framer-motion';
 
-// List of all countries
-const allCountriesList = [
-  "Armenia", "Azerbaijan", "Bahrain", "China", "Georgia", "Hong Kong", "Israel",
-  "Japan", "Kazakhstan", "Kuwait", "Kyrgyzstan", "Macau", "Mongolia", "Oman",
-  "Philippines", "Qatar", "Russian", "Saudi Arabia", "Singapore", "South Korea",
-  "Tajikistan", "Turkey", "UAE", "Uzbekistan", "Albania", "Andorra", "Austria", 
-  "Belarus", "Belgium", "Bosnia and Herzegovina", "Bulgaria", "Croatia", "Cyprus", 
-  "Czech Republic", "Denmark", "Estonia", "Finland", "France", "Germany",
-  "Greece", "Hungary", "Iceland", "Ireland", "Italy", "Kosovo", "Latvia", "Liechtenstein",
-  "Lithuania", "Luxembourg", "Malta", "Moldova, Republic of", "Monaco", "Montenegro",
-  "Netherlands", "North Macedonia, Republic of", "Norway", "Poland", "Portugal", "Romania",
-  "San Marino", "Serbia", "Slovakia", "Slovenia", "Spain", "Sweden", "Switzerland", "Ukraine",
-  "United Kingdom", "Antigua and Barbuda", "Argentina", "Bahamas", "Barbados", "Belize", 
-  "Bolivia", "Brazil", "Chile", "Colombia", "Costa Rica", "Dominica", "Dominican Republic", 
-  "Ecuador", "El Salvador", "Grenada", "Guatemala", "Guyana", "Honduras", "Jamaica", 
-  "Mexico", "Nicaragua", "Panama", "Paraguay", "Peru", "Saint Kitts and Nevis", 
-  "Saint Lucia", "Saint Vincent and the Grenadines", "Suriname", "Trinidad and Tobago", 
-  "USA", "Uruguay", "Venezuela", "Botswana", "Burundi", "Cape Verde", "Lesotho", "Liberia", 
-  "Malawi", "Mauritius", "Morocco", "Namibia", "Sao Tome and Principe", "Seychelles", 
-  "South Africa", "Tunisia", "Australia", "Brunei Darussalam", "Cook Islands", "Fiji", 
-  "Marshall Islands", "New Zealand", "Niue", "Palau", "Samoa", "Tonga", "Vanuatu", "India"
+// Define attestation only countries
+const attestationCountriesList = [
+  "Afghanistan", "Algeria", "Angola", "Bangladesh", "Benin", "Cambodia",
+  "Cameroon", "Congo Republic", "Congo Democratic", "Ivory Coast", "Cuba",
+  "Eritrea", "Ethiopia", "Ghana", "Guinea", "Haiti", "Indonesia", "Iran",
+  "Iraq", "Jamaica", "Kenya", "Kuwait", "Laos", "Lebanon", "Libya",
+  "Madagascar", "Mali", "Mauritania", "Myanmar", "Nepal", "Niger",
+  "Nigeria", "Pakistan", "Palestine", "Qatar", "Rwanda", "Senegal",
+  "Sierra Leone", "Sudan", "Syria", "Taiwan", "Tanzania", "Togo",
+  "Turkmenistan", "UAE", "Uganda", "Yemen", "Zimbabwe"
 ];
+
+// Define apostille only countries
+const apostilleCountriesList = [
+  "Argentina", "El Salvador", "Paraguay", "Burkina Faso", "South Africa",
+  "Albania", "Bulgaria", "European Union", "Iceland", "Malta", "Poland",
+  "Slovakia", "Ukraine", "Armenia", "Israel", "New Zealand", "Thailand",
+  "Brazil", "Canada", "Chile", "Ecuador", "Honduras", "Mexico", "Peru",
+  "Suriname", "United States of America", "Egypt", "Morocco", "Mauritius",
+  "Tunisia", "Zambia", "Andorra", "Austria", "Belarus", "Croatia", "Cyprus",
+  "Czech Republic", "Finland", "France", "Germany", "Ireland", "Italy",
+  "Latvia", "Monaco", "Montenegro", "Netherlands", "Portugal", "Republic of Moldova",
+  "Romania", "Slovenia", "Spain", "Sweden", "United Kingdom", "Australia",
+  "Azerbaijan", "China", "Japan", "Jordan", "Kazakhstan", "Philippines",
+  "Republic of Korea", "Saudi Arabia", "Uzbekistan", "Viet Nam", "Costa Rica",
+  "Nicaragua", "Uruguay", "Namibia", "Belgium", "Denmark", "Greece", "Lithuania",
+  "North Macedonia", "Russian Federation", "Switzerland", "Georgia", "Malaysia",
+  "Singapore", "Dominican Republic", "Panama", "Venezuela", "Rwanda",
+  "Bosnia and Herzegovina", "Estonia", "Hungary", "Luxembourg", "Norway", "Serbia",
+  "Türkiye", "India", "Mongolia", "Sri Lanka"
+];
+
+// List of all countries (combined)
+const allCountriesList = [
+  ...new Set([
+    ...attestationCountriesList,
+    ...apostilleCountriesList,
+    "Bahrain", "Hong Kong", "Kyrgyzstan", "Macau", "Oman", "Russian", 
+    "Tajikistan", "Turkey", "Liechtenstein", "Moldova, Republic of", 
+    "North Macedonia, Republic of", "San Marino", "Antigua and Barbuda", 
+    "Bahamas", "Barbados", "Belize", "Bolivia", "Dominica", 
+    "Grenada", "Guatemala", "Guyana", "Saint Kitts and Nevis", 
+    "Saint Lucia", "Saint Vincent and the Grenadines", "Trinidad and Tobago", 
+    "Botswana", "Burundi", "Cape Verde", "Lesotho", "Liberia", 
+    "Malawi", "Sao Tome and Principe", "Seychelles", "Brunei Darussalam", 
+    "Cook Islands", "Fiji", "Marshall Islands", "Niue", "Palau", "Samoa", "Tonga", "Vanuatu"
+  ])
+].sort();
   
 function Countries() {
   const router = useRouter();
@@ -33,11 +59,11 @@ function Countries() {
   const [searchTerm, setSearchTerm] = useState('');
   const [countriesData, setCountriesData] = useState([]);
   
-  // Group countries based on fetched data
+  // Group countries based on services
   const [groupedCountries, setGroupedCountries] = useState({
-    all: [],
-    attestation: [],
-    apostille: [],
+    all: allCountriesList,
+    attestation: attestationCountriesList,
+    apostille: apostilleCountriesList,
   });
 
   // Fetch countries with data
@@ -50,59 +76,8 @@ function Countries() {
           const countriesWithData = data.countries || [];
           setCountriesData(countriesWithData);
           
-          // Group countries based on service type
-          const sortedCountries = {
-            all: [],
-            attestation: [],
-            apostille: [],
-          };
-          
-          // First collect all countries with data and their service types
-          const countryServiceTypes = {};
-          
-          countriesWithData.forEach(country => {
-            const countryId = country.id;
-            const serviceType = country.serviceType || 'attestation';
-            
-            if (!countryServiceTypes[countryId]) {
-              countryServiceTypes[countryId] = [serviceType];
-            } else if (!countryServiceTypes[countryId].includes(serviceType)) {
-              countryServiceTypes[countryId].push(serviceType);
-            }
-          });
-          
-          // Categorize countries based on their service types
-          countriesWithData.forEach(country => {
-            const countryId = country.id;
-            const countryName = country.countryName;
-            
-            // Add to the 'all' category
-            if (!sortedCountries.all.includes(countryName)) {
-              sortedCountries.all.push(countryName);
-            }
-            
-            // Add to the specific service type categories
-            if (countryServiceTypes[countryId].length > 1) {
-              if (!sortedCountries.both.includes(countryName)) {
-                sortedCountries.both.push(countryName);
-              }
-            } else if (countryServiceTypes[countryId][0] === 'attestation') {
-              if (!sortedCountries.attestation.includes(countryName)) {
-                sortedCountries.attestation.push(countryName);
-              }
-            } else if (countryServiceTypes[countryId][0] === 'apostille') {
-              if (!sortedCountries.apostille.includes(countryName)) {
-                sortedCountries.apostille.push(countryName);
-              }
-            }
-          });
-          
-          // Sort each category alphabetically
-          Object.keys(sortedCountries).forEach(key => {
-            sortedCountries[key].sort();
-          });
-          
-          setGroupedCountries(sortedCountries);
+          // Additional processing for countries with actual data from the database
+          // This helps identify which countries have details pages available
         }
       } catch (error) {
         console.error('Error fetching countries with data:', error);
@@ -234,10 +209,22 @@ function Countries() {
                 const countryId = country.toLowerCase().replace(/\s+/g, '-');
                 const hasData = countriesData.some(dataCountry => dataCountry.id === countryId);
                 
-                // Find the service type(s) for this country
-                const countryData = countriesData.filter(dataCountry => dataCountry.id === countryId);
-                const serviceTypes = [...new Set(countryData.map(item => item.serviceType || 'attestation'))];
+                // Determine service type for this country
+                let serviceType = 'attestation';
+                if (apostilleCountriesList.includes(country)) {
+                  serviceType = 'apostille';
+                }
+                if (attestationCountriesList.includes(country)) {
+                  serviceType = 'attestation';
+                }
                 
+                // Get real service type if data exists
+                if (hasData) {
+                  const countryData = countriesData.find(dataCountry => dataCountry.id === countryId);
+                  if (countryData && countryData.serviceType) {
+                    serviceType = countryData.serviceType;
+                  }
+                }
                 
                 // Service type indicator color
                 const serviceTypeColor = {
@@ -257,7 +244,9 @@ function Countries() {
                   >
                     <div className="flex justify-between items-start">
                       <h3 className="text-lg font-medium text-[#222222]">{country}</h3>
-                      
+                      <span className={`text-xs font-medium px-2 py-1 rounded-full ${serviceTypeColor[serviceType] || ''}`}>
+                        {serviceType === 'apostille' ? 'Apostille' : 'Attestation'}
+                      </span>
                     </div>
                     <div className={`mt-2 flex items-center ${hasData ? 'text-[#FF6A00]' : 'text-gray-400'}`}>
                       <span className="text-sm">{hasData ? 'View Details' : ' '}</span>
