@@ -22,7 +22,7 @@ const HeadingBlock = ({ block }) => {
 
 // Paragraph Block Component
 const ParagraphBlock = ({ block }) => {
-  return <p className="my-4 text-slate-700 leading-loose">{block.text}</p>;
+  return <p className="my-5 text-lg  text-slate-800 leading-loose">{block.text}</p>;
 };
 
 // List Block Component

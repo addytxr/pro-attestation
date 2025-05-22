@@ -737,8 +737,7 @@
     "processHeading": "Attestation Process",
     "documentsRequired": [
       "Original Document (Degree/Birth/Marriage/etc.)",
-      "Passport Copy (Front and Back)",
-      "Authorization Letter (if using an agent)"
+      "Passport Copy (Front and Back)"
     ],
     "documentsRequiredHeading": "Documents Required",
     "commonDocuments": [
