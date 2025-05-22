@@ -6,30 +6,30 @@ import { useRouter } from 'next/navigation';
 // Define attestation only countries
 const attestationCountriesList = [
   "Afghanistan", "Algeria", "Angola", "Bangladesh", "Benin", "Cambodia",
-  "Cameroon", "Congo Republic", "Congo Democratic", "Ivory Coast", "Cuba",
+  "Cameroon", "Congo Republic", "Congo Democratic","China","Egypt", "Ivory Coast", "Cuba",
   "Eritrea", "Ethiopia", "Ghana", "Guinea", "Haiti", "Indonesia", "Iran",
-  "Iraq", "Jamaica", "Kenya", "Kuwait", "Laos", "Lebanon", "Libya",
-  "Madagascar", "Mali", "Mauritania", "Myanmar", "Nepal", "Niger",
+  "Iraq", "Jamaica","Jordan", "Kenya", "Kuwait", "Laos", "Lebanon", "Libya",
+  "Madagascar", "Mali","Malaysia", "Mauritania", "Myanmar", "Nepal", "Niger",
   "Nigeria", "Palestine", "Qatar", "Rwanda", "Senegal",
-  "Sierra Leone", "Sudan", "Syria", "Taiwan", "Tanzania", "Togo",
-  "Turkmenistan", "UAE", "Uganda", "Yemen", "Zimbabwe"
+  "Sierra Leone", "Sudan", "Syria", "Taiwan", "Tanzania","Thailand", "Togo",
+  "Turkmenistan", "UAE", "Uganda","Vietnam", "Yemen", "Zimbabwe"
 ];
 
 // Define apostille only countries
 const apostilleCountriesList = [
   "Argentina", "El Salvador", "Paraguay", "Burkina Faso", "South Africa",
   "Albania", "Bulgaria", "European Union", "Iceland", "Malta", "Poland",
-  "Slovakia", "Ukraine", "Armenia", "Israel", "New Zealand", "Thailand",
+  "Slovakia", "Ukraine", "Armenia", "Israel", "New Zealand", 
   "Brazil", "Canada", "Chile", "Ecuador", "Honduras", "Mexico", "Peru",
-  "Suriname", "United States of America (USA)", "Egypt", "Morocco", "Mauritius",
+  "Suriname", "United States of America (USA)",  "Morocco", "Mauritius",
   "Tunisia", "Zambia", "Andorra", "Austria", "Belarus", "Croatia", "Cyprus",
   "Czech Republic", "Finland", "France", "Germany", "Ireland", "Italy",
   "Latvia", "Monaco", "Montenegro", "Netherlands", "Portugal", "Republic of Moldova",
   "Romania", "Slovenia", "Spain", "Sweden", "United Kingdom(UK)", "Australia",
-  "Azerbaijan", "China", "Japan", "Jordan", "Kazakhstan", "Philippines",
-  "Republic of Korea", "Saudi Arabia", "Uzbekistan", "Vietnam", "Costa Rica",
+  "Azerbaijan",  "Japan",  "Kazakhstan", "Philippines",
+  "Republic of Korea", "Saudi Arabia", "Uzbekistan",  "Costa Rica",
   "Nicaragua", "Uruguay", "Namibia", "Belgium", "Denmark", "Greece", "Lithuania",
-  "North Macedonia", "Russian Federation", "Switzerland", "Georgia", "Malaysia",
+  "North Macedonia", "Russian Federation", "Switzerland", "Georgia", 
   "Singapore", "Dominican Republic", "Panama", "Venezuela", "Rwanda",
   "Bosnia and Herzegovina", "Estonia", "Hungary", "Luxembourg", "Norway","Oman", "Serbia",
   "Türkiye", "Mongolia", "Sri Lanka","South Korea"
