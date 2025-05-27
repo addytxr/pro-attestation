@@ -25,7 +25,7 @@ export async function POST(req) {
     
     if (body.requirements && body.requirements.trim()) {
       formattedData.requirements = body.requirements.split('\n').filter(Boolean).map(item => item.trim());
-      formattedData.requirementsHeading = body.requirementsHeading || "Why is Attestation Required?";
+      formattedData.requirementsHeading = body.requirementsHeading || "Why Choose Us";
     }
     
     if (body.process && body.process.trim()) {

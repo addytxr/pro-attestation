@@ -185,7 +185,7 @@ const countriesWithCodes = {
   "Uzbekistan": "UZ",
   "Vanuatu": "VU",
   "Venezuela": "VE",
-  "Viet Nam": "VN",
+  "Vietnam": "VN",
   "Yemen": "YE",
   "Zambia": "ZM",
   "Zimbabwe": "ZW"
@@ -201,7 +201,7 @@ export default function UploadPage() {
     description: "",
     descriptionHeading: serviceType === "attestation" ? "About Attestation" : "About Apostille",
     requirements: "",
-    requirementsHeading: serviceType === "attestation" ? "Why is Attestation Required?" : "Why Choose Our Apostille Services",
+    requirementsHeading: serviceType === "attestation" ? "Why Choose Us" : "Why Choose Our Apostille Services",
     process: "",
     processHeading: serviceType === "attestation" ? "Attestation Process" : "Apostille Process",
     note: "", // Add this line
@@ -289,7 +289,7 @@ export default function UploadPage() {
           description: "",
           descriptionHeading: serviceType === "attestation" ? "About Attestation" : "About Apostille",
           requirements: "",
-          requirementsHeading: serviceType === "attestation" ? "Why is Attestation Required?" : "Why Choose Our Apostille Services",
+          requirementsHeading: serviceType === "attestation" ? "Why Choose Us" : "Why Choose Our Apostille Services",
           process: "",
           processHeading: serviceType === "attestation" ? "Attestation Process" : "Apostille Process",
           note: "", // Add this line
@@ -398,7 +398,7 @@ export default function UploadPage() {
                   ...prev,
                   serviceType: "attestation",
                   descriptionHeading: "About Attestation",
-                  requirementsHeading: "Why is Attestation Required?",
+                  requirementsHeading: "Why Choose Us",
                   processHeading: "Attestation Process"
                 }));
               }}
@@ -544,7 +544,7 @@ export default function UploadPage() {
 
         <div>
           <label htmlFor="requirements" className="block mb-2 font-medium text-gray-800">
-            Why is Attestation Required? (One item per line)
+            Why Choose Us (One item per line)
           </label>
           <div className="mb-2">
             <label htmlFor="requirementsHeading" className="block mb-2 text-sm text-gray-600">
@@ -557,7 +557,7 @@ export default function UploadPage() {
               value={formData.requirementsHeading}
               onChange={handleChange}
               className="w-full p-3 border text-gray-800 placeholder:text-gray-400 border-gray-300 rounded-md"
-              placeholder="Why is Attestation Required?"
+              placeholder="Why Choose Us"
             />
           </div>
           <textarea
