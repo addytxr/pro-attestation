@@ -244,7 +244,7 @@ export default function CountryPage({ params }) {
             {country.process && country.process.length > 0 && (
               <div className="bg-white rounded-lg shadow-lg p-8 mb-8">
                 <h3 className="text-2xl font-bold mb-6 text-gray-800 border-b pb-4">
-                  {country.processHeading || `${country.countryName} Attestation Process`}
+                  {country.processHeading || `${country.countryName} ${country.serviceType === 'apostille' ? 'Apostille' : 'Attestation'} Process`}
                 </h3>
                 <ol className="relative border-l border-gray-200 ml-4 mt-8 space-y-10">
                   {country.process.map((step, idx) => (
@@ -258,6 +258,19 @@ export default function CountryPage({ params }) {
                     </li>
                   ))}
                 </ol>
+                {country.note && (
+                  <div className="mt-8 p-4 bg-orange-50 border border-orange-100 rounded-md">
+                    <div className="flex items-start">
+                      <svg xmlns="http://www.w3.org/2000/svg" className="h-6 w-6 text-[#FF6A00] mr-2 mt-0.5" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                        <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M13 16h-1v-4h-1m1-4h.01M21 12a9 9 0 11-18 0 9 9 0 0118 0z" />
+                      </svg>
+                      <div>
+                        <h4 className="font-semibold text-gray-800 mb-1">Important Note:</h4>
+                        <p className="text-gray-700">{country.note}</p>
+                      </div>
+                    </div>
+                  </div>
+                )}
               </div>
             )}
 

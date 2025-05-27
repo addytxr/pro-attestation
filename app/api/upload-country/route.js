@@ -33,6 +33,11 @@ export async function POST(req) {
       formattedData.processHeading = body.processHeading || "Attestation Process";
     }
     
+    // Add note if provided
+    if (body.note && body.note.trim()) {
+      formattedData.note = body.note.trim();
+    }
+    
     if (body.documentsRequired && body.documentsRequired.trim()) {
       formattedData.documentsRequired = body.documentsRequired.split('\n').filter(Boolean).map(item => item.trim());
       formattedData.documentsRequiredHeading = body.documentsRequiredHeading || "Documents Required";
@@ -104,4 +109,4 @@ export async function POST(req) {
       { status: 500 }
     );
   }
-} 
+}

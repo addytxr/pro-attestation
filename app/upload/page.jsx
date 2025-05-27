@@ -204,6 +204,7 @@ export default function UploadPage() {
     requirementsHeading: serviceType === "attestation" ? "Why is Attestation Required?" : "Why Choose Our Apostille Services",
     process: "",
     processHeading: serviceType === "attestation" ? "Attestation Process" : "Apostille Process",
+    note: "", // Add this line
     documentsRequired: "",
     documentsRequiredHeading: "Documents Required",
     commonDocuments: "",
@@ -291,6 +292,7 @@ export default function UploadPage() {
           requirementsHeading: serviceType === "attestation" ? "Why is Attestation Required?" : "Why Choose Our Apostille Services",
           process: "",
           processHeading: serviceType === "attestation" ? "Attestation Process" : "Apostille Process",
+          note: "", // Add this line
           documentsRequired: "",
           documentsRequiredHeading: "Documents Required",
           commonDocuments: "",
@@ -616,6 +618,21 @@ MEA Apostille`}
         </div>
 
         <div>
+          <label htmlFor="note" className="block mb-2 font-medium text-gray-800">
+            Important Note
+          </label>
+          <textarea
+            id="note"
+            name="note"
+            value={formData.note}
+            onChange={handleChange}
+            rows="3"
+            className="w-full p-3 border text-gray-800 placeholder:text-gray-400 border-gray-300 rounded-md"
+            placeholder="Add any important notes or additional information here..."
+          ></textarea>
+        </div>
+
+        <div>
           <label htmlFor="documentsRequired" className="block mb-2 font-medium text-gray-800">
             Documents Required (One item per line)
           </label>
@@ -729,4 +746,4 @@ Affidavits, Medical, Divorce, and Death Certificates`}
       </form>
     </div>
   );
-} 
+}
