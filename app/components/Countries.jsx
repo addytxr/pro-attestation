@@ -6,34 +6,36 @@ import { useRouter } from 'next/navigation';
 // Define attestation only countries
 const attestationCountriesList = [
   "Afghanistan", "Algeria", "Angola", "Bangladesh", "Benin", "Cambodia",
-  "Cameroon", "Congo Republic", "Congo Democratic","China","Egypt", "Ivory Coast", "Cuba",
+  "Cameroon", "China", "Congo Democratic", "Congo Republic", "Cuba", "Egypt",
   "Eritrea", "Ethiopia", "Ghana", "Guinea", "Haiti", "Indonesia", "Iran",
-  "Iraq", "Jamaica","Jordan", "Kenya", "Kuwait", "Laos", "Lebanon", "Libya",
-  "Madagascar", "Mali","Malaysia", "Mauritania", "Myanmar", "Nepal", "Niger",
-  "Nigeria", "Palestine", "Qatar", "Rwanda", "Senegal",
-  "Sierra Leone", "Sudan", "Syria", "Taiwan", "Tanzania","Thailand", "Togo",
-  "Turkmenistan", "UAE", "Uganda","Vietnam", "Yemen", "Zimbabwe"
+  "Iraq", "Ivory Coast", "Jamaica", "Jordan", "Kenya", "Kuwait", "Laos",
+  "Lebanon", "Libya", "Madagascar", "Malaysia", "Mali", "Mauritania", "Myanmar",
+  "Nepal", "Niger", "Nigeria", "Palestine", "Qatar", "Rwanda", "Senegal",
+  "Sierra Leone", "Sudan", "Syria", "Taiwan", "Tanzania", "Thailand", "Togo",
+  "Turkmenistan", "UAE", "Uganda", "Vietnam", "Yemen", "Zimbabwe"
 ];
+
 
 // Define apostille only countries
 const apostilleCountriesList = [
-  "Argentina", "El Salvador", "Paraguay", "Burkina Faso", "South Africa",
-  "Albania", "Bulgaria", "European Union", "Iceland", "Malta", "Poland",
-  "Slovakia", "Ukraine", "Armenia", "Israel", "New Zealand", 
-  "Brazil", "Canada", "Chile", "Ecuador", "Honduras", "Mexico", "Peru",
-  "Suriname", "United States of America (USA)",  "Morocco", "Mauritius",
-  "Tunisia", "Zambia", "Andorra", "Austria", "Belarus", "Croatia", "Cyprus",
-  "Czech Republic", "Finland", "France", "Germany", "Ireland", "Italy",
-  "Latvia", "Monaco", "Montenegro", "Netherlands", "Portugal", "Republic of Moldova",
-  "Romania", "Slovenia", "Spain", "Sweden", "United Kingdom(UK)", "Australia",
-  "Azerbaijan",  "Japan",  "Kazakhstan", "Philippines",
-  "Republic of Korea", "Saudi Arabia", "Uzbekistan",  "Costa Rica",
-  "Nicaragua", "Uruguay", "Namibia", "Belgium", "Denmark", "Greece", "Lithuania",
-  "North Macedonia", "Russian Federation", "Switzerland", "Georgia", 
-  "Singapore", "Dominican Republic", "Panama", "Venezuela", "Rwanda",
-  "Bosnia and Herzegovina", "Estonia", "Hungary", "Luxembourg", "Norway","Oman", "Serbia",
-  "Türkiye", "Mongolia", "Sri Lanka","South Korea"
+  "Albania", "Andorra", "Argentina", "Armenia", "Australia", "Austria",
+  "Azerbaijan", "Belarus", "Belgium", "Bosnia and Herzegovina", "Brazil",
+  "Bulgaria", "Burkina Faso", "Canada", "Chile", "Costa Rica", "Croatia",
+  "Cyprus", "Czech Republic", "Denmark", "Dominican Republic", "Ecuador",
+  "El Salvador", "Estonia", "Finland", "France", "Georgia", "Germany",
+  "Greece", "Honduras", "Hungary", "Iceland", "Ireland", "Israel", "Italy",
+  "Japan", "Kazakhstan", "Latvia", "Lithuania", "Luxembourg", "Malta",
+  "Mauritius", "Mexico", "Monaco", "Mongolia", "Montenegro", "Morocco",
+  "Namibia", "Netherlands", "New Zealand", "Nicaragua", "North Macedonia",
+  "Norway", "Oman", "Panama", "Paraguay", "Peru", "Philippines", "Poland",
+  "Portugal", "Republic of Moldova", "Romania", "Russian Federation",
+  "Rwanda", "Saudi Arabia", "Serbia", "Singapore", "Slovakia", "Slovenia",
+  "South Africa", "South Korea", "Spain", "Sri Lanka", "Suriname", "Sweden",
+  "Switzerland", "Tunisia", "Türkiye", "Ukraine", "United Kingdom(UK)",
+  "United States of America (USA)", "Uruguay", "Uzbekistan", "Venezuela",
+  "Zambia"
 ];
+
 
 // List of all countries (combined)
 const allCountriesList = [
