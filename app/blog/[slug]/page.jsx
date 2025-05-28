@@ -3,7 +3,7 @@ import fs from 'fs';
 import path from 'path';
 import { notFound } from 'next/navigation';
 import Link from 'next/link';
-import BlockRenderer from '@/app/components/blog/BlockRenderer';
+import BlockRenderer from '../../components/blog/BlockRenderer';
 
 // Generate static params for all blog posts
 export async function generateStaticParams() {

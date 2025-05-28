@@ -3,7 +3,7 @@
 import React, { useState, useEffect } from 'react';
 import { useRouter } from 'next/navigation';
 import Link from 'next/link';
-import BlogEditor from '@/app/components/blog/BlogEditor';
+import BlogEditor from '../../components/blog/BlogEditor';
 
 export default function NewBlogPage() {
   const router = useRouter();
