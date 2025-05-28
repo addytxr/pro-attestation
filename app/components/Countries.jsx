@@ -31,8 +31,8 @@ const apostilleCountriesList = [
   "Portugal", "Republic of Moldova", "Romania", "Russian Federation",
   "Rwanda", "Saudi Arabia", "Serbia", "Singapore", "Slovakia", "Slovenia",
   "South Africa", "South Korea", "Spain", "Sri Lanka", "Suriname", "Sweden",
-  "Switzerland", "Tunisia", "Türkiye", "Ukraine", "United Kingdom(UK)",
-  "United States of America (USA)", "Uruguay", "Uzbekistan", "Venezuela",
+  "Switzerland", "Tunisia", "Türkiye", "Ukraine", "United Kingdom",
+  "United States of America", "Uruguay", "Uzbekistan", "Venezuela",
   "Zambia"
 ];
 
