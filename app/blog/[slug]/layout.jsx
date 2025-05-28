@@ -8,7 +8,6 @@ export default function CountriesLayout({ children }) {
     <>
       <Navbar />
       {children}
-      <Footer />
     </>
   );
 }
