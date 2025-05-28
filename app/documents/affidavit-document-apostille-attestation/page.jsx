@@ -1,12 +1,12 @@
 
-import Countries_Attestation from '@/app/components/affidavit/Countries.Attestation'
-import Countries_Apostille from '@/app/components/affidavit/Countries_Apostille'
-import Documents from '@/app/components/affidavit/Documents'
-import PersonalHeader from '@/app/components/affidavit/Header'
-import Intro from '@/app/components/affidavit/Intro'
-import Process from '@/app/components/affidavit/Process'
-import What_Apostille from '@/app/components/affidavit/What_Apostille'
-import WHY_Apostille from '@/app/components/affidavit/WHY_Apostille'
+import Countries_Attestation from '../../components/affidavit/Countries.Attestation'
+import Countries_Apostille from '../../components/affidavit/Countries_Apostille'
+import Documents from '../../components/affidavit/Documents'
+import PersonalHeader from '../../components/affidavit/Header'
+import Intro from '../../components/affidavit/Intro'
+import Process from '../../components/affidavit/Process'
+import What_Apostille from '../../components/affidavit/What_Apostille'
+import WHY_Apostille from '../../components/affidavit/WHY_Apostille'
 import React from 'react'
 
 const page = () => {

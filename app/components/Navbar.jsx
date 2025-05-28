@@ -87,6 +87,9 @@ export default function Navbar() {
               <Link href="/services/hrd-home-attestation" className="block px-4 py-2 text-lg text-black hover:text-[#FF6A00] transition-colors">
                 Home/HRD Department
               </Link>
+              <Link href="/services/dubai-visa-services" className="block px-4 py-2 text-lg text-black hover:text-[#FF6A00] transition-colors">
+                Dubai Visa Services
+              </Link>
             </div>
           </div>
           <div className="relative group">
@@ -248,6 +251,9 @@ export default function Navbar() {
                 </Link>
                 <Link href="/services/hrd-home-attestation" className="block py-2 text-lg text-[#FF6A00] hover:text-[#FF6A00] transition-colors">
                   Home/HRD Department
+                </Link>
+                <Link href="/services/dubai-visa-services" className="block py-2 text-lg text-[#FF6A00] hover:text-[#FF6A00] transition-colors">
+                  Dubai Visa Services
                 </Link>
               </div>
             </div>

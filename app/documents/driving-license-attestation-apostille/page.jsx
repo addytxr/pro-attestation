@@ -1,12 +1,12 @@
 
-import Countries_Attestation from '@/app/components/Driving/Countries.Attestation'
-import Countries_Apostille from '@/app/components/Driving/Countries_Apostille'
-import Documents from '@/app/components/Driving/Documents'
-import PersonalHeader from '@/app/components/Driving/Header'
-import Intro from '@/app/components/Driving/Intro'
-import Process from '@/app/components/Driving/Process'
-import What_Apostille from '@/app/components/Driving/What_Apostille'
-import WHY_Apostille from '@/app/components/Driving/WHY_Apostille'
+import Countries_Attestation from '../../components/Driving/Countries.Attestation'
+import Countries_Apostille from '../../components/Driving/Countries_Apostille'
+import Documents from '../../components/Driving/Documents'
+import PersonalHeader from '../../components/Driving/Header'
+import Intro from '../../components/Driving/Intro'
+import Process from '../../components/Driving/Process'
+import What_Apostille from '../../components/Driving/What_Apostille'
+import WHY_Apostille from '../../components/Driving/WHY_Apostille'
 import React from 'react'
 
 const page = () => {
