@@ -9,11 +9,11 @@ export const metadata = {
   openGraph: {
     title: "MEA Attestation Services in India",
     description: "Fast and reliable MEA attestation for documents like degrees, birth certificates, and commercial papers. Trusted service with end-to-end support.",
-    url: "https://proattestation.com/mea-attestation-services",
+    url: "https://proattestation.com/mea-attestation",
     type: "website",
   },
   alternates: {
-    canonical: "https://proattestation.com/mea-attestation-services"
+    canonical: "https://proattestation.com/mea-attestation"
   }
 };
 
