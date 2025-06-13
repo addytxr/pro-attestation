@@ -111,8 +111,8 @@
       "type": "list",
       "style": "bullet",
       "items": [
-        " Birth Certificate",
-        "Marriage Certificate",
+        "[ Birth Certificate](/documents/birth-certificate-apostille-attestation){_blank}",
+        "[Marriage Certificate](/documents/marriage-certificate-attestation){_blank}",
         "Divorce Certificate",
         "Police Clearance Certificate (PCC)"
       ]
@@ -255,5 +255,5 @@
     }
   ],
   "createdAt": "2025-05-28T15:47:59.878Z",
-  "updatedAt": "2025-05-28T15:47:59.880Z"
+  "updatedAt": "2025-06-13T17:24:30.967Z"
 }

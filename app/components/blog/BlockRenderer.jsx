@@ -20,9 +20,48 @@ const HeadingBlock = ({ block }) => {
   }
 };
 
+// Function to parse text with links
+const parseTextWithLinks = (text) => {
+  if (!text) return '';
+  
+  // Regex to match [text](url) or [text](url){target} format
+  const linkRegex = /\[([^\]]+)\]\(([^)]+)\)(?:\{([^}]+)\})?/g;
+  const parts = [];
+  let lastIndex = 0;
+  let match;
+
+  while ((match = linkRegex.exec(text)) !== null) {
+    // Add text before the link
+    if (match.index > lastIndex) {
+      parts.push(text.slice(lastIndex, match.index));
+    }
+    
+    // Add the link
+    const linkText = match[1];
+    const linkUrl = match[2];
+    const target = match[3] || '_blank';
+    
+    parts.push(`<a href="${linkUrl}" target="${target}" class="text-[#FF6A00] hover:text-[#E63C00] underline font-medium">${linkText}</a>`);
+    lastIndex = match.index + match[0].length;
+  }
+  
+  // Add remaining text
+  if (lastIndex < text.length) {
+    parts.push(text.slice(lastIndex));
+  }
+  
+  return parts.join('');
+};
+
 // Paragraph Block Component
 const ParagraphBlock = ({ block }) => {
-  return <p className="my-5 text-lg  text-slate-800 leading-loose">{block.text}</p>;
+  const htmlContent = parseTextWithLinks(block.text);
+  return (
+    <p 
+      className="my-5 text-lg text-slate-800 leading-loose"
+      dangerouslySetInnerHTML={{ __html: htmlContent }}
+    />
+  );
 };
 
 // List Block Component
@@ -33,7 +72,11 @@ const ListBlock = ({ block }) => {
     return (
       <ol className="list-decimal pl-6 my-4 space-y-2 marker:text-[#FF6A00]">
         {items.map((item, index) => (
-          <li key={index} className="text-slate-700">{item}</li>
+          <li 
+            key={index} 
+            className="text-slate-700"
+            dangerouslySetInnerHTML={{ __html: parseTextWithLinks(item) }}
+          />
         ))}
       </ol>
     );
@@ -42,7 +85,11 @@ const ListBlock = ({ block }) => {
   return (
     <ul className="list-disc pl-6 my-4 space-y-2 marker:text-[#FF6A00]">
       {items.map((item, index) => (
-        <li key={index} className="text-slate-700">{item}</li>
+        <li 
+          key={index} 
+          className="text-slate-700"
+          dangerouslySetInnerHTML={{ __html: parseTextWithLinks(item) }}
+        />
       ))}
     </ul>
   );
@@ -74,9 +121,8 @@ const TableBlock = ({ block }) => {
                 <td 
                   key={cellIndex} 
                   className="px-6 py-4 whitespace-nowrap text-sm text-slate-700 border-r border-slate-300 last:border-r-0"
-                >
-                  {cell}
-                </td>
+                  dangerouslySetInnerHTML={{ __html: parseTextWithLinks(cell) }}
+                />
               ))}
             </tr>
           ))}
@@ -92,8 +138,14 @@ const FAQBlock = ({ block }) => {
   
   return (
     <div className="my-6 p-4 border border-slate-300 rounded-lg bg-slate-50 shadow-sm">
-      <h3 className="text-xl font-semibold text-slate-800">{question}</h3>
-      <p className="mt-2 text-slate-700 leading-relaxed">{answer}</p>
+      <h3 
+        className="text-xl font-semibold text-slate-800"
+        dangerouslySetInnerHTML={{ __html: parseTextWithLinks(question) }}
+      />
+      <p 
+        className="mt-2 text-slate-700 leading-relaxed"
+        dangerouslySetInnerHTML={{ __html: parseTextWithLinks(answer) }}
+      />
     </div>
   );
 };
@@ -122,8 +174,16 @@ const QuoteBlock = ({ block }) => {
   
   return (
     <blockquote className="my-6 border-l-4 border-[#FF6A00] pl-4 py-3 bg-[#FFF5EE] italic rounded-r-md">
-      <p className="text-slate-800 text-lg">{text}</p>
-      {author && <footer className="mt-2 text-slate-600">— {author}</footer>}
+      <p 
+        className="text-slate-800 text-lg"
+        dangerouslySetInnerHTML={{ __html: parseTextWithLinks(text) }}
+      />
+      {author && (
+        <footer 
+          className="mt-2 text-slate-600"
+          dangerouslySetInnerHTML={{ __html: `— ${parseTextWithLinks(author)}` }}
+        />
+      )}
     </blockquote>
   );
 };
