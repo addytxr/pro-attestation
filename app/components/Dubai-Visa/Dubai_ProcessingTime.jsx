@@ -41,9 +41,9 @@ const Dubai_ProcessingTime = () => {
       details: "For business meetings, conferences, and corporate travel"
     },
     {
-      type: "Employment Visa (Pre-Approval)",
+      type: "Job Seeking Visa",
       time: "5–7 working days",
-      details: "Required documentation for work permits in the UAE"
+      details: "Required documentation for job searching in the UAE"
     },
     {
       type: "Express e-Visa",
